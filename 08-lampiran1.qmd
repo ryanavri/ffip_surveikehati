@@ -1,0 +1,231 @@
+# Lembar Data
+
+Peran lembar data dalam kajian survei kehati sangat penting. Penggunaan lembar data yang tepat membuat pencatatan temuan menjadi lebih efisien dan terstandarisasi. Dalam lampiran ini terlampir contoh-contoh lembar data untuk setiap taksa. Templat lembar data tersedia pada tautan ini: [*Tallysheet-biodive*](https://ffionline-my.sharepoint.com/:f:/g/personal/ravriandy_fauna-flora_org/EmzNrbP8UHxCutN_drVob-UBxVyPXpzaQ6x6CDaW-0r42Q?e=F0a4Ss). Pembaca bisa mengunduh dan memperbanyak lembar data sebanyak yang dibutuhkan sebelum survei. Pada praktiknya, mungkin lembar data yang penulis sediakan belum mencakup hal spesifik yang dibutuhkan oleh projek, oleh karena itu pembaca bisa menambahkan sendiri kolom-kolom yang dibutuhkan.
+
+Selalu gunakan pensil dalam menulis di lembar data dan jika memungkinkan gunakan kertas tahan air, karena kemungkinan basah karena hujan sangat tinggi. Setelah selesai dari lapang, harus langsung dipindai untuk disimpan sebagai salinan digital. Lembar data yang ditulis dilapangan ini merupakan data primer untuk verifikasi input ada kesalahan input saat surveior memindahkan ke dalam excel.
+
+## Lembar Data Avifauna
+
+**Lembar data pengamatan menggunakan titik hitung**
+
+Pada awal lembar data dibutuhkan informasi umum mengenai tanggal, lokasi, durasi pengamatan, dan seluruh personil yang terlibat. Untuk lokasi geografis dari GPS, set menjadi decimal degree supaya bisa konsisten diseluruh Indonesia dan mudah di-input ke dalam sistem computer (Excel, dll). Keterangan dari setiap kolom adalah sebagai berikut;
+
+**Jenis:** Nama jenis burung menggunakan nama latin, namun apabila belum mengetahui jenisnya, dapat menggunakan nama lokal terlebih dahulu.
+
+**Individu:** Jumlah burung yang ditemukan pada satu spot (beberapa burung terkadang berkelompok atau berpasangan seperti cendrawasih atau burung gereja)
+
+**Jarak:** Jarak burung dari pengamat dalam satuan meter
+
+**Catatan:** Tambahan catatan penting jika ada
+
+![Contoh lembar data untuk metode titik hitung](images/ldp_th.jpg){#fig-lpdth fig-align="center"}
+
+**Lembar data parameter lingkungan di titik hitung**
+
+Dalam setiap titik hitung, dapat ditambahkan parameter lingkungan untuk melihat pengaruh perbedaan rona lingkungan terhadap komunitas burung, Adapun keterangan dari setiap baris adalah sebagai berikut
+
+**Tallest tree (m):** Pohon tertinggi disekitar lokasi pengamatan. Satuan nilai dalam meter
+
+**Ground cover (%):** Tutupan bawah disekitar lokasi pengamatan satuan nilai (%)
+
+**Plant height 0-1,5 m (%):** Jumlah persentase pohon dengan ukuran 0-1.5 m disekitar lokasi pengamatan
+
+**Plant height 1,5-5 m (%):** Jumlah persentase pohon dengan ukuran 1.5-5 m disekitar lokasi pengamatan
+
+**Plant height 5-15 m (%):** Jumlah persentase pohon dengan ukuran 5-15 m disekitar lokasi pengamatan
+
+**Plant height \>15 m (%):** Jumlah persentase pohon dengan ukuran \>15 m disekitar lokasi pengamatan
+
+**Bole climb (%):** Persentase tumbuhan yang merambat disekitar lokasi pengamatan
+
+**Liana (%):** Persentase tumbuhan pemanjat disekitar lokasi pengamatan
+
+**Macaranga (%):** Persentase tumbuhan jenis macaranga disekitar lokasi pengamatan
+
+**Rattan (%):** Persentase rotan disekitar lokasi pengamatan
+
+**Fern (%):** Persentase paku-pakuan disekitar lokasi pengamatan
+
+**Small palm (%):** Persentase palem-paleman disekitar lokasi pengamatan
+
+**Dist. from water:** Kategori jarak ke sumber air; 1 = 0-50 m, 2 = 50-100m, 3 \> 100m
+
+**Logs abd:** Jumlah pohon tumbang yang ada dilokasi pengamatan
+
+**Snags abd:** Jumlah pohon mati berdiri disekitar lokasi pengamatan
+
+**Zingiberaceae (%):** Persentase temu-temuan/rimpang disekitar lokasi pengamatan
+
+**Grass (%):** Persentase rumput-rumputan disekitar lokasi pengamatan
+
+**Moss (cm):** Ketebalan lumut disekitar lokasi pengamatan dalam centimeter
+
+**Litter (cm):** Ketebalan seresah disekitar lokasi pengamatan dalam centimeter
+
+![Contoh lembar data untuk parameter lingkungan di setiap titik hitung](images/ldp_pl.jpg){#fig-ldppl fig-align="center"}
+
+**Lembar data daftar jenis MacKinnon**
+
+Pada pengamatan yang bersifat ekploratif menggunakan daftar jenis MacKinnon, lembar data yang digunakan sangat sederhana, dengan diawali informasi pengamat, lokasi dan durasi pengamatan
+
+![Contoh lembar data untuk daftar jenis MacKinnon](images/ldp_ml){#fig-ldpml fig-align="center"}
+
+## Lembar Data Herpetofauna
+
+**Lembar data pengamatan menggunakan metode *VES***
+
+Pada awal lembar data dibutuhkan informasi umum mengenai tanggal, lokasi, durasi pengamatan, dan seluruh personil yang terlibat. Untuk lokasi geografis dari GPS, set menjadi decimal degree supaya bisa konsisten diseluruh Indonesia dan mudah di-input ke dalam sistem computer (Excel, dll). Keterangan dari setiap kolom adalah sebagai berikut;
+
+**Waktu:** Jam ditemukannya herpetofauna, gunakan format hh;mm (0:00 -- 24:00)
+
+**Jenis:** Nama jenis menggunakan nama latin, namun apabila belum mengetahui jenisnya, dapat menggunakan nama lokal terlebih dahulu.
+
+**SVL (cm):** Panjang tubuh dari moncong hingga pangkal ekor dalam satuan cm
+
+**Hor (m):** (a) survei di sempadan sungai; jarak horisontal dari sungai (b) survei di transek; jarak horisontal dari garis tengah transek
+
+**Ver (m):** (a) survei di sempadan sungai; Jarak vertikal dari badan air (b) survei di transek; jarak vertikal dari permukaan tanah
+
+**Substrat:** Substrat atau pijakan dari satwa yang ditemukan
+
+**Aktivitas:** Aktivitas spesifik pada saat ditemukan
+
+![Contoh lembar data untuk metode VES](images/ldh_ves.jpg){#fig-ldhves fig-align="center"}
+
+## Lembar Data Mamalia
+
+**Lembar data pengamatan menggunakan transek garis dan eksplorasi**
+
+Pada awal lembar data dibutuhkan informasi umum mengenai tanggal, lokasi, durasi pengamatan, dan seluruh personil yang terlibat. Untuk lokasi geografis dari GPS, set menjadi decimal degree supaya bisa konsisten diseluruh Indonesia dan mudah di-input ke dalam sistem computer (Excel, dll). Keterangan dari setiap kolom adalah sebagai berikut;
+
+**Waktu:** Jam ditemukannya mamalia, gunakan format hh;mm (0:00 -- 24:00)
+
+**Jenis:** Nama jenis menggunakan nama latin, namun apabila belum mengetahui jenisnya, dapat menggunakan nama lokal terlebih dahulu.
+
+**PPD (M):** Jarak perpendicular satwa ditemukan pertama kali, relatif terhadap garis tengah transek jika memungkinkan.
+
+**Tipe temuan:** Tipe temuan satwa dapat diisi dengan perjumpaan langsung, kotoran, cakaran, maupun suara. Pembeda temuan ini untuk mengukur akurasi identifikasi.
+
+**GPS ID:** Nomor waypoint pada GPS. Supaya survei lebih efisien, pengamat boleh menulis nomor waypoint pada GPS terlebih dahulu selama pengamatan, untuk kemudian melengkapi koordinat pada saat sudah di kamp.
+
+**Lon:** Lokasi koordinat Longitude (X). Referensi kordinat yang dipakai adalah WGS84 dengan format penulisan decimal degree.
+
+**Lat:** Lokasi koordinat Latitude (Y). Referensi kordinat yang dipakai adalah WGS84 dengan format penulisan decimal degree.
+
+**Catatan:** Tambahkan catatan penting jika ada
+
+![Contoh lembar data untuk metode transek garis](images/ldm_tg.jpg){#fig-ldmtg fig-align="center"}
+
+**Lembar data pengamatan mamalia kecil menggunakan perangkap**
+
+Khusus untuk pengamatan mamalia kecil menggunakan perangkap, menggunakan contoh lembar data dan keterangan di bawah ini. Lembar data ini terdiri dari dua bagian, dimana bagian kedua berisi informasi perangkap yang digunakan pada bagian selanjutnya untuk dapat mengukur usaha survei dan informasi lokasi disetiap perangkap.
+
+**Tanggal:** Tanggal ditemukan satwa
+
+**Waktu:** Jam ditemukan satwa
+
+**Trap ID:** Nomor unik setiap perangkap yang digunakan
+
+**Jenis:** Nama jenis menggunakan nama latin, namun apabila belum mengetahui jenisnya, dapat menggunakan nama lokal terlebih dahulu.
+
+**Usia:** kriteria usia satwa jika diketahui
+
+**Sex:** Jenis kelamin satwa jika diketahui
+
+**HB (mm):** Panjang tubuh satwa dalam satuan milimeter
+
+**FA (mm):** Panjang lengan atau kaki depan satwa dalam sattuan milimeter
+
+**E (mm):** Panjang telinga satwa
+
+**T (mm):** Panjang ekor satwa
+
+**HF (mm):** Panjang kaki belakang satwa
+
+**W (gr):** Berat tubuh satwa dalam gram
+
+**AT (mm):** Panjang anti tragus dalam milimeter, khusus untuk satwa kelelawar
+
+**TR (mm):** Panjang tragus dalam milimeter, khusus untuk satwa kelelawar
+
+**Catatan:** Tambahan catatan penting jika ada
+
+![Contoh lembar data untuk pengamatan menggunakan perangkap](images/ldm_pk.jpg){#fig-ldmpk fig-align="center"}
+
+**Lembar data informasi perangkap yang digunakan**
+
+Lembar data dibawah ini merupakan bagian kedua yang berisi informasi seluruh perangkap selama melakukan kajian. Lembar data ini merupakan bagian kedua dari lembar data sebelumnya, dengan informasi setiap kolom sebagai berikut;
+
+**Trap ID:** Nomor unik setiap perangkap yang digunakan
+
+**Tipe:** Tipe atau jenis perangkap yang digunakan
+
+**GPS ID:** Nomor waypoint pada GPS. Supaya survei lebih efisien, pengamat boleh menulis nomor waypoint pada GPS terlebih dahulu selama pengamatan, untuk kemudian melengkapi koordinat pada saat sudah di kamp.
+
+**Lon:** Lokasi koordinat Longitude (X). Referensi kordinat yang dipakai adalah WGS84 dengan format penulisan decimal degree.
+
+**Lat:** Lokasi koordinat Latitude (Y). Referensi kordinat yang dipakai adalah WGS84 dengan format penulisan decimal degree.
+
+**Tanggal pasang:** Tanggal perangkap mulai dipasang atau diaktifkan
+
+**Tangggal selesai:** Tanggal perangkap selesai digunakan
+
+**Waktu pasang:** Waktu mulai perangkap dipasang atau diaktifkan
+
+**Waktu selesai:** waktu berakhirnya perangkap digunakan
+
+**Catatan:** Tambahan catatan penting jika ada
+
+![Contoh lembar data informasi perangkap](images/ldm_p.jpg){#fig-ldmp fig-align="center"}
+
+## Lembar Data Vegetasi
+
+**Lembar data informasi petak vegetasi**
+
+Lembar data vegetasi memiliki dua bagian utama. Bagian pertama berisi mengenai informasi personil, lokasi referensi geografis, dan keadaan umum disekitar plot dengan contoh dan informasi dibawah ini;
+
+**Nomor ID Plot:** Nomor unik plot
+
+**Koordinat GPS (X):** Lokasi koordinat Longitude (X). Referensi kordinat yang dipakai adalah WGS84 dengan format penulisan decimal degree.
+
+**Koordinat GPS (Y):** Lokasi koordinat Latitude (Y). Referensi kordinat yang dipakai adalah WGS84 dengan format penulisan decimal degree.
+
+**Arah plot:** arah plot (barat, timur, utara, selatan)
+
+**Waktu (tanggal, jam):** informasi waktu dan jam memulai pengamatan di plot
+
+**Cuaca:** cuaca pada saat pengamatan
+
+**Substrat:** Kondisi subsrat dominan yang ada di plot
+
+**Anggota tim:** nama-nama seluruh personil
+
+**Tipe habitat:** Kondisi deksriptif habitat atau vegetasi yang dominan di plot
+
+**Drainase lantai hutan:** Kondisi lantai hutan, tandai dengan silang pilihan yang ada disebelah kanannya
+
+**Gangguan:** Gangguan atau potensi gangguan yang ada di dalam dan sekitar plot
+
+**Nomor foto rona vegetasi:** nomor foto yang ada di kamera, mengenai foto-foto rona vegetasi yang ada di dalam plot
+
+**Catatan tambahan:** Catatan tambahan jika diperlukan mengenai kondisi plot.
+
+![Contoh lembar data petak vegetasi](images/ldv_ip.jpg){#fig-ldvip fig-align="center"} **Lembar data vegetasi**
+
+Lembar data ini merupakan bagian kedua dari set lembar data vegetasi untuk menulis pengukuran tumbuhan di setiap anak petak dengan contoh dan informasi setiap kolom sebagai berikut;
+
+**Kelas:** Kelas kategori tumbuhan berdasarkan ukuran diameter batang
+
+**Jenis:** Nama jenis menggunakan nama latin, namun apabila belum mengetahui jenisnya, dapat menggunakan nama lokal terlebih dahulu.
+
+**Kode pohon:** Kode penanda individu tumbuhan didalam plot
+
+**DBH (cm):** Diameter batang setinggi dada (Dbh) dalam satuan cm
+
+**TT (m):** Tinggi total tanaman dalam meter
+
+**TBC (m):** Tinggi bebas cabang dalam satuan meter
+
+**Kode foto:** Nomor foto di kamera **Keterangan:** Catatan atau keterangan tambahan jika diperlukan
+
+![Contoh lembar data vegetasi](images/ldv_m.jpg){#fig-ldvm fig-align="center"}

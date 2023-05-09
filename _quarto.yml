@@ -1,0 +1,54 @@
+project:
+  type: book
+
+book:
+  title: "Draft Panduan Survei Kehati"
+  author: "Fauna & Flora International`s Indonesia Programme"
+  favicon: cover.png
+  description: Panduan praktis mengenai survei keanekaragaman hayati
+  sidebar: 
+    background: "#F5F5F5"
+    logo: cover.png
+    search: true
+  sharing: [twitter, facebook, linkedin]
+
+  chapters:
+  - index.qmd
+  - 01-pendahuluan.qmd
+  - 02-pra-survei.qmd
+  - 03-rancangan-survei.qmd
+  - 04-protokol.qmd
+  - 05-pengelolaan-data.qmd
+  - 06-analisa-data.qmd
+  - 07-referensi.qmd
+  - part: Lampiran
+    chapters:
+    - 08-lampiran1.qmd
+    - 09-lampiran2.qmd
+    - 10-lampiran3.qmd
+    
+bibliography: book.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+    code-fold: false
+    css: custom.css
+    backgroundcolor: "#F5F5F5"
+    fontsize: 1.1em
+    linestretch: 1.7
+    toc: true
+    crossref: 
+      fig-title: "Gambar"
+      fig-prefix: "Gambar" 
+      tbl-title: "Tabel"
+      tbl-prefix: "Tabel"
+      sec-prefix: "Bab"
+      sec-labels: alpha
+      
+  docx:
+    reference-doc: FFI_Word Template.docx
+
+prefer-html: true
+editor: visual
