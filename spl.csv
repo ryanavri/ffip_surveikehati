@@ -1,0 +1,12 @@
+"","Class","Order","Family","Species","Status","Trend","Appendix","Protected","Endemic","Migratory"
+"1","Mammalia","Cetartiodactyla","Suidae","Sus scrofa","LC","Unknown",NA,NA,NA,NA
+"2","Mammalia","Primates","Cercopithecidae","Trachypithecus auratus","VU","Decreasing","II","Y",NA,NA
+"3","Mammalia","Primates","Cercopithecidae","Macaca fascicularis","EN","Decreasing","II",NA,NA,NA
+"4","Mammalia","Primates","Cercopithecidae","Macaca fascicularis","EN","Decreasing","II",NA,NA,NA
+"5","Mammalia","Carnivora","Mustelidae","Aonyx cinereus","VU","Decreasing","I",NA,NA,NA
+"6","Mammalia","Carnivora","Herpestidae","Herpestes javanicus","LC","Unknown","III",NA,NA,NA
+"7","Mammalia","Primates","Hylobatidae","Hylobates moloch","EN","Decreasing","I","Y","Y",NA
+"8","Mammalia","Rodentia","Hystricidae","Hystrix javanica","LC","Stable",NA,"Y",NA,NA
+"9","Mammalia","Carnivora","Felidae","Prionailurus bengalensis","LC","Stable","II","Y",NA,NA
+"10","Mammalia","Cetartiodactyla","Cervidae","Muntiacus muntjak","LC","Decreasing",NA,"Y",NA,NA
+"11","Mammalia","Primates","Cercopithecidae","Presbytis comata","VU","Decreasing","II","Y",NA,NA
