@@ -68,7 +68,7 @@ Dalam setiap titik hitung, dapat ditambahkan parameter lingkungan untuk melihat 
 
 Pada pengamatan yang bersifat ekploratif menggunakan daftar jenis MacKinnon, lembar data yang digunakan sangat sederhana, dengan diawali informasi pengamat, lokasi dan durasi pengamatan
 
-![Contoh lembar data untuk daftar jenis MacKinnon](images/ldp_ml){#fig-ldpml fig-align="center"}
+![Contoh lembar data untuk daftar jenis MacKinnon](images/ldp_ml.jpg){#fig-ldpml fig-align="center"}
 
 ## Lembar Data Herpetofauna
 

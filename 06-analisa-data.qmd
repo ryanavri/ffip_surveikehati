@@ -106,6 +106,18 @@ Sementara itu, CCA merupakan metode statistik multivariat yang digunakan untuk m
 
 Kedua metode ini sering digunakan dalam studi-studi ekologi untuk mengevaluasi perbedaan dalam pola keanekaragaman hayati antar lokasi atau dalam rentang waktu tertentu. Misalnya, sebuah studi dapat menggunakan MDS untuk memvisualisasikan perbedaan dalam keanekaragaman hayati antara beberapa lokasi, dan kemudian menggunakan CCA untuk mengevaluasi faktor lingkungan yang mempengaruhi pola-pola keanekaragaman tersebut.
 
-Penjelasan mengenai analisis data dalam bab ini hanya sebagian kecil dari keseluruhan teknik yang dapat anda pelajari dan aplikasikan dalam survei yang telah anda lakukan. Untuk memperdalam pemahaman anda, penjelasan yang lebih mendetail akan dipraktikan pada [lampiran 3](#lampiran) dan diagram analisa yang dapat anda lakukan dari data yang anda miliki tersaji pada @fig-oa berikut ini.
+## Kepadatan Spesies (*Distance sampling*)
+
+Salah satu analisis yang paling populer untuk memperkirakan kepadatan satwa adalah dengan menggunakan metode *Distance sampling*, metode tersebut pada dasarnya mengukur jarak objek dari sebuah garis atau titik deteksi. Objek yang dimaksud biasanya adalah hewan atau kelompok hewan (yang disebut klaster), maupun tanda satwa (seperti suara burung, kotoran, sarang, hingga semburan paus).
+
+Metode konvensional *distance sampling* (CDS) dijelaskan oleh [@buckland2005distance], dan variasi lainnya dibahas dalam [@buckland2004advanced]. Daftar referensi yang lengkap, mencakup pengembangan metodologi dan aplikasi praktis metode tersebut, dapat ditemukan di [Online distance sampling course](https://workshops.distancesampling.org/online-course/). Untuk dapat menerapkan aplikasi ini, setidaknya ada 3 asumsi yang harus dipenuhi:
+
+1.  **Objek tepat pada garis atau titik dideteksi dengan pasti**. Secara konseptual, objek pada jarak yang dekat harus selalu dapat terdeteksi. Namun, asumsi ini kadang dilanggar, misalnya pada survei menggunakan perahu untuk mamalia laut di mana satwa di bawah perahu tidak terdeteksi. Solusi untuk ini adalah menggunakan lebih dari satu pengamat yang berjalan beriringan [@borchers2006accommodating]
+2.  **Objek tidak bergerak**. Secara konseptual, kita mengukur objek saat hewan tersebut pertama kali terdeteksi. Jika hewan tersebut berpindah dari tempat semula, itu tidak masalah, yang penting adalah individu yang sama tidak diukur kembali.
+3.  **Pengukuran yang tepat**. Sebisa mungkin, jarak objek dari garis atau titik harus diukur dengan seakurat mungkin. Selalu gunakan alat bantu seperti distometer jika memungkinkan.
+
+Dengan memahami dan memenuhi asumsi-asumsi ini, analisis *distance sampling* dapat memberikan perkiraan yang andal mengenai kepadatan satwa dan dapat digunakan untuk studi ekologi dan konservasi.
+
+Bab ini hanya sebagian kecil dari keseluruhan teknik yang dapat anda pelajari dan aplikasikan dalam survei yang telah anda lakukan. Untuk memperdalam pemahaman anda, penjelasan yang lebih mendetail akan dipraktikan pada [lampiran 3](#lampiran) dan diagram analisa yang dapat anda lakukan dari data yang anda miliki tersaji pada @fig-oa berikut ini.
 
 ![Analisis yang dapat dilakukan dari data yang dimiliki](images/option_analysis.jpg){#fig-oa fig-align="center"}

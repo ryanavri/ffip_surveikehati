@@ -230,7 +230,7 @@ Pelaksanaan survei mamalia di FFI\`s IP membutuhkan keterampilan dan langkah ker
 ### Peralatan
 
 | Peralatan                            | Penggunaan                                              | Spesifikasi                                                                                                                              |
-|------------------|------------------|-----------------------------------|
+|-------------------|-------------------|-----------------------------------|
 | Alat Tulis                           | Pencatatan data dan penandaan                           | Kuat, tidak mudah luntur                                                                                                                 |
 | Lembar data                          | Lembar pencatatan data                                  | Tahan air                                                                                                                                |
 | Alat Navigasi (GPS, Peta dan Kompas) | Untuk navigasi sekaligus penanda lokasi geografis       | Tahan air                                                                                                                                |

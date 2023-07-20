@@ -49,6 +49,7 @@ library(ggrepel)
 library(ggplot2)
 library(ggvegan)
 library(kableExtra)
+library(unmarked)
 
 ##Memuat dataset----
 # Mengunduh data dan memuat data
@@ -361,7 +362,7 @@ legend("bottomright", legend=unique(group), col=unique(group), pch=16, title = "
 
 Bagian ini akan membahas penggunaan Model Linier Umum (GLM) dalam menganalisis pengaruh faktor lingkungan terhadap kelimpahan spesies. Model ini memungkinkan kita untuk mempelajari hubungan antara variabel dependen (misalnya, kelimpahan spesies) dan satu atau lebih variabel independen (faktor lingkungan). GLM fleksibel dalam mengakomodasi berbagai distribusi variabel respon, seperti distribusi poisson (kelimpahan) atau binomial (keberadaan/ketiadaan), yang umum ditemukan dalam data ekologi.
 
-#### GLM dengan variabel kontinu
+### GLM dengan variabel kontinu
 
 Skrip di bawah ini menunjukkan contoh analisis hubungan antara variabel kontinu, di mana kita akan mengevaluasi pengaruh elevasi, keragaman jenis pohon, kepadatan pohon, dan jumlah pohon pakan terhadap kelimpahan merpati hijau Sumatra (*Treron oxyurus).*
 
@@ -441,7 +442,7 @@ ggplot(raw_env_bird, aes(x = Tree.rich, y = Abundance)) +
         legend.position = "bottom")
 ```
 
-#### GLM dengan variable kategori
+### GLM dengan variable kategori
 
 Bagian ini akan membahas penggunaan Model Linier Umum (GLM) dalam menganalisis pengaruh faktor lingkungan tipe kategori terhadap kelimpahan spesies. Dalam contoh ini, kita akan mengevaluasi pengaruh tutupan lahan, yang mencakup hutan primer, hutan sekunder, hutan tanaman, dan tanah terbuka, terhadap kelimpahan merpati hijau Sumatra (*Treron oxyurus*). Skrip di bawah ini menunjukkan cara menggunakan GLM untuk memodelkan hubungan antara kelimpahan burung dengan variabel kategori tutupan lahan.
 
@@ -493,21 +494,24 @@ ggplot(data = pred_df, aes(x = Tuplah, y = Predicted, fill = Tuplah)) +
 #| label: fig-showglmcatpl
 #| fig-cap: "Grafik pengaruh tutupan lahan terhadap kelimpahan burung"
 
-ggplot(raw_env_bird, aes(x = Tree.rich, y = Abundance)) +
-  geom_point(alpha = 0.5, color = "#3B6B9A") + 
-  geom_smooth(method = "glm", method.args = list(family = "poisson"), se = TRUE, color = "#8C510A") +
-  theme_bw(base_size = 16) +
-  ggtitle("Predicted abundance by tree richness") +
-  xlab("Tree richness") +
-  ylab("Predicted abundance") +
-  theme(plot.title = element_text(hjust = 0.5, size = 20),
-        axis.title.x = element_text(size = 20),
-        axis.title.y = element_text(size = 20),
-        axis.text.x = element_text(size = 16),
-        axis.text.y = element_text(size = 16),
+ggplot(data = pred_df, aes(x = Tuplah, y = Predicted, fill = Tuplah)) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  geom_errorbar(aes(ymin = Predicted - SE, ymax = Predicted + SE), 
+                position = position_dodge(width = 0.9), width = 0.2) +
+  scale_fill_manual(values = c("#74C476", "#6BAED6", "#FD8D3C", "#9E9AC8")) +
+  labs(x = "Landcover", y = "Predicted abundance",
+       title = "Predicted abundance by landcover",
+       fill = "") +
+  theme_bw() +
+  theme(plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+        axis.title = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 10),
         legend.title = element_blank(),
-        legend.text = element_text(size = 16),
-        legend.position = "bottom")
+        legend.text = element_text(size = 10),
+        legend.position = "bottom",
+        panel.grid = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA, size = 0.5))
 ```
 
 ## Pengaruh Faktor Lingkungan terhadap komposisi Spesies: Canonical Correspondence Analysis (CCA)
@@ -605,13 +609,292 @@ ggplot() +
 
 @fig-showccaplot menunjukkan plot CCA yang telah dimodifikasi dengan memperlihatkan 10 spesies paling melimpah untuk kemudahan interpretasi. Untuk memahami hasil CCA, Anda harus melihat sejauh mana titik-titik transek, spesies, dan panah variabel lingkungan berdekatan. Transek dan spesies yang berada dekat dengan panah variabel lingkungan menandakan bahwa mereka dipengaruhi oleh variabel lingkungan tersebut. Jika panah variabel lingkungan berdekatan atau berpotongan, ini menunjukkan adanya korelasi antara variabel-variabel tersebut dalam menjelaskan pola distribusi spesies.
 
-Pada @fig-showccaplot tersebut menunjukkan bahwa panah elevasi dan keragaman jenis pohon berdekatan, yang berarti semakin tinggi elevasi, keragaman jenis pohon semakin meningkat. Selain itu, posisi ayam hutan (*Gallus varius*) terletak jauh dari arah elevasi, yang berarti dalam sampel kita, ayam hutan lebih sering ditemukan di daerah dengan elevasi yang lebih rendah dan ditemukan lebih sering di hutan sekunder. Jarak antar titik juga menunjukkan kesamaan komposisi jenis dan variabel lingkungan, seperti transek 5 dan 6 yang lebih mirip satu sama lain dibandingkan dengan transek 3 dan 4 yang memiliki posisi yang lebih jauh. 
+Pada @fig-showccaplot tersebut menunjukkan bahwa panah elevasi dan keragaman jenis pohon berdekatan, yang berarti semakin tinggi elevasi, keragaman jenis pohon semakin meningkat. Selain itu, posisi ayam hutan (*Gallus varius*) terletak jauh dari arah elevasi, yang berarti dalam sampel kita, ayam hutan lebih sering ditemukan di daerah dengan elevasi yang lebih rendah dan ditemukan lebih sering di hutan sekunder. Jarak antar titik juga menunjukkan kesamaan komposisi jenis dan variabel lingkungan, seperti transek 5 dan 6 yang lebih mirip satu sama lain dibandingkan dengan transek 3 dan 4 yang memiliki posisi yang lebih jauh.
 
 Jika kita bandingkan dengan hasil klaster dan NMDS pada @fig-showclustplot dan @fig-shownmdsplot, posisi relatif titik atau transek ini menjadi berbeda karena metode sebelumnya hanya mempertimbangkan komposisi spesies, sedangkan CCA mencakup variabel-variabel lingkungan sehingga menggambarkan kondisi komunitas dan lingkungan yang lebih lengkap.
 
-
 ## Analisis Kepadatan Spesies
-tba
+
+### Analisis dasar tanpa variabel
+
+Bagian ini akan membahas tentang cara memperoleh kepadatan spesies menggunakan konsep *distance sampling*.
+
+Dalam panduan ini, kita akan menggunakan data simulasi dari observasi primata menggunakan metode transek garis. Setiap transek memiliki panjang 2000 meter dan satuan jarak yang digunakan adalah meter (m).
+
+```{r Inspect_distancedata, echo=TRUE}
+#Melihat struktur data
+str(simdat_primate_ds)
+```
+
+Pada bagian ini, kita akan membuat struktur data untuk analisis *distance sampling*. Pertama, kita memilih salah satu spesies, dalam contoh ini, kita akan memilih monyet ekor panjang (*Macaca fascicularis*) untuk dihitung estimasi kepadatannya.
+
+Selanjutnya, kita melakukan beberapa manipulasi data. Kolom "Transect" diubah menjadi faktor dan kolom "Distance" diubah menjadi tipe data integer. Hal ini dilakukan untuk memastikan bahwa kolom-kolom tersebut memiliki tipe data yang sesuai untuk analisis *distance sampling*.
+
+```{r df_distancedata, echo=TRUE}
+
+# Membuat struktur data untuk analisa 'distance sampling'
+
+# Memilih salah satu spesies yang akan dianalisa
+subset_data <- simdat_primate_ds %>%
+  filter(Species == "Macaca fascicularis") %>% #Ganti argumen ini untuk spesies yang lain
+  mutate(Transect = as.factor(Transect)) %>%
+  mutate(Distance = as.integer(Distance)) %>%
+  as.data.frame()
+
+# Memastikan semua transek yang disurvei ada pada dataset kita
+levels(subset_data$Transect)
+```
+
+Pada data ekologi yang sebenarnya, mungkin tidak semua spesies teridentifikasi di semua transek, dan juga mungkin beberapa transek tidak mencatat adanya spesies tertentu. Oleh karena itu, penting untuk memastikan bahwa semua transek yang ada dalam kajian tercakup dalam dataset kita. Baris terakhir diatas digunakan untuk memeriksa transek yang ada pada dataset kita.
+
+Gunakan skrip dibawah ini apabila kita melakukan survei, namun spesies target tidak ditemukan pada transek "TS08", "TS09", dan "TS07".
+
+```{r df_distancedata2, eval=FALSE, echo=TRUE}
+levels(subset_data$Transect) <- c(levels(subset_data$Transect), "TS08", "TS09", "TS07")
+```
+
+Setelah semua transek dipastikan ada dalam dataset kita, selanjutnya kita akan membuat dataset deteksi dengan interval jarak sejauh 5 meter.
+
+```{r df_distancedata3, echo=TRUE}
+# Membuat interval jarak
+db <- c(0,5,10,15,20,25,30)
+
+# Membuat dataset deteksi spesies
+yDat <- formatDistData(subset_data,
+                       distCol="Distance",
+                       transectNameCol="Transect",
+                       dist.breaks=db)
+
+# Menambahkan variabel yang dipergunakan dan melakukan standarisasi pada data kontinu
+covs <- raw_env %>%
+  column_to_rownames("Transect") %>%
+  select(Tuplah, Elev, Tree.count) %>%
+  mutate(Elev = scale(Elev), # Standarisasi untuk data kontinu
+         Tree.count = scale(Tree.count))
+
+# Dataset final yang dipergunakan untuk analisis
+umf <- unmarkedFrameDS(y=yDat, 
+                       siteCovs=covs, 
+                       dist.breaks=db,
+                       survey="line", #ganti jadi point untuk metode titik hitung
+                       tlength=rep(2000, 10), #total transek 10 dengan panjang masing-masing 2000m
+                       unitsIn="m") #satuan panjang kolom transek dan jarak
+summary(umf)
+```
+
+Baris skrip terakhir diatas memberikan ringkasan dari objek 'umf' menunjukkan hasil dari persiapan data untuk analisis distance sampling dengan metode transek garis yang menunjukan jumlah transek dan nilai variabel.
+
+Selanjutnya pada skrip dibawah ini, kita membuat tiga model dasar dengan berbagai macam fungsi deteksi yang berbeda. Fungsi deteksi digunakan untuk mengestimasi probabilitas deteksi objek dalam distance sampling. Dengan membuat ketiga model ini, kita dapat membandingkan kinerja fungsi deteksi yang berbeda dalam mengestimasi kepadatan spesies pada data yang telah disiapkan sebelumnya dan menentukan model mana yang akan dipergunakan
+
+```{r analyse_ds_basic, echo=TRUE}
+
+# Membuat model dasar dengan berbagai macam fungsi deteksi
+m.half <- distsamp(~1 ~1, umf,
+                   keyfun="halfnorm", # fungsi deteksi
+                   output="density", unitsOut="ha") # pengaturah hasil, dalam konteks ini berarti 'animals/ha'
+
+m.haz <- distsamp(~1 ~1, umf, keyfun="hazard", output="density", unitsOut="ha")
+
+m.uni <- distsamp(~1 ~1, umf, keyfun="uniform", output="density", unitsOut="ha")
+```
+
+Setelah model-model dibuat, mengetikkan namanya akan menampilkan informasi estimasi parameter dan AIC (Kriteria Informasi Akaike).
+
+```{r inspet_model_ds, echo=TRUE}
+m.half
+```
+
+Hasil tersebut menunjukkan bahwa nilai p-value dari model tersebut adalah kurang dari 0.05, yang berarti secara statistik nilai estimasi tersebut signifikan, dan data dapat digunakan secara sah. Selain itu, nilai AIC dari model ini lebih kecil daripada nilai AIC model lainnya, yang menunjukkan bahwa model ini adalah model terbaik.
+
+Selain melihat perbedaan nilai AIC, kita juga harus memeriksa bentuk histogram yang mungkin menunjukkan adanya "bahu". Skrip dibawah digunakan untuk visualisasi deteksi fungsi dari model tersebut. Idealnya semakin lebar "bahu", maka data tersebut semakin bagus.
+
+```{r inspet_model_ds2,eval=FALSE, echo=TRUE}
+hist(m.half)
+```
+
+![histogram deteksi yang menunjukan 'bahu'](images/Shoulder.png){#fig-rlv fig-align="center"}
+
+Setelah kita yakin dengan model yang akan dipergunakan, selanjutnya adalah melihat bagaimana nilai kepadatan spesies dengan skrip dibawah ini
+
+```{r inspet_model_ds3, echo=TRUE}
+backTransform(m.half, type="state")
+```
+
+Pada hasil tersebut dinyatakan kepadatan monyet ekor panjang dalam kajian ini adalah 5.45 [+]{.underline} 0.4 individu/ha.
+
+### Analisis dengan mempertimbangkan variabel
+
+Dalam kajian ekologi seringkali kondisi lingkungan antar transek tidak homogen, terdapat berbagai variasi parameter lingkungan antar transek. Dalam pembahasan ini kita akan melihat bagaimana tipe tutupan hutan, elevasi dan jumlah pohon mempengaruhi kepadatan spesies.
+
+Dari model sebelumnya diketahui bahwa model dengan deteksi fungsi 'half-normal' adalah model terbaik. Maka kita akan tetap menggunakan fungsi tersebut dengan menambahkan variabel lingkungan menggunakan skrip dibawah ini
+
+```{r analyse_ds_covs, echo=TRUE}
+
+# Model dengan variabel lingkungan
+
+# Model dengan elevasi sebagai covariate yang mempengaruhi kepadatan
+m.Elev <- distsamp(~1 ~Elev, umf, keyfun="halfnorm", output="density", unitsOut="ha")
+
+# Model dengan tutupan lahan
+m.Tuplah <- distsamp(~1 ~Tuplah, umf, keyfun="halfnorm", output="density", unitsOut="ha")
+
+# Model dengan banyaknya pohon
+m.Treecount <- distsamp(~1 ~Tree.count, umf, keyfun="halfnorm", output="density", unitsOut="ha")
+
+# Model dengan elevasi, tutupan lahan dan banyaknya pohon secara bersamaan
+m.all <- distsamp(~1 ~Tuplah + Elev + Tree.count, umf, keyfun="halfnorm", output="density", unitsOut="ha")
+
+# Evaluasi model terbaik dari seluruh model yang digunakan
+
+mlist <- fitList(m.half, m.Elev, m.Tuplah, m.Treecount, m.all)
+
+modSel(mlist)
+
+```
+
+Dari nilai tersebut diketahui bahwa model tanpa variabel merupakan model terbaik, diikuti dengan elevasi, jumlah pohon dan tutupan lahan.
+
+Kita dapat menggunakan skrip dibawah ini untuk melihat bagaimana respon dari variabel tersebut mempengaruhi kepadatan satwa .
+
+```{r viz_ds_covs, echo=TRUE}
+
+# Prediksi pengaruh elevasi terhadap kepadatan satwa
+
+# Membuat tabel nilai prediksi
+m.nelev <- data.frame(Elev = seq(min(covs$Elev), max(covs$Elev), length=100))
+elev.pred <- predict(m.Elev, type="state", newdata=m.nelev, appendData=TRUE)
+
+# Membuat plot prediksi
+ggplot(elev.pred, aes(x = Elev, y = Predicted)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = lower, ymax = upper), alpha = 0.2) +
+  labs(x = expression(bold('Elevation')), y = expression(bold(paste("Animals/Ha")))) +
+  theme_bw()
+
+```
+
+Pada grafik tersebut terlihat bahwa semakin tinggi elevasi, maka estimasi kepadatan satwa semakin menurun. Selanjutnya kita juga dapat melihat respon variabel yang datanya bersifat kategori dengan skrip dibawah ini
+
+```{r viz_ds_covs2, echo=TRUE}
+# Prediksi pengaruh tutupan lahan terhadap kepadatan satwa
+
+# Membuat tabel nilai prediksi
+m.hab <- data.frame(Tuplah=factor(c('Hutan Primer', 'Hutan Sekunder', 'Hutan Tanaman', 'Tanah Terbuka')))
+hab.pred <- predict(m.Tuplah, type="state", newdata=m.hab, appendData=TRUE)
+
+# Membuat plot prediksi
+ggplot(hab.pred, aes(x=Tuplah, y=Predicted)) +  
+  geom_bar(position=position_dodge(), stat="identity", colour = 'blue', fill = 'light blue') +
+  geom_errorbar(aes(ymin=Predicted-SE, ymax=Predicted+SE), width=.2, colour = 'blue') +
+  scale_x_discrete(name = expression(bold('Land Cover'))) +
+  scale_y_continuous(name = expression(bold(paste("Animals/Ha")))) +
+  theme_bw()
+```
+
+Berdasarkan hasil analisis diatas, estimasi kepadatan satwa pada hutan primer dan hutan tanaman lebih tinggi dibandingkan dengan hutan sekunder dan tanah terbuka. Artinya, daerah dengan tutupan lahan hutan primer dan hutan tanaman memiliki kepadatan satwa yang lebih tinggi dibandingkan dengan hutan sekunder dan daerah terbuka.
 
 ## Daftar Spesies Prioritas
-tba
+
+Bagian ini akan menjelaskan mengenai bagaimana kita bisa langsung mendapatkan seluruh informasi taksonomi dan status konservasi satwa, dari dataset yang kita miliki. Data tersebut diambil dari pangkalan data IUCN, CITES dan Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor P.106/MENLHK/SETJEN/KUM.1/12/2018.
+
+::: {.callout-caution collapse="true"}
+## Mendaftarkan nomor token
+
+Sebelum menggunakan skrip dibawah ini, daftarkan dulu nomor token masing-masing menggunakan [Panduan Mendapatkan Token IUCN dan CITES](https://ffionline-my.sharepoint.com/:b:/g/personal/ravriandy_fauna-flora_org/EQgcEO91EJ9JosiJleKqfgIBRPr7l6c8Cg3UHM6Uy8_OvQ?e=H0rFoH).
+
+Nomor token ini biasanya didapatkan selama 1-3 hari kerja. Mohon diisi alasan kenapa memerlukan token dengan jawaban yang logis. Jawaban yang terlalu singkat dan asal-asalan cenderung ditolak dan memerlukan akun baru untuk mendaftarkan kembali.
+:::
+
+Skrip dibawah ini baru bisa dilakukan setelah anda mendapatkan nomor token dari IUCN dan CITES. Ganti nomor token dibawah ini menggunakan token yang sudah didapatkan.
+
+```{r gettaxonCSdummy, eval=FALSE}
+##Memuat paket yang dibutuhkan----
+library(tidyverse)
+library(rredlist)
+library(rcites)
+
+# Mengatur token dari CITES
+set_token("3yTXsqrceqKHF") 
+#PERHATIAN! Nomor token ini hanya contoh,
+#gunakan token kamu sendiri 
+
+# Mengatur token dari IUCN
+Sys.setenv(IUCN_KEY = "qNdBxkZRQi5V54ZYyauKacIzT7csLlUaVxi")
+#PERHATIAN! Nomor token ini hanya contoh,
+#gunakan token kamu sendiri 
+
+apikey <- Sys.getenv("IUCN_KEY")
+
+# Mengunduh fungsi yang dibutuhkan
+devtools::source_url("https://raw.githubusercontent.com/ryanavri/GetTaxonCS/main/iucn_cites_fn.R")
+```
+
+```{r gettaxonreal, echo=FALSE}
+##Memuat paket yang dibutuhkan----
+library(tidyverse)
+library(rredlist)
+library(rcites)
+
+#set token from CITES
+set_token("kUydW4HMDXY9AvDFSThxMwtt") #This is Ryan Tokens
+
+#set token from IUCN
+Sys.setenv(IUCN_KEY = "9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee") #This is Ryan Tokens
+apikey <- Sys.getenv("IUCN_KEY")
+
+# download the function
+devtools::source_url("https://raw.githubusercontent.com/ryanavri/GetTaxonCS/main/iucn_cites_fn.R")
+```
+
+Skrip diatas memuat paket tambahan yang dibutuhkan serta mendaftarkan nomor token yang kita miliki ke dalam sistem Rstudio kita. Token ini berfungsi seperti kunci yang memungkinkan kita untuk dapat mengakses pangkalan data IUCN dan CITES.
+
+Selanjutnya dengan menggunakan dataset mamalia dalam panduan sebelumnya, kita akan membuat dataset baru dengan memilih nama unik spesies didalam dataset yang kita miliki.
+
+```{r getuniquesp, echo=TRUE}
+
+# Membuat dataset baru yang hanya memiliki kolom spesies dan perwakilan spesies
+Species <- unique(raw_m$Scientific.Name)
+Species_df <- data.frame(Species)
+```
+
+Setelah itu, skrip dibawah ini dapat diijalankan untuk membuat tabel informasi dari status taksonomi hingga status konservasi dan tren populasi spesies secara global.
+
+```{r gettaxonallfn, eval=FALSE}
+
+# Mendapatkan data dari IUCN
+sp1 <- retrieve_IUCN_data(Species_df$Species)
+
+# Mendapatkan katalog data dari CITES
+sp2 <- retrieve_CITES_data(Species_df$Species)
+
+# Mendapatkan informasi spesies dari katalog CITES 
+sp3 <- spp_cites_legislation(taxon_id = sp2$taxon_id, verbose = FALSE)
+sp3 <- as.data.frame (sp3[["cites_listings"]])
+
+# Menggabungkan seluruh informasi dari IUCN, CITES dan Peraturan Pemerintah kedalam satu tabel.
+(species_list <- left_join(sp1, sp2, by='Species') %>%
+  left_join(., sp3, by='taxon_id') %>%
+  left_join(., db,  by="Species") %>%
+  select(Class, Order, Family, Species, Status, Trend, appendix, Protected, Endemic, Migratory) %>%
+  mutate_at(vars(Class, Order, Family),tolower) %>%
+  mutate_at(vars(Class, Order, Family),str_to_title) %>%
+  rename(Appendix = appendix))
+```
+
+```{r spltb, echo=FALSE}
+#| label: tbl-spltb
+#| tbl-cap: "Daftar jenis, taksonomi dan status konservasi"
+#| tbl-cap-location: top
+
+spl <- read_csv("spl.csv", col_types = cols(...1 = col_skip()))
+
+spl %>%
+  kbl() %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+Pada tabel @tbl-spltb di atas, kita telah memperoleh ringkasan informasi tentang sistem taksonomi, konservasi, tren populasi, daftar spesies endemik, dan spesies migran dari dataset yang dimiliki.
+
+Namun, perlu diperhatikan bahwa hingga saat panduan ini ditulis, skrip ini hanya efektif untuk taksa mamalia, reptil, dan beberapa jenis burung. Sementara itu, identifikasi tumbuhan sering kali gagal karena banyaknya sinonim dari spesies tumbuhan. Oleh karena itu, kamu tetap harus memeriksa kembali hasil dari skrip ini.
+
+Terkadang hasilnya menunjukan 'NA' pada kolom taksonomi atau status konservasi, karena ada perbedaan nama latin yang tercantum di dataset dengan nama latin yang terdaftar di pangkalan data IUCN dan CITES.
