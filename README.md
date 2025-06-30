@@ -8,10 +8,7 @@ Buku ini disusun sebagai rujukan praktis untuk pelaksanaan survei keanekaragaman
 
 ## ✨ Isi Buku
 
-Panduan ini terbagi ke dalam beberapa bagian utama:
-
-- **Pendahuluan**  
-  Latar belakang pentingnya survei kehati, tujuan, dan cakupan panduan.
+Panduan ini terbagi ke dalam empat bagian utama:
 
 - **Bioma Terestrial**  
   - Rancangan survei kehati terestrial
@@ -31,14 +28,6 @@ Panduan ini terbagi ke dalam beberapa bagian utama:
   - Penjelasan teori analisis data kehati
   - Penerapan analisis praktis menggunakan perangkat lunak R
   - Analisis untuk data terestrial, kamera intai, maupun marine
-
-- **Lampiran**  
-  - Datasheet (formulir survei, template metadata)
-  - Contoh data dummy untuk latihan analisis
-
-- **Referensi**  
-  Daftar pustaka yang mendukung penyusunan panduan ini.
-
 ---
 
 ## 📚 Versi Buku Online
