@@ -1,0 +1,138 @@
+# Rancangan Survei
+
+Tahap awal untuk membuat rancangan survei menggunakan kamera intai adalah menetapkan "apa" yang ingin diketahui. Pada level yang paling fundamental, kamera intai dapat menjawab keberadaan spesies apa saja yang ada di lokasi survei. Informasi tersebut biasanya digunakan untuk mendapatkan daftar spesies yang ada di suatu area dan menyediakan cuplikan komunitas burung dan mamalia terestrial di kawasan tersebut.
+
+Pada beberapa kasus, kompilasi spesies saja sudah cukup untuk menjawab konfirmasi keberadaan spesies langka atau spesies prioritas. Namun, hal ini seringkali tidak cukup berarti dalam pengelolaan kawasan karena tidak bisa dikuantifikasi, oleh karena itu tujuan survei harus ditentukan diawal dengan jelas
+
+Penentuan tujuan survei akan mempengaruhi beberapa aspek penting dalam rancangan survei, seperti jumlah kamera yang harus dipasang, durasi pemasangan kamera intai, serta penempatan dan pengaturan kamera. (@tbl-rds) dibawah memuat ringkasan rancangan survei secara umum
+
++-------------------+---------------------+-------------------------------------------------------------------------------------+------------------+--------------------+
+| Tujuan Survei     | Strategi pemasangan | Jarak antar stasiun                                                                 | Jumlah Stasiun   | Durasi\            |
+|                   |                     |                                                                                     |                  | (Hari)             |
++:==================+:====================+:====================================================================================+:=================+:===================+
+| Inventarisasi     | Ditargetkan / Acak  | Tidak ada batas minimal                                                             | Sebanyak mungkin | [\>]{.underline}30 |
++-------------------+---------------------+-------------------------------------------------------------------------------------+------------------+--------------------+
+| Distribusi Hunian | Sistematik          | Lebih besar dari luas jelajah satwa target. Bila tidak diketahui gunakan 0.5 - 4 km | 30 - 60          | 80 - 120           |
++-------------------+---------------------+-------------------------------------------------------------------------------------+------------------+--------------------+
+| Kepadatan Satwa   | Sistematik          | Lebih kecil dari luas jelajah satwa target. Bila tidak diketahui gunakan 1 - 4 km   | 40 - 120         | 60 - 180           |
++-------------------+---------------------+-------------------------------------------------------------------------------------+------------------+--------------------+
+| Perilaku          | Ditargetkan         | Disesuaikan                                                                         | Disesuaikan      | Disesuaikan        |
++-------------------+---------------------+-------------------------------------------------------------------------------------+------------------+--------------------+
+
+: Ringkasan desain usaha survei kamera intai {#tbl-rds}
+
+## Rancangan survei secara umum
+
+### Jumlah kamera
+
+Semakin banyak jumlah kamera yang dipasang pada suatu lokasi survei, semakin banyak data yang bisa didapatkan, namun dalam sebuah rancangan survei, jumlah data yang banyak tidak selalu menjadi target utama, tetapi bagaimana survei bisa efisien. Secara umum, jika satwa yang ingin disurvei relatif mudah dijumpai dan tersebar luas, 10 - 15 kamera intai sudah cukup untuk mendapatkan deteksi yang tinggi, namun apabila satwa yang akan dikaji merupakan satwa elusif maka setidaknya dibutuhkan 20 - 40 kamera intai.
+
+Pada survei di daerah tropis secara umum, @kays2020empirical, merekomendasikan setidaknya 35 unit untuk survei skala besar (survei dengan jarak minimum antar kamera [\>]{.underline} 1 km). Sementara itu, untuk survei skala kecil dengan jarak antar kamera kurang dari 200 m, setidaknya 25 kamera intai sudah cukup untuk memantau area yang lebih terbatas namun lebih padat dengan aktivitas satwa liar.
+
+### Durasi pemasangan kamera
+
+Dalam survei yang bertujuan secara umum untuk mendapatkan jumlah spesies sebanyak-banyaknya di hutan tropis, @kays2020empirical merekomendasikan setidaknya 3 - 4 minggu. Namun untuk kajian survei spesifik seperti analisa kepadatan satwa elusif yang membutuhkan banyak deteksi satwa secara berulang, 3 - 4 bulan merupakan waktu yang direkomendasikan oleh @tobler2013estimating. Penambahan durasi kamera seringkali tidak berkorelasi langsung dalam penambahan jenis, @si2014long menyatakan bahwa penambahan lokasi sampling atau jumlah kamera lebih efisien untuk meningkatkan penambahan jenis daripada memasang kamera dengan jumlah sedikit namun dalam waktu yang lebih lama.
+
+### Penempatan kamera intai
+
+Rancangan peletakan kamera intai harus dapat menggambarkan keseluruhan lokasi secara umum, oleh karena itu harus disesuaikan dengan tujuan studi dan kondisi habitat. Metode-metode penentuan lokasi tersebut diantaranya adalah adaptif*,* acak*,* stratifikasi, sistematik dan klaster.
+
+#### *Purposive* (Adaptif)
+
+Lokasi peletakan kamera intai didasari oleh subjektivitas surveior dengan mempertimbangkan keberadaan spesies yang telah diketahui sebelumnya. Metode ini biasa digunakan untuk mengamati tingkah laku spesies tertentu.
+
+Sebagai contoh:
+
+1.  Kamera intai diletakan pada lokasi burung kuau raja biasa menari untuk memikat pasangan (@fig-kakwin).
+2.  Kamera intai diletakan menghadap ke kubangan air di tengah hutan untuk melihat spesies apa saja yang memanfaatkan sumber air tersebut.
+
+![Kamera intai diletakan secara sengaja untuk merekam perilaku burung kuau raja kawin](images/kuaukawin.jpg){#fig-kakwin fig-align="center"}
+
+#### *Random* (Acak)
+
+Kamera intai disebarkan secara acak di dalam area kajian menggunakan aplikasi GIS. Kamera-kamera ini ditempatkan di area yang mendekati titik-titik yang telah ditentukan (@fig-randsamp). Dengan melakukan penyebaran secara acak, tujuan utamanya adalah meningkatkan keterwakilan sampel. Hal ini dilakukan dengan memberikan peluang yang sama bagi setiap stasiun untuk disurvei, sekaligus mengurangi bias yang dapat muncul akibat pemasangan kamera hanya pada lokasi yang lebih mudah diakses oleh manusia.
+
+kamera intai disebar secara acak. Meskipun diletakan secara acak, jarak minumun antar kamera intai perlu ditetapkan berdasarkan spesies yang akan dikaji, agar dapat mewakili seluruh lokasi survei. Salah satu cara untuk memenuhi jarak minimum antar kamera adalah dengan membuat petak survei (*grid*) pada seluruh area survei (@fig-randsamp). Pada metode ini diasumsikan bahwa setiap kamera intai memiliki probabilitas yang sama untuk menangkap gambar spesies tertentu.
+
+![Ilustrasi peletakan kamera intai secara acak](images/randomsamp.jpg){#fig-randsamp fig-align="center"}
+
+#### *Stratified* (Stratifikasi)
+
+Peletakan kamera intai dibagi berdasarkan adanya stratifikasi pada lokasi survei. Stratifikasi dapat didasarkan pada faktor seperti tutupan lahan, tipe habitat, tingkat gangguan manusia, ketinggian, dan lain sebagainya. Setelah stratifikasi dilakukan, peletakan kamera dilakukan secara proporsional di setiap strata yang ada. Metode ini memastikan bahwa setiap zona ekologi atau strata memiliki representasi sampel yang memadai, sesuai dengan prinsip variasi distribusi spesies.
+
+Sebagai contoh:
+
+1.  Hutan sekunder alami cenderung memiliki keragaman jenis yang lebih tinggi dibandingkan dengan kawasan perkebunan. Oleh karena itu, jumlah kamera intai yang ditempatkan di kawasan hutan sekunder harus lebih banyak daripada di kawasan perkebunan (@fig-stratsamp).
+
+2.  Sebaliknya, ketika membandingkan dua strata yang memiliki variasi yang belum diketahui, seperti hutan sekunder dataran rendah dan hutan sekunder dataran tinggi, jumlah kamera intai diusahakan untuk diatur secara sama.
+
+Dengan menerapkan pendekatan ini, diharapkan pengambilan sampel akan mencerminkan keanekaragaman dan distribusi spesies dengan lebih baik.
+
+![Ilustrasi peletakan kamera intai dengan stratifikasi](images/stratsamp.jpg){#fig-stratsamp fig-align="center"}
+
+#### *Systematic* (Sistematik)
+
+Kamera intai diletakkan dengan interval tertentu, biasanya menggunakan petak survei (*grid*), di dalam area studi . Tujuan utamanya adalah untuk memastikan penyebaran sampel yang merata dan mencakup proporsi area yang representatif. Dalam setiap petak survei, kamera dapat diletakkan secara acak atau secara adaptif ditempatkan pada area yang memiliki kemungkinan mendeteksi hewan yang ingin diamati. Pada analisis yang lebih kompleks, metode ini lebih sering digunakan karena memungkinkan pengumpulan data yang terstruktur dengan efisiensi cakupan area yang lebih luas, sehingga memungkinkan penilaian yang lebih akurat terhadap aktivitas dan kelimpahan satwa liar.
+
+#### *Cluster* (Klaster)
+
+## Inventarisasi
+
+Secara umum, tujuan dari survei ini hanya untuk mengidentifikasi spesies apa saja yang ada pada suatu lanskap pada kurun waktu tertentu tanpa mempertimbangkan kuantifikasi statistik yang rumit. Di Indonesia, tujuan survei ini merupakan salah satu kajian yang paling banyak dilakukan seperti yang dilakukan oleh @husnul2015jenis yang mengidentifikasi 24 jenis mamalia di hutan konservasi Prof. Dr. Sumitro Djojohadikusumo, Solok Selatan, Sumatera Barat, dan oleh @hariadi2012inventarisasi yang melakukan inventarisasi di Hutan Harapan, Sumatera Selatan dan berhasil mengidentifikasi 23 jenis mamalia.
+
+Idealnya, strategi pemasangan kamera tetap harus mengikuti metode yang umum seperti *random* atau *stratified sampling*. Namun, dalam kasus tertentu, strategi pemasangan bisa lebih fleksibel, sebagai contoh, jika tujuan survei ingin mengetahui apakah terdapat berang-berang ekor kecil (*Aonyx cinereus*) di suatu lanskap, maka lebih masuk akal apabila kita memasang kamera secara spesifik di sepanjang pinggiran sungai atau pematang sawah.
+
+Jumlah dan durasi kamera untuk tujuan survei ini tidak ditentukan secara spesifik karena tidak membutuhkan interfensi statistik apapun. Namun tentu saja, semakin banyak lokasi dan durasi pemasangan semakin baik.
+
+## Distribusi Hunian (*Occupancy*)
+
+Tujuan survei ini utamanya untuk mengetahui pola sebaran dan penggunaan habitat dari suatu spesies dengan mempertimbangkan probabilitas deteksi. Metodenya biasa disebut dengan model okupansi [@mackenzie2017occupancy]. Model ini menggabungkan dua aspek penting yaitu;
+
+1.  Apakah unit sampel (petak survei) dihuni oleh spesies yang dikaji, proses ini disebut dengan probabilitas okupansi (Psi / Ψ)
+2.  Dan, **jika** spesies tersebut menghuni unit sampel, apakah terdeteksi atau tidak selama survei, proses ini disebut dengan probabilitas deteksi (*p*). Hasil dari survei ini bisa mendapatkan estimasi persentase penggunaan area atau lanskap yang digunakan oleh suatu spesies dan memahami faktor yang mempengaruhinya.
+
+Asumsi utama yang harus dipenuhi untuk metode ini ada dua yaitu;
+
+1.  Populasi tertutup. Selama survei berlangsung, tidak ada penambahan atau pengurangan populasi karena kematian, kelahiran atau migrasi
+2.  Tidak ada kekeliruan dalam identifikasi spesies.
+
+Selain itu, ada dua asumsi tambahan berupa probabilitas okupansi dan deteksi adalah konstan di setiap stasiun. Kedua asumsi terakhir ini dapat dikondisikan dengan menggunakan kovariat ke dalam model.
+
+**Strategi pemasangan kamera** idealnya berupa sistematik menggunakan petak survei (*grid*) yang berukuran setidaknya sebesar **daerah jelajah satwa target**, dimana dalam setiap petak survei ditempatkan satu stasiun kamera di tempat dengan deteksi tertinggi atau secara acak. Jika informasi daerah jelajah tidak diketahui, jarak antar kamera bisa sejauh **1 - 4 km** [@o2010wildlife; @network2011terrestrial].
+
+**Jumlah stasiun kamera** yang dibutuhkan untuk spesies yang mudah dijumpai adalah [**\<**]{.underline} **30 stasiun**, namun untuk spesies sulit dijumpai dibutuhkan setidaknya **30 - 60 stasiun** [@shannon2014recommended]. Stasiun yang dibutuhkan bisa bertambah lebih banyak jika kita menggunakan banyak kovariat, idealnya ada penambahan 10 stasiun setiap penambahan 1 kovariat.
+
+**Durasi kamera** yang dibutuhkan setidaknya adalah **\> 30 hari,** namun untuk spesies yang sulit terdeteksi dibutuhkan setidaknya **80 - 120 hari** [@shannon2014recommended]. Dalam metode ini terdapat *trade-off* antara jumlah stasiun dan durasi survei. Pada prinsipnya, untuk spesies yang umum dijumpai, akan lebih efisien menggunakan jumlah stasiun sedikit dengan durasi yang lebih panjang. Sebaliknya, lebih efisien menggunakan durasi survei yang lebih pendek namun memperbanyak jumlah stasiun untuk spesies yang sulit dijumpai (@fig-tradof).
+
+![*Trade-off* dalam desain sampling untuk studi okupansi menggunakan kamera intai [@shannon2014recommended]. Simbol-simbol menunjukkan tingkat usaha tinggi (+), menengah (O), dan rendah (-) dalam setiap kasus.](images/tradof.jpg){#fig-tradof fig-align="center"}
+
+## Kepadatan Satwa
+
+Keberlanjutan dan pengelolaan populasi hewan sangat bergantung pada pemahaman terhadap kelimpahan dan kepadatan mereka. Namun, mengestimasi kepadatan ini menjadi rumit ketika pengamatan langsung terhadap setiap individu sangat sulit dilakukan. Model *spatial explicit capture‐recapture* (SECR) mengatasi tantangan ini dengan memanfaatkan informasi spasial dari setiap stasiun kamera intai untuk mengestimasi kepadatan sambil juga memperhitungkan pergerakan individu [@efford2004density; @royle2008hierarchical]. Secara sederhana, model-model ini mengasumsikan bahwa setiap individu memiliki pusat aktivitas (mirip dengan pusat wilayah jelajah) dan bergerak di dalam area lingkaran sekitar pusat ini. Saat bergerak, individu akan bertemu dengan perangkap kamera, dan frekuensi pertemuan dengan perangkap tertentu akan berkurang seiring meningkatnya jarak perangkap tersebut dari pusat aktivitas wilayah jelajah individu tersebut.
+
+Asumsi-asumsi utama dalam model ini adalah sebagai berikut:
+
+1.  Individu tidak kehilangan tanda identifikasinya atau salah diidentifikasi.
+
+2.  Tangkapan individu yang berbeda adalah independen (oleh karena itu, sebagian besar studi tidak mencakup individu muda yang masih bergantung pada orang tua).
+
+3.  Semua hewan memiliki probabilitas tangkapan yang sama.
+
+4.  Tidak ada respons perilaku terhadap penangkapan atau penandaan.
+
+5.  Populasi tertutup secara demografis, artinya tidak ada kelahiran atau kematian (dan, untuk model konvensional, juga tertutup secara geografis, artinya tidak ada imigrasi atau emigrasi). Asumsi nomor 3 dan 4 dapat dikondisikan dengan menggunakan kovariat ke dalam model
+
+**Strategi pemasangan kamera** idealnya berupa sistematik menggunakan petak survei yang berukuran cukup rapat sebesar **sepertiga dari radius wilayah jelajah satwa target** [@sollmann2012does] atau direkomendasikan juga setidaknya terdapat **4 stasiun kamera per luas jelajah satwa target** [@dillon2008ocelot], supaya setiap individu akan terekam beberapa kali di banyak stasiun. Pertimbangan lainnya untuk memenuhi asumsi nomor 1, maka setiap stasiun kamera idealnya dipasang kamera secara **berpasangan** untuk dapat mengidentifikasi setiap individu secara akurat. Hal ini juga menjadi salah satu kekurangan dari model ini, yaitu spesies yang akan dikaji harus memiliki fitur (belang, totol atau pewarnaan lainnya) yang dapat dibedakan dengan jelas setiap individunya.
+
+**Jumlah stasiun** yang dibutuhkan dalam model ini bergantung pada jumlah individu yang terdeteksi dalam survei. Secara umum, idealnya membutuhkan \> 20 individu terdeteksi setidaknya sekali untuk mendapatkan estimasi kepadatan yang presisi atau \>10 individu apabila individu-individu tersebut terdeksi lebih dari 1 kali [@palmerosampling]. Dengan pertimbangan tersebut, maka secara umum membutuhkan **40 - 120 stasiun**, bahkan lebih apabila spesies yang disurvei memiliki probabilitas deteksi yang sangat rendah [@tobler2013estimating]
+
+**Durasi kamera** yang dibutuhkan untuk model ini idealnya dibuat tidak terlalu panjang untuk memenuhi asumsi ke-4, yaitu demografi tertutup. Pada dasarnya hal ini tergantung pada fekunditas populasi spesies target, namun secara umum untuk kucing-kucing besar durasi yang dilakukan berkisar antara **2 - 3 bulan** [@karanth1998estimation; @silver2004use], dalam beberapa kasus untuk harimau, bahkan bisa sampai **6 hingga 12 bulan** [@karanth1995estimating; @kawanishi2004conservation]
+
+## Perilaku
+
+Penggunakan kamera intai juga dapat digunakan untuk melihat tingkah laku. Hal ini merupakan keunggulan dari kamera intai sebagai metode non-invasif untuk mempelajari perilaku satwa liar tanpa merubah perilaku alaminya. Karena aspek perilaku sangat luas, maka strategi rancangan surveinya juga jadi sangat beragam. @caravaggi2017 telah mengkaji potensi penggunaan kamera intai untuk kajian perilaku satwa.
+
+Beberapa kajian, fokus pada perilaku spesifik sebagai berikut;
+
+1.  Deteksi spesies-spesies polinator [@aziz2017; @krauss2018; @sritongchuay2019] dengan menempatkan kamera intai dengan mode video di depan tumbuhan berbunga untuk melihat spesies polinator dan perilaku spesies tersebut
+2.  Aktivitas mencari makan dengan menempatkan kamera intai di depan sumber daya tertentu (contoh; lantai hutan yang penuh dengan buah-buahan matang yang jatuh ke tanah, sumber air berupa kubangan, dll)\

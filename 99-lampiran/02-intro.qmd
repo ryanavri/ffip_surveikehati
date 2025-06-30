@@ -1,0 +1,9 @@
+---
+lightbox: true
+---
+
+# Lampiran
+
+Bagian lampiran ini memberikan terdapat dua informasi utama: lembar data dan eksplorasi serta visualisasi data. Lembar data menyediakan format yang direkomendasikan untuk memastikan konsistensi dalam pencatatan dan penulisan data survei, sehingga memudahkan analisis lebih lanjut. Bagian eksplorasi dan visualisasi data memberikan panduan praktis dan latihan untuk membantu pengguna mengeksplorasi, menganalisis, dan menampilkan data dengan efektif, untuk mendukung pengambilan keputusan yang lebih baik.
+
+![Contoh eksplorasi dan visualisasi data](images/data-viz.jpg){#fig-ksnp fig-align="center"}

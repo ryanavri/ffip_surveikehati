@@ -1,0 +1,9 @@
+---
+lightbox: true
+---
+
+# Bioma Laut
+
+Bagian ini membahas survei di bioma laut untuk pemantauan ikan, terumbu karang, mamalia laut, dll
+
+![Ikan Kue sirip biru (*Caranx melampygus*), Sulawesi. Foto diambil oleh Zafer Kizilkaya,Fauna & Flora](images/IDN-0116-ZKA.jpg){#fig-ksnp fig-align="center"}

@@ -1,0 +1,9 @@
+---
+lightbox: true
+---
+
+# Kamera Intai
+
+Bagian ini memberikan panduan praktis tentang penggunaan kamera intai dalam survei keanekaragaman hayati.Kamera intai memungkinkan pengumpulan data yang detail dan akurat terkait sebaran spesies, pola aktivitas, interaksi antar spesies hingga estimasi kepadatan satwa. Selain untuk tujuan ilmiah, kamera intai juga berperan penting dalam meningkatkan kesadaran publik melalui gambar visual yang menarik, yang dapat digunakan dalam kampanye konservasi. Bagian ini menguraikan seluruh proses, mulai dari perencanaan survei, penempatan kamera, hingga analisis dan interpretasi data.
+
+![Pemasangan kamera jebak dilakukan di Hutan Adat Telun Sakti, Desa Raden Anom, Sarolangun. Foto diambil oleh Edy Susanto,Fauna & Flora](images/IDN-0283-ESU.jpg){#fig-ksnp fig-align="center"}

@@ -1,0 +1,87 @@
+# Pengelolaan data {#sec-pengelolaan-data}
+
+Bagian ini memberikan rekomendasi tentang pengelolaan data kamera pengintai. Survei menggunakan kamera pengintai biasanya dapat menghasilkan ratusan hingga puluhan ribu foto dan video dalam satu durasi survei. Jika data ini dikelola secara manual , ini akan membutuhkan banyak waktu, melelahkan, dan berpotensi tinggi mengalami banyak kesalahan. Oleh karena itu, otomatisasi pengelolaan data merupakan pilihan yang masuk akal karena dapat memangkas waktu dan memaksimalkan informasi yang dapat diperoleh.
+
+Pengelolaan data kamera pengintai dapat dianggap "benar" jika mampu menyediakan struktur data yang konsisten namun fleksibel untuk dapat memenuhi berbagai macam desain survei dan luaran yang dibutuhkan. Selama beberapa tahun terakhir, untuk memenuhi kriteria tersebut, berbagai perangkat lunak telah dikembangkan untuk mengotomatisasi pengelolaan data kamera pengintai [@Sanderson2013; @sundaresan2011; @fegraus2011a; @krishnappa2014; @zaragozí2015; @beery2019; @hendry2018].
+
+Beberapa publikasi telah membandingkan kelebihan dan kekurangan dari perangkat lunak yang tersedia [@scotson2017; @wearn2017]. Dalam panduan ini, kami mengadopsi protokol pengelolaan data kamera pengintai menggunakan *camtrapR* (paket dalam perangkat lunak R) yang menyediakan sejumlah fitur yang dapat membantu mengelola data kamera pengintai secara lebih efisien dan efektif, mulai dari organisasi penyimpanan data, pemrosesan data temuan, hingga visualisasi dan analisis data yang lebih kompleks.
+
+Alur kerja pengelolaan data dengan *camtrapR* dibagi menjadi lima bagian (@fig-wf), dimulai dari memindahkan data kamera intai ke dalam sistem komputer. Selanjutnya, camtrapR akan membantu membaca seluruh gambar atau video yang sudah diorganisir ke dalam tabel rekaman spesies. Tabel tersebut kemudian dapat digunakan lebih lanjut untuk eksplorasi dan visualisasi data, serta analisis lebih lanjut seperti model okupansi dan *spatial capture-recapture.*
+
+![Alur kerja pengelolaan data kamera intai](images/workflow.png){#fig-wf fig-align="center" width="100%"}
+
+## Organisir data kamera intai {#sec-organisir-data-kamera-intai}
+
+Langkah pertama dalam pengelolaan data kamera pengintai adalah membuat salinan data mentah. Dari data mentah yang sudah disalin tersebut kemudian dilakukan organisasi data ke dalam struktur folder seperti yang ditunjukkan pada @fig-fld. Prinsip organisasi folder ini adalah membuat penyimpanan bertingkat berupa nama area studi -\> nama stasiun -\> lalu nama spesies (@fig-fld .i).
+
+Pada beberapa desain survei, seringkali satu stasiun dipasang kamera secara berpasangan, sehingga kita bisa mengikuti struktur pada gambar (@fig-fld .ii), dengan menambah satu tingkat lagi menjadi nama stasiun -\> nama kamera -\> nama spesies. Kedua struktur sama saja, yang penting dalam satu studi area dibuat konsisten dengan pilihan tersebut.
+
+::: callout-warning
+Data mentah harus tetap disimpan sebagai sumber awal pengecekan data, apabila terdapat kesalahan pada saat melakukan organisasi data
+:::
+
+![Struktur organisasi folder kamera intai](images/foldering.png){#fig-fld fig-align="center" width="100%"}
+
+Dalam struktur folder ini, data kamera pengintai akan diorganisir berdasarkan area studi dan stasiun yang digunakan dalam survei. Kemudian, data akan dikelompokkan berdasarkan spesies yang terekam dalam gambar. Selanjutnya *camtrapR* akan mengekstrak metadata tersebut kedalam lembar data kamera intai. Prosedur mengenai pembuatan lembar data ini akan dijelaskan lebih lanjut pada lampiran xx.
+
+Dalam konteks pengelolaan data yang efektif, selain data kamera intai, data pendukung lain seperti data spasial, laporan hasil, dan dokumentasi juga perlu disimpan dengan protokol yang konsisten, dikarenakan data tersebut saling terkait satu sama lain dan memiliki informasi yang sama berharganya dengan data hasil kamera intai itu sendiri. Hal ini dilakukan agar hasil survei ini dapat digunakan kembali dengan mudah dan efisien di masa depan.
+
+## Data Tabular {#sec-datatabular}
+
+Data tabular merupakan data utama dari kajian survei kamera intai yang berisi temuan satwa dan informasi usaha survei. Pada @fig-dts dibawah, terdapat minimal dua jenis data.
+
+-   Pertama, dalam format (.pdf) dari hasil pemindaian lembar kerja pengisian informasi stasiun kamera intai. Data ini merupakan sumber verifikasi utama dari lembar data usaha survei kamera intai, apabila terdapat kesalahan dalam pemindahan ke format digital (xls).
+
+-   Kedua merupakan lembar data digital dalam format (.xls).
+
+![Komponen pada folder data tabular](images/datasheet.png){#fig-dts fig-align="center" width="100%"}
+
+Templat lembar data dalam survei menggunakan kamera intai dapat diunduh melalui tautan berikut ini; [Lembar data kamera intai](https://ffionline-my.sharepoint.com/:x:/g/personal/ravriandy_fauna-flora_org/EfgEkh2-8B9KsxpUcI8Iq7wBDbaXplsYv6BbsOUotgOE7g?e=ReRE5u). Setiap lembar data memiliki 4 lembar utama berupa;
+
+1.  Perjumpaan satwa. Lembar ini berisi informasi perjumpaan satwa liar yang terdeteksi oleh kamera pengintai. Lembar data ini akan diproduksi menggunakan *camtrapR* pada @sec-bacadatakamera, dengan tambahan informasi spesifik yang akan diedit secara manual.
+
+2.  Usaha survei. Lembar ini berisi informasi yang mencakup waktu dan lokasi pemasangan kamera pengintai, serta durasi kamera intai aktif. Informasi ini membantu dalam memahami konteks usaha survei.
+
+3.  Deksripsi pengisian data. Lembar ini berupa informasi cara pengisian setiap kolom dalam lembar pertama dan kedua. Lembar ini dijadikan acuan dalam pengisian data dan memastikan penggunaan data yang konsisten, serta dapat diinterpretasikan dan di replikasi oleh orang lain di kemudian hari.
+
+4.  Informasi survei. Lembar ini berisi informasi kepemilikan data serta gambaran umum survei tersebut. Dengan adanya informasi ini, orisinalitas kepemilikan data melekat pada data tersebut.
+
+## Data Foto/Video
+
+Folder ini terdiri dari dua sub-folder utama, yaitu ;
+
+-   Folder hasil kamera intai yang telah diorganisir pada @sec-organisir-data-kamera-intai
+
+-   Folder aktivitas yang berisi foto-foto terpilih mengenai aktivitas yang dilakukan oleh tim terkait survei seperti pada @fig-dok.
+
+![Komponen pada folder data foto/video](images/figdok.png){#fig-dok fig-align="center" width="100%"}
+
+## Data Spasial
+
+Folder ini berisi seluruh data spasial pendukung kegiatan survei. Folder utama yang perlu ada setidaknya adalah gpx dan shapefiles (@fig-fsp). Folder gpx merupakan *backup* dari data gps yang dipakai, baik untuk menyimpan data *waypoint* maupun *track*. Data gpx dalam bentuk *waypoint* digunakan untuk verifikasi kordinat yang tertulis dalam lembar data, sekaligus sebagai informasi tambahan untuk titik penting lainnya, sedangkan data *track* diperlukan agar informasi terkait jalur dan rute survei dapat digunakan oleh tim lain jika terdapat pergantian personil, maupun oleh pemangku kepentingan lain jika dibutuhkan di kemudian hari. Data dari gps dapat dengan mudah dikelola serta dipindahkan antar perangkat (contoh; gps ke laptop, maupun sebaliknya) menggunakan perangkat lunak [*BaseCamp*](https://www.garmin.com/en-US/software/basecamp/).
+
+![Komponen pada folder data spasial](images/figsp.png){#fig-fsp fig-align="center" width="100%"}
+
+Folder shapefile utamanya berisi lokasi kamera intai, dengan isian atribut tabel yang sama pada lembar kerja di lembar (usaha survei). Selain itu, data pendukung lainnya seperti petak survei (grid), batas kawasan, sungai, jalan dan informasi penting lainnya dalam area studi juga disarankan masuk kedalam folder tersebut.
+
+## Laporan
+
+Seluruh laporan dari hasil kajian survei yang dilakukan, baik itu laporan tematis ataupun laporan utama disimpan dalam folder ini. Penamaan laporan dibuat dengan praktik sebagai berikut;
+
+-   Dibuat sesingkat mungkin namun tetap informatis
+-   Hindari kata yang berulang
+-   Hindari spesial karakter seperti; !\@#\$%\^&\*()\`;\<\>?,'"\|
+-   Menambahkan versi untuk memudahkan melacak perubahan seperti; laporan-camtrap-seko2021_02-12-21, laporan-camtrap-seko2021_25-12-21.
+-   Penambahan inisial pada akhir nama juga dapat ditambahkan bila diperlukan untuk melihat *reviewer* terakhir seperti; laporan-camtrap-seko2021_25-12-21_FNT.
+
+## Penyimpanan data
+
+Setelah melalui empat tahap sebelumnya termasuk pengendalian kualitas data, tahap terakhir adalah menyimpan data final ke dalam tiga lokasi yang berbeda. Ketiga lokasi penyimpanan tersebut adalah:
+
+1.  Lokal pada hard drive external di site atau wilayah kerja masing-masing, yang didedikasikan khusus untuk penyimpanan final semua kegiatan.
+
+2.  Online pada akun personal OneDrive staf FFI's IP yang ditunjuk sebagai wali data di site tersebut.
+
+3.  Menghubungkan data pada poin dua tersebut pada akun OneDrive Indonesia (indonesia\@fauna-flora.org, cc; ryan.avriandy\@fauna-flora.org) dan mengirimkan email pemberitahuan pembaruan data pada email tersebut.
+
+Tahapan pertama dilakukan untuk memastikan data tersimpan tidak hanya pada laptop individu tetapi juga ada cadangan lokal di site tersebut. Tahap kedua untuk memastikan backup secara online karena penyimpanan lokal dapat kehilangan data akibat kerusakan atau pencurian infrastrukturnya. Terakhir, tahap ketiga dilakukan untuk memastikan adanya cadangan di nasional antara site dan proyek agar data nasional dapat diperbarui secara berkala. Data ini dapat ditampilkan dalam sistem [visualisasi data FFI's IP](https://ryanavri.shinyapps.io/FFI_Database/) untuk strategi proposal bagi fundraiser atau pengelola pusat untuk membantu pelaporan kepada donor.

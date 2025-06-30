@@ -1,0 +1,188 @@
+# Protokol Survei
+
+Bagian ini akan menjelaskan mengenai langkah teknis pemasangan kamera intai saat di lapangan.
+
+## Persiapan Tim
+
+Tim kamera pengintai idealnya terdiri dari 4 orang, yaitu satu ketua tim dan tiga asisten lapangan. Dengan peran dan tanggung jawab yang terangkum dalam @tbl-tbtim. Dalam praktiknya, jumlah dan peran anggota tim dapat berubah disesuaikan dengan kondisi. Sebagai contoh jika kawasan survei relatif aman dari hewan predator, maka dua anggota pun cukup dalam satu tim. sebaliknya, jika lokasi tersebut diketahui merupakan area jelajah harimau, 6 orang dalam satu tim mungkin diperlukan demi keamanan semua tim.
+
++------------------+-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Peran            | Tanggung jawab                                                                                                          | Syarat khusus                                                                                   |
++:=================+:========================================================================================================================+:================================================================================================+
+| Ketua tim        | Menentukan rute perjalanan, menetapkan lokasi pemasangan kamera dan mencatat semua informasi yang dibutuhkan            | Memahami protokol survei, kemampuan navigasi dan pengalaman survei menggunakan kamera pengintai |
++------------------+-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Asisten lapangan | Membantu membawa peralatan survei, membuka jalan dan membantu membersihkan vegetasi di sekitar lokasi pemasangan kamera | Stamina yang kuat                                                                               |
++------------------+-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+: Peran dan tanggung jawab tim kamera pengintai {#tbl-tbtim}
+
+## Peralatan
+
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Peralatan           | Penggunaan                                                                                                                                              | Spesifikasi                                         |
++:====================+:========================================================================================================================================================+:====================================================+
+| kamera pengintai    | Perangkat utama yang digunakan, setiap kamera berikan label ID permanen                                                                                 | Merek dan tipe bervariasi                           |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Baterai             | Sumber daya utama kamera pengintai, jumlah unit yang dibutuhkan setiap model berbeda-beda (6 - 12 unit). Selalu gunakan baterai baru setiap kali survei | Ukuran AA dengan merek Energizer atau Duracell      |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| *SD Card*           | Setiap kartu memori harus menggunakan label ID yang sama dengan kamera pengintai                                                                        | *Ultra SDHC*                                        |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| *Multitools*        | Untuk memperbaiki unit kamera dan aksesorisnya                                                                                                          | *Stainless*, ukuran portabel                        |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| GPS                 | Navigasi dan mencatat lokasi setiap unit kamera                                                                                                         | Tahan air                                           |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Kompas              | Navigasi                                                                                                                                                | Tahan air                                           |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Kamera Pocket       | Dokumentasi dan untuk mengecek *point of view* kamera pengintai setelah dipasang                                                                        | Tahan air                                           |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| *Bungee cord*       | untuk menguatkan dan mempertahankan posisi kamera pengintai pada pohon                                                                                  | Bisa menggunakan karet ban bekas sebagai alternatif |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| *Whiteboard* gulung | Untuk merekam informasi posisi dan waktu saat pemasangan dan pembongkaran kamera pengintai                                                              | \-                                                  |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Lembar data         | Lembar pencatatan data                                                                                                                                  | Tahan air                                           |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Parang              | Untuk membersihkan vegetasi di depan kamera pengintai                                                                                                   | \-                                                  |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+: Peralatan yang dibutuhkan tim kamera pengintai {#tbl-tbal}
+
+## Langkah pemasangan
+
+Sebelum survei dilaksanakan, seluruh kamera pengintai harus diuji coba semua fungsinya. Ada kalanya kamera yang masih berfungsi dengan baik pada survei sebelumnya, mengalami kerusakan selama penyimpanan. Pastikan baterai, sensor pemicu, cahaya *infrared* dan perangkat lunaknya berfungsi optimal.
+
+### Pengaturan kamera
+
+Secara umum, menu pada kamera pengintai serta penjelasannya terangkum pada tabel @tbl-tbpen. Sebelum melakukan survei, seluruh menu pengaturan harus sudah ditetapkan sehingga dapat diatur dan diseragamkan kepada seluruh perangkat sebelum survei dimulai dan dibawa ke lapang.
+
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Menu              | Pilihan                  | Keterangan                                                                                                                                     |
++:==================+:=========================+:===============================================================================================================================================+
+| Mode              | Camera, video, Hybrid    | Opsi Pengambilan gambar berupa media foto, video atau kombinasi keduanya                                                                       |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Image Size        | Low, Medium, High        | Pilihan resolusi foto. Semakin besar akan menghasilkan foto yang lebih jernih, namun menyita memori lebih banyak                               |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Image Format      | Full Screen, Wide Screen | Memilih aspek rasio foto; 4:3 (Full) atau 16:9 (Wide)                                                                                          |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Capture Number    | 1 - 5 Photo              | Memilih jumlah foto yang diambil setiap sensor terpicu                                                                                         |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Illumination mode | Low, Medium, High        | Pilihan seberapa banyak infrared yang digunakan ketika mengambil gambar di malam hari                                                          |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Camera Name       | (input)                  | Memberikan label ID pada kamera pengintai, gunakan ID yang sama dengan label manual pada badan kamera                                          |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Video Size        | Low, Medium, High        | Pilihan resolusi video. Semakin besar akan menghasilkan video yang lebih jernih, namun menyita memori lebih banyak                             |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Video Length      | 10 Second - 60 Minutes   | Durasi video setiap kali sensor terpicu                                                                                                        |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Delay             | 1 Second - 60 Minutes    | Waktu jeda sensor dapat berfungsi kembali setelah sensor sukses mengambil gambar. Semakin kecil delay, semakin banyak gambar yang akan didapat |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Sensor Level      | Low, Medium, High        | Mengatur sensitifitas sensor.                                                                                                                  |
+|                   |                          |                                                                                                                                                |
+|                   |                          | Gunakan *High* untuk daerah yang relatif panas sehingga mudah terpicu terhadap gerakan.                                                        |
+|                   |                          |                                                                                                                                                |
+|                   |                          | Sebaliknya, gunakan *low* untuk daerah yang relatif dingin                                                                                     |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Camera Mode       | Day, Night, 24hrs        | Membatasi waktu aktif kamera. Selalu gunakan 24hrs                                                                                             |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Time and Date     | Mengatur tanggal dan jam | Samakan jam di kamera dengan GPS                                                                                                               |
++-------------------+--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Pengaturan umum kamera pengintai {#tbl-tbpen}
+
+*Catatan:*
+
+*\* Nama pada menu mungkin akan berbeda pada setiap model, namun fungsi yang dimaksud relatif sama*
+
+*\* Beberapa menu lain sangat spesifik dan hanya tersedia pada model kamera tertentu, seperti; pre-set, Field Scan dll. sehingga tidak disertakan dalam panduan ini*
+
+*\* Apabila telah selesai melakukan pengaturan, pastikan baterai dan SD Card tidak terlepas pada posisinya. Hal tersebut seringkali menyebabkan pengaturan yang telah dilakukan kembali ke pengaturan awal.*
+
+### Memilih lokasi pemasangan
+
+Pada survei pemasangan kamera yang bersifat sistematis menggunakan grid, salah satu hal yang perlu diperhatikan adalah bagaimana jarak antar kamera diupayakan untuk tetap independen. Secara umum, untuk komunitas mamalia terestrial, jarak minimal antar stasiun kamera adalah 1,5 km (@fig-iat).
+
+![Ilustrasi jarak antar stasiun kamera](images/332_desainsurvey.png){#fig-iat fig-align="center"}
+
+Setelah tim sampai di grid atau lokasi target, tim mulai melakukan pencarian lokasi pemasangan terbaik. Proses ini harus dilakukan dengan seksama tanpa terburu-buru. Lokasi terbaik dipilih berdasarkan berbagai pertimbangan, seperti:
+
+1.  [Optimal.]{.underline} Lokasi yang terdapat tanda satwa yang baru ditinggalkan seperti tapak, kaisan pada lantai hutan, cakaran pada batang pohon, feses maupun urin.
+
+2.  Lokasi dengan fitur alami seperti kubangan lumpur atau *salt lick*
+
+3.  Lokasi dengan persimpangan atau pertemuan beberapa jalur yang aktif digunakan oleh satwa dapat meningkatkan kemungkinan merekam spesies yang berbeda
+
+4.  Lokasi pada jalur dengan topografi berupa punggungan panjang yang aktif digunakan oleh satwa maupun oleh manusia
+
+5.  [Kurang Optimal]{.underline}. Lokasi dekat dengan sumber air yang memiliki jalur penghubung antara badan air dan daratan.
+
+Ketika lokasi tersebut sudah ditemukan, tahap selanjutnya adalah memastikan bahwa lokasi tersebut kondisi jalurnya relatif datar dan hindari daerah rawa yang memiliki kemungkinan banjir apabila terjadi hujan deras.
+
+Pemasangan kamera diatur supaya jarak dari jalur target kurang lebih sekitar 3 meter. Apabila kamera dipasang terlalu dekat dengan jalur satwa, maka akan menghasilkan cahaya putih berlebih terhadap objek satwa, sebaliknya apabila terpasang terlalu jauh, gambar yang terekam pada malam hari menjadi terlalu gelap sehingga fitur identifikasi jadi tidak terlihat dengan jelas.
+
+\
+Jumlah kamera dalam satu lokasi (stasiun) bisa dipasang sebanyak satu unit, maupun berpasangan. Kamera pengintai biasanya dipasang secara berpasangan untuk mendapatkan kedua sisi tubuh satwa. Dalam kasus ini kamera pengintai tidak boleh dipasang saling berhadapan karena *flash* dari Infrared akan aktif bersamaan dan membuat semua gambar menjadi putih. Solusinya adalah dipasang pada kedua sisi jalur dengan diberi jarak.
+
+![Ilustrasi kamera yang berpasangan dalam satu stasiun](images/kamerapasang.png){#fig-pairct fig-align="center"}
+
+### Membersihkan vegetasi di depan kamera
+
+Setelah lokasi pemasangan dan batang pohon yang akan digunakan sudah bisa dipastikan, langkah selanjutnya adalah membersihkan vegetasi seperti rumput, semak dan ranting yang melintang di depan kamera. Vegetasi tersebut dapat memicu sensor kamera, menghalangi identifikasi satwa dan merefleksikan *flash*.
+
+![Hasil foto jika di depan kamera masih ada vegetasi](images/3.3.3.%20Vegetasi%20menghalangi%20saat%20hewan%20lewat.jpg){#fig-vegblock fig-align="center"}
+
+Vegetasi sudah bisa dikatakan bersih apabila tidak ada lagi tanaman berukuran besar yang menghalangi *point of view* kamera pengintai ke jalur target. Peneliti juga harus memperhatikan supaya modifikasi ini tidak dilakukan berlebihan sehingga justru membuat satwa menghindari area tersebut.\
+\
+Pada hutan tropis, seringkali tumbuhan bawah sangat cepat tumbuh, maka pembersihan ini sebisa mungkin mencabut hingga ke akarnya, bukan hanya ditebas dengan parang. Setelah proses tersebut selesai, letakkan batu yang besar atau daun yang lebar di bawah kamera untuk menghindari tumbuhan baru tumbuh sekaligus menghindari percikan lumpur ke lensa kamera ketika hujan. *(insert picture)*
+
+### Pemasangan kamera
+
+#### Ketinggian kamera
+
+Untuk memaksimalkan deteksi satwa, kamera pengintai harus dipasang pada batang pohon dengan ketinggian yang disesuaikan dengan spesies target. Untuk komunitas satwa terestrial secara umum, 30 - 40 cm diatas jalur target merupakan nilai yang direkomendasikan untuk dapat mengoptimalkan deteksi satwa berukuran kecil hingga sedang. Pengaturan ketinggian ini merupakan ketinggian kamera secara paralel terhadap jalur target (bukan pada batang pohon).
+
+![Ilustrasi tinggi kamera](images/tinggikamera.png){#fig-ctheight fig-align="center"}
+
+Kamera pengintai yang dipasang terlalu tinggi menyebabkan banyak satwa berukuran kecil, seperti burung terestrial terlewat atau gambar satwa yang tidak utuh. Sebaliknya jika terlalu rendah, maka sisi tubuh satwa target menjadi terpotong
+
+![Ilustrasi ketinggian kamera yang ideal terhadap satwa](images/3.3.4.1.%20Kolase%20foto%20terlalu%20tinggi-rendah%20dan%20optimal.jpg){#fig-cthoptim fig-align="center"}
+
+*Catatan:*
+
+-   *Kamera dipasang pada batang pohon berkayu yang masih hidup dengan diameter minimal xx cm, sehingga cukup kuat dan tidak bergoyang ketika ada angin kencang atau patah jika terserempet hewan.*
+
+-   *Pastikan batang tersebut tidak bergetah, lapuk, terdapat sarang serangga atau faktor lain yang dapat menggangu kinerja kamera.*
+
+-   *Pastikan kondisi di sekitar stasiun pemasangan aman dari gangguan seperti pohon yang akan tumbang, tumbuhan merambat dan potensi terendam.*
+
+#### Sudut kamera
+
+Idealnya kamera dipasang pada area yang relatif datar, namun dalam banyak kasus, kondisi ini tidak bisa dipenuhi, oleh sebab itu perlu ada penyesuaian dan modifikasi sehingga kamera tetap mengarah sejarar terhadap jalur target. Hal ini dilakukan supaya kinerja sensor tetap optimal dalam mendeteksi pergerakan satwa, selain itu supaya gambar satwa yang tertangkap, bagian sisi tubuhnya tertangkap utuh dan mudah diidentifikasi.
+
+![Posisi foto tubuh satwa yang direkomendasikan](images/3.3.4.2.%20Kolase%20foto%20diagonal%20dan%20optimal.jpg){#fig-sidebody fig-align="center"}
+
+### Menguji kamera
+
+Beberapa model memiliki fitur untuk menguji apakah sensornya berfungsi atau tidak. Jika kamera yang dimiliki tidak memiliki fitur itu maka harus diuji dengan menyalakan kamera, lalu satu anggota tim berjalan di depan kamera dengan merangkak di jalur target, kemudian periksa hasilnya apakah jarak dan posisi kamera sudah tepat.
+
+![Menguji posisi kamera terhadap jalur](images/3.3.6%20Foto%20tim%20merangkak%202.JPG){#fig-tescam fig-align="center"}
+
+### Mengaktifkan kamera
+
+Setelah tahap di atas selesai, langkah selanjutnya adalah menulis ID kamera, lokasi, kordinat, waktu serta tanggal dan informasi lainnya ke *whiteboard* gulung lalu aktifkan kamera pengintai dan berfoto bersama di depan kamera selama beberapa saat*.*
+
+![Berfoto dengan papan informasi pemasangan kamera](images/ctselfie.png){#fig-ctselfie fig-align="center"}
+
+Proses ini harus dilakukan pada saat pemasangan, maupun pada saat pengambilan kamera setelah survei selesai. Langkah ini dilakukan untuk verifikasi tanggal dan lokasi dengan data yang terekam pada kamera pengintai.
+
+Setelah selesai, catat informasi tersebut ke dalam lembar data dan kencangkan kamera menggunakan *bungee cord* atau karet ban bekas supaya posisi kamera tidak bergeser hingga akhir survei karena terserempet satwa atau faktor lainnya.
+
+*Catatan:*
+
+-   *Seluruh proses pemasangan bisa memakan waktu 30 - 60 menit. Lebih baik memastikan pemasangan ini secara optimal, daripada terburu-buru namun menghasilkan data yang buruk*
+
+-   *Dilarang merokok atau meninggalkan bekas makan selama proses berlangsung, karena bau yang ditinggalkan dapat mengubah perilaku satwa disekitar area tersebut*
+
+### Pencatatan lembar kerja {#sec-pencatatan-lembar-data}
+
+Setelah kamera diaktifkan, tim mencatat informasi pemasangan kamera ke dalam lembar kerja informasi stasiun kamera intai yang dapat diunduh pada tautan berikut ini; [lembar kerja-informasi stasiun](https://ffionline-my.sharepoint.com/:b:/g/personal/ravriandy_fauna-flora_org/ET5rzXB6OjRAvVQKg_iLxsYB_2vx3sEAtcxoMg14H-D_hg?e=AzjapQ). Contoh pengisian lembar data ada pada (@fig-ctldstasiun) dibawah.
+
+![Ilustrasi pengisian lembar data stasiun kamera intai](images/lembardatastasiun.png){#fig-ctldstasiun fig-align="center"}

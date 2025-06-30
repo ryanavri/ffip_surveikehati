@@ -1,13 +1,53 @@
 # Pendahuluan
 
-Survei keanekaragaman hayati bertujuan untuk mendapatkan informasi mengenai keberadaan satwa liar pada suatu wilayah tertentu dalam waktu tertentu. Secara umum, survei keanekaragaman hayati memiliki dua keluaran, yaitu inventarisasi dan monitoring.
+## Struktur Buku
 
-Inventarisasi bertujuan untuk mendapatkan informasi mengenai fauna dan flora pada suatu area, yang nantinya dapat digunakan sebagai data dasar (baseline data). Pada kegiatan ini, biasanya hanya diperlukan konfirmasi apakah suatu spesies berhasil teridentifikasi di suatu area atau tidak.
+Survei keanekaragaman hayati bertujuan untuk mendapatkan informasi tentang keberadaan dan kondisi satwa liar serta tumbuhan di suatu wilayah dalam periode tertentu. Secara umum, ada dua pendekatan utama dalam survei ini: inventarisasi dan monitoring, yang masing-masing memiliki tujuan dan metodologi yang berbeda.
 
-Sementara itu, monitoring dilakukan lebih dari satu kali dalam tahun atau musim yang berbeda untuk mendeteksi perubahan dalam suatu komunitas biologi. Monitoring juga digunakan untuk melihat efek dari suatu kegiatan, seperti perambahan kawasan terhadap komunitas burung liar atau pencemaran sungai terhadap mortalitas amfibi. Pada monitoring, dibutuhkan penilaian kuantitatif yang kuat, daripada sekedar konfirmasi keberadaan spesies.
+**Inventarisasi** berfokus pada pengumpulan informasi dasar mengenai keberadaan fauna dan/atau flora di suatu area. Tujuan utama dari kegiatan ini adalah untuk memperoleh data awal atau data dasar tentang spesies yang ada di suatu lokasi. Proses ini biasanya dilakukan satu kali dalam jangka waktu tertentu untuk memberikan konfirmasi awal tentang ada atau tidaknya spesies tertentu di lokasi tersebut.
 
-Mendapatkan nilai atau jumlah dari spesies yang seluruhnya menghuni suatu kawasan cukup sulit, terlebih di hutan tropis yang lebat dengan tingkat visibilitas yang rendah. Oleh karena itu,[rancangan survei](#sec-rancangansurvei) yang tepat harus dimiliki untuk mendapatkan sampel yang representatif dari kawasan tersebut . Sindrom data "sampah masuk, sampah keluar" juga berlaku untuk survei keanekaragaman hayati. Jika kualitas data yang dikumpulkan lemah dan rancangan surveinya kurang menggambarkan areal terkait, maka sulit untuk menganalisa dan menginterpretasi data. Prosedur pengambilan sampel harus mengikuti [protokol survei](#sec-protokol) di lapangan dengan benar untuk memastikan pengumpulan data yang konsisten dengan kualitas terbaik.
+Sementara itu, **monitoring** dilakukan secara berulang dalam periode waktu yang berbeda, misalnya beberapa kali dalam setahun atau pada musim yang berbeda di lanskap yang sama, dengan menggunakan metode yang sama. Monitoring bertujuan untuk mengamati pola, dinamika, atau perubahan dalam komunitas fauna dan flora seiring waktu. Selain itu, monitoring juga digunakan untuk mengevaluasi dampak dari kegiatan tertentu, seperti perambahan kawasan terhadap komunitas burung dan primata, atau pencemaran sungai terhadap populasi amfibi.
 
-[Analisis data](#sec-analisadata) merupakan bagian mendasar setelah survei selesai, dan pada saat mempersiapkan rancangan survei, konsultasi dengan seorang ahli statistik satwa liar yang berpengalaman akan sangat bermanfaat untuk mempersiapkan analisis yang tepat.
+Baik inventarisasi maupun monitoring memerlukan perencanaan yang cermat untuk memastikan data yang diperoleh akurat dan representatif. Di lingkungan yang kompleks seperti hutan tropis yang lebat di Indonesia, mengumpulkan data yang akurat mengenai jumlah dan distribusi spesies menjadi tantangan yang signifikan. Oleh karena itu, rancangan survei yang tepat sangat penting untuk memastikan sampel yang diperoleh benar-benar mewakili kondisi sebenarnya di lapangan.
 
-Selain itu, hasil survei seringkali menjadi laporan kepada donor atau publikasi ilmiah, sehingga data-data yang sudah didapatkan menjadi sangat berharga dan diperlukan untuk pengambilan keputusan yang tepat serta memastikan data yang sudah didapat masih relevan untuk digunakan hingga bertahun-tahun kedepan. Oleh karena itu, pengarsipan data juga bagian yang sangat penting dan akan dibahas pada bagian [pengelolaan data](#sec-pengelolaandata) keanekaragaman hayati.
+Kualitas data sangat dipengaruhi oleh metode dan rancangan survei yang digunakan. Survei yang dirancang dengan buruk atau data yang dikumpulkan dengan metode yang tidak memadai dapat menghambat proses analisis dan interpretasi, yang pada gilirannya mengurangi keandalan hasil survei. Dengan demikian, perencanaan survei harus memperhitungkan metode analisis yang sesuai sejak awal agar hasil analisis dapat mendukung tujuan penelitian atau konservasi dengan valid dan dapat diandalkan.
+
+Hasil survei yang berkualitas tinggi sangat penting untuk pengambilan keputusan yang tepat, terutama dalam upaya konservasi jangka panjang. Data yang dikumpulkan harus dikelola dan diarsipkan dengan baik untuk memastikan relevansi dan kegunaannya di masa depan. Tanpa pengelolaan data yang memadai, informasi berharga yang diperoleh dari survei berisiko hilang atau tidak dapat digunakan secara efektif.
+
+Untuk membantu para praktisi memahami dan menerapkan survei keanekaragaman hayati dengan baik, setiap bagian dari buku ini dibagi menjadi empat sub-bab utama yang saling berkaitan:
+
+1.  **Rancangan Survei**: Menguraikan metode dan strategi perencanaan survei yang efektif untuk mendapatkan data yang akurat dan representatif.
+
+2.  **Protokol Survei**: Menjelaskan prosedur standar untuk pelaksanaan survei di lapangan, termasuk teknik pengambilan sampel yang memastikan data dikumpulkan secara konsisten dan sistematis.
+
+3.  **Pengelolaan Data**: Menyajikan langkah-langkah pengelolaan dan pengarsipan data yang tepat untuk menjaga integritas, keamanan, dan aksesibilitas data dalam jangka panjang.
+
+4.  **Analisis Data**: Memberikan panduan dalam memilih dan menerapkan metode analisis data yang sesuai untuk menginterpretasikan hasil survei secara akurat dan informatif.
+
+Selain itu, pada bagian lampiran buku ini juga mencakup panduan tentang **format lembar data yang terstandarisasi**. Bagian ini membantu para praktisi memahami cara mencatat dan menyusun data secara konsisten, sehingga data dapat dengan mudah dianalisis menggunakan standar yang sama dan menjaga kualitas data minimum yang diperlukan.
+
+Bagian lampiran juga menyediakan panduan **eksplorasi dan visualisasi data**, lengkap dengan latihan-latihan analisis menggunakan dataset contoh. Latihan ini dirancang untuk meningkatkan keterampilan praktis dalam mengolah dan menampilkan data survei secara efektif, dengan memanfaatkan **R sebagai perangkat utama** untuk analisis. Hal ini memungkinkan hasil analisis dapat direproduksi oleh pembaca lain, mendukung transparansi, dan keandalan data.
+
+## Keselamatan Kerja
+
+Selain memahami metode dan teknik survei yang tepat, aspek keselamatan kerja di lapangan tidak kalah pentingnya untuk diperhatikan. Survei keanekaragaman hayati sering kali dilakukan di daerah terpencil yang jauh dari akses sarana umum dan bantuan medis profesional. Oleh karena itu, penting untuk selalu waspada terhadap berbagai potensi bahaya yang mungkin terjadi selama kegiatan survei.
+
+Dalam kondisi yang menantang ini, memahami dan mematuhi prinsip-prinsip keselamatan sangatlah penting untuk menjaga kesejahteraan seluruh anggota tim. Berikut ini adalah beberapa tips keselamatan kerja yang perlu diikuti oleh setiap anggota tim survei:
+
+-   **Selalu bekerja bersama tim:** Jangan pernah melakukan pengamatan sendirian; pastikan minimal ada satu anggota lain. Jika terjadi kecelakaan atau kondisi darurat, rekan kerja dapat memberikan pertolongan pertama dan evakuasi.
+
+-   **Beri tahu rencana perjalanan:** Sampaikan rencana perjalanan Anda kepada orang di luar tim survei. Rincikan jadwal harian dan waktu kembali. Ini penting agar mereka dapat memutuskan untuk melakukan evakuasi jika Anda belum kembali sesuai jadwal.
+
+-   **Persiapkan peralatan keselamatan:** Bawa peta, kompas, GPS, senter, dan alat penerang. Bawa peralatan pertolongan pertama, suplai makanan ekstra, dan perlengkapan keselamatan lain sesuai kebutuhan.
+
+-   **Pelatihan pertolongan pertama:** Pastikan seluruh anggota tim terlatih dalam memberikan pertolongan pertama baik melalui kursus singkat ataupun membawa tim medis profesional.
+
+-   **Siapkan jalur evakuasi:** Tentukan rute evakuasi, titik evakuasi terdekat, kendaraan, fasilitas medis, dan protokol komunikasi yang diperlukan.
+
+-   **Gunakan tenaga lokal:** Libatkan masyarakat lokal untuk memberikan informasi mengenai jalur dan kondisi medan yang berbahaya.
+
+-   **Hindari organisme dan area berbahaya:** Hindari menangkap hewan berbahaya, seperti ular berbisa, dan jauhi tumbuhan yang menyebabkan iritasi. Hindari area berbahaya seperti sungai yang berpotensi dihuni buaya atau membuat kamp di sekitar pohon yang terlihat sudah mati.
+
+-   **Perhatikan kebersihan:** Bersihkan luka kecil dengan air dan sabun antiseptik. Pastikan kebersihan dapur kamp untuk mencegah infeksi dan masalah pencernaan.
+
+-   **Gunakan akal sehat:** Hindari tindakan berisiko seperti menyeberang sungai deras tanpa pengaman atau memanjat tebing tanpa tali. Kenali batas kemampuan diri dan buat pilihan yang aman.

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Panduan praktis mengenai survei keanekaragaman hayati">
+
+<title>5&nbsp; Analisis Data – Panduan Survei Kehati</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../02-camtrap/02-intro.html" rel="next">
+<link href="../01-terestrial/05-pengelolaan-data.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="../theme.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01-terestrial/02-intro.html">Bioma Terestrial</a></li><li class="breadcrumb-item"><a href="../01-terestrial/06-analisa-data.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analisis Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Panduan Survei Kehati</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prakata</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-pendahuluan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pendahuluan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01-terestrial/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioma Terestrial</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/03-rancangan-survei.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Rancangan Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/04-protokol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/05-pengelolaan-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pengelolaan Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/06-analisa-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analisis Data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../02-camtrap/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kamera Intai</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-camtrap/02-rancangan-survei.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rancangan Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-camtrap/03-protokol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-camtrap/04-pengelolaan-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pengelolaan data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-referensi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referensi</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../03-marine/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioma Laut</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-marine/temporary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">temporary.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../99-lampiran/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-lampiran/08-lampiran1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lembar Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../99-lampiran/10-lampiran3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Eksplorasi dan visualisasi data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Daftar Isi</h2>
+   
+  <ul>
+  <li><a href="#kekayaan-dan-keseragaman-spesies" id="toc-kekayaan-dan-keseragaman-spesies" class="nav-link active" data-scroll-target="#kekayaan-dan-keseragaman-spesies"><span class="header-section-number">5.1</span> Kekayaan dan keseragaman spesies</a></li>
+  <li><a href="#perbedaan-komposisi-spesies" id="toc-perbedaan-komposisi-spesies" class="nav-link" data-scroll-target="#perbedaan-komposisi-spesies"><span class="header-section-number">5.2</span> Perbedaan komposisi spesies</a></li>
+  <li><a href="#faktor-lingkungan-terhadap-kelimpahan-spesies" id="toc-faktor-lingkungan-terhadap-kelimpahan-spesies" class="nav-link" data-scroll-target="#faktor-lingkungan-terhadap-kelimpahan-spesies"><span class="header-section-number">5.3</span> Faktor Lingkungan terhadap Kelimpahan Spesies</a></li>
+  <li><a href="#analisis-pola-dan-struktur-dalam-komunitas" id="toc-analisis-pola-dan-struktur-dalam-komunitas" class="nav-link" data-scroll-target="#analisis-pola-dan-struktur-dalam-komunitas"><span class="header-section-number">5.4</span> Analisis pola dan struktur dalam komunitas</a>
+  <ul class="collapse">
+  <li><a href="#dendogram-klaster" id="toc-dendogram-klaster" class="nav-link" data-scroll-target="#dendogram-klaster"><span class="header-section-number">5.4.1</span> Dendogram klaster</a></li>
+  <li><a href="#ordinasi" id="toc-ordinasi" class="nav-link" data-scroll-target="#ordinasi"><span class="header-section-number">5.4.2</span> Ordinasi</a></li>
+  </ul></li>
+  <li><a href="#kepadatan-spesies-distance-sampling" id="toc-kepadatan-spesies-distance-sampling" class="nav-link" data-scroll-target="#kepadatan-spesies-distance-sampling"><span class="header-section-number">5.5</span> Kepadatan Spesies (<em>Distance sampling</em>)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01-terestrial/02-intro.html">Bioma Terestrial</a></li><li class="breadcrumb-item"><a href="../01-terestrial/06-analisa-data.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analisis Data</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-analisadata" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analisis Data</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Setelah melalui tahap survei dan pengelolaan data, langkah selanjutnya yang perlu dilakukan adalah menganalisis data. Proses analisis data ini sangat penting untuk dapat merangkum dan mensintesis data yang telah dikumpulkan selama survei. Dalam analisis data, Anda akan menarik kesimpulan penting dari data mentah yang telah dikumpulkan. Hal ini dapat menjadi tantangan yang menarik, sekaligus menyenangkan, sama seperti pekerjaan lapangan. Melalui proses analisis data, Anda akan merasa puas karena berhasil menghasilkan kesimpulan yang didukung oleh data aktual yang telah Anda kumpulkan sebelumnya. Oleh karena itu, analisis data merupakan tahap yang sangat penting dalam penyusunan laporan ilmiah yang mudah dipahami oleh pembaca.</p>
+<p>Tujuan utama dari analisis data adalah untuk menerjemahkan sejumlah besar informasi yang bersifat numerik dan kompleks menjadi bentuk yang mudah dipahami dan singkat. Ada banyak cara untuk melakukannya dan metode yang dapat dipelajari, namun bab ini bertujuan untuk memberikan gambaran umum tentang berbagai pendekatan untuk mendeskripsikan dan menganalisis data menggunakan metode survei yang sudah dijelaskan sebelumnya. Teori dasar dan mendalam mengenai metode statistik yang digunakan diluar lingkup panduan ini, namun anda dapat mempelajari lebih dalam pada literatur berikut ini <span class="citation" data-cites="legendre2012 fielding2006 cook2000 henderson2008 margalef1973">(<a href="../07-referensi.html#ref-legendre2012" role="doc-biblioref">Legendre and Legendre 2012</a>; <a href="../07-referensi.html#ref-fielding2006" role="doc-biblioref">Fielding 2006</a>; <a href="../07-referensi.html#ref-cook2000" role="doc-biblioref">Cook and Wheater 2000</a>; <a href="../07-referensi.html#ref-henderson2008" role="doc-biblioref">Henderson and Seaby 2008</a>; <a href="../07-referensi.html#ref-margalef1973" role="doc-biblioref">Margalef 1973</a>)</span>.</p>
+<section id="kekayaan-dan-keseragaman-spesies" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="kekayaan-dan-keseragaman-spesies"><span class="header-section-number">5.1</span> Kekayaan dan keseragaman spesies</h2>
+<p>Dalam kajian survei, anda mungkin ingin menjelaskan data temuan spesies dalam hal kekayaan komunitas. Secara sederhana, hal ini dapat dibuat dengan melaporkan jumlah spesies dan individu yang ditemukan. Metode yang lainnya adalah melibatkan perhitungan indeks keanekaragaman dan keseragaman. Di sini, proporsi relatif setiap spesies dalam seluruh komunitas digunakan untuk membuat indikator keanekaragaman (biasanya indeks ini akan bernilai tinggi saat ada banyak spesies dengan kelimpahan yang sama - yaitu tidak ada satu spesies pun yang mendominasi). Sebaliknya, indikator keseragaman dapat dihasilkan yang menggambarkan seberapa seimbang proporsi relatif spesiesnya (keseragaman rendah dikaitkan dengan kasus di mana satu spesies mendominasi komunitas yang disurvei). Anda dapat mempelajari lebih dalam mengenai indek kekayaan dan keseragaman pada literatur berikut ini; . Contoh indeks yang biasa digunakan tersaji pada <a href="#tbl-tabelindeks" class="quarto-xref">Tabel&nbsp;<span>5.1</span></a>.</p>
+<div id="tbl-tabelindeks" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabelindeks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;5.1: Indeks kekayaan dan keseragaman yang biasa digunakan
+</figcaption>
+<div aria-describedby="tbl-tabelindeks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 73%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Keterangan</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shannon - Wiener</td>
+<td>Memperhitungkan jumlah individu dari masing-masing spesies yang ditemukan dalam suatu area atau habitat. Semakin tinggi nilai indeks Shannon-Wiener, semakin besar jumlah dan kemerataan spesies dalam suatu komunitas</td>
+<td><p><span class="math display">\[
+H' = -\sum_{i=1}^{S}p_i \ln p_i
+\]</span></p>
+<p>S adalah jumlah spesies, dan pi adalah proporsi jumlah individu pada spesies ke-i. Nilainya jarang melebihi 4.</p></td>
+</tr>
+<tr class="even">
+<td>Margalef</td>
+<td>Mengukur kekayaan spesies relatif terhadap kelimpahan spesies dalam suatu komunitas. Nilai indeks yang lebih tinggi menunjukkan tingkat keanekaragaman yang lebih tinggi dalam suatu komunitas.</td>
+<td><p><span class="math display">\[
+\text{Margalef} = \frac{S-1}{\ln(N)}
+\]</span></p>
+<p>N adalah jumlah total individu dalam sampel atau komunitas</p></td>
+</tr>
+<tr class="odd">
+<td>Pielou Evennes</td>
+<td>Mengukur seberapa merata spesies didistribusikan dalam suatu komunitas. Nilai indeksnya berkisar dari 0 hingga 1, dengan 1 menunjukkan distribusi yang sempurna atau keseragaman yang maksimal, sementara 0 menunjukkan distribusi yang sangat tidak merata atau keseragaman yang minimal.</td>
+<td><span class="math display">\[
+J' = \frac{H'}{\ln(S)}
+\]</span></td>
+</tr>
+<tr class="even">
+<td>Simpson</td>
+<td>mengukur dominasi suatu spesies dalam suatu komunitas. Indeks ini menghasilkan nilai antara 0 dan 1, di mana nilai 1 menunjukkan bahwa hanya ada satu spesies yang mendominasi komunitas, sementara nilai 0 menunjukkan adanya keanekaragaman maksimum. Perhitungan indeks Simpson didasarkan pada proporsi relatif jumlah individu dari masing-masing spesies dalam suatu komunitas</td>
+<td><span class="math display">\[
+D = \sum_{i=1}^S p_i^2
+\]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="perbedaan-komposisi-spesies" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="perbedaan-komposisi-spesies"><span class="header-section-number">5.2</span> Perbedaan komposisi spesies</h2>
+<p>Terdapat banyak cara untuk mengukur perbedaan komposisi spesies berdasarkan pada dua pendekatan yang berbeda. Pendekatan pertama mengevaluasi apakah dua atau lebih komunitas memiliki spesies yang sama berdasarkan jumlah spesies yang dimiliki secara bersama dibandingkan dengan spesies yang ditemukan hanya di salah satu komunitas. Pendekatan kedua melihat tumpang tindih tidak hanya pada tingkat spesies tetapi juga pada kelimpahan masing-masing spesies. <a href="#tbl-tabdisindex" class="quarto-xref">Tabel&nbsp;<span>5.2</span></a> adalah beberapa contoh yang biasa digunakan.</p>
+<div id="tbl-tabdisindex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabdisindex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;5.2: Metode ketidaksamaan yang biasa digunakan
+</figcaption>
+<div aria-describedby="tbl-tabdisindex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 65%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Tipe data</th>
+<th>Keterangan</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jaccard index</td>
+<td>Presence / absence</td>
+<td>Merupakan salah satu rumus yang paling sederhana, namun rumus ini tidak mempertimbangkan spesies yang tidak hadir pada kedua komunitas yang dibandingkan.</td>
+<td><p><span class="math display">\[
+J = \frac{a}{a + b + c}
+\]</span></p>
+<ul>
+<li><p>a = jumlah spesies yang ditemukan pada kedua komunitas</p></li>
+<li><p>b = jumlah spesies yang ditemukan hanya pada komunitas pertama</p></li>
+<li><p>c = jumlah spesies yang ditemukan hanya pada komunitas kedua</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Sørensen index</td>
+<td>Presence / absence</td>
+<td>Mirip dengan pengukuran Jaccard namun memberikan bobot yang lebih besar pada spesies yang ditemukan bersama di kedua komunitas.</td>
+<td><p><span class="math display">\[
+S_{S} = \frac{2c}{a+b}
+\]</span></p>
+<ul>
+<li><p>a = jumlah spesies yang ditemukan pada komunitas A</p></li>
+<li><p>b = jumlah spesies yang ditemukan pada komunitas B</p></li>
+<li><p>c = jumlah spesies yang ditemukan pada komintas A dan B</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Bray-Curtis index</td>
+<td>Kelimpahan</td>
+<td>Mengukur perbedaan antara komunitas berdasarkan kelimpahan relatif spesies yang dihadirkan dan yang tidak dihadirkan dalam masing-masing komunitas. Semakin besar nilai indeks ini, semakin berbeda pula komposisi spesies antar-komunitas</td>
+<td><p><span class="math display">\[
+BC_{d} = \frac{\sum_{k=1}^S{|a_{ik} - a_{jk}|}}{\sum_{k=1}^S{(a_{ik} + a_{jk})}}
+\]</span></p>
+<ul>
+<li><p><span class="math display">\[a_{ik}\]</span> adalah kelimpahan spesies dalam komunitas pertama</p></li>
+<li><p><span class="math display">\[a_{jk}\]</span> adalah kelimpahan spesies dalam komunitas kedua</p></li>
+<li><p>S adalah total spesies yang sama dalam kedua komunitas tersebut.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="faktor-lingkungan-terhadap-kelimpahan-spesies" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="faktor-lingkungan-terhadap-kelimpahan-spesies"><span class="header-section-number">5.3</span> Faktor Lingkungan terhadap Kelimpahan Spesies</h2>
+<p><em>Generalized Linear Model</em> (GLM) / model linier umum adalah sebuah pendekatan analisis statistik yang dapat digunakan dalam analisis ekologi untuk memprediksi dan menjelaskan hubungan antara variabel respons dan satu atau lebih variabel prediktor dengan mempertimbangkan asumsi khusus mengenai distribusi data dan hubungan antara variabel.</p>
+<p>Pendekatan ini cocok digunakan dalam analisis data ekologi karena data ekologi umumnya bersifat tidak normal, terdapat variasi yang besar dalam data, dan hubungan antar variabel seringkali bersifat kompleks. Dalam analisis ekologi, GLM dapat digunakan untuk mempelajari pengaruh faktor lingkungan, prediktor biologis, dan faktor-faktor lainnya terhadap variabel respons seperti biomassa, kelimpahan, atau keanekaragaman spesies.</p>
+<p>Contoh penerapan GLM dalam analisis ekologi adalah ketika kita ingin memahami faktor-faktor apa saja yang mempengaruhi kelimpahan populasi suatu spesies di suatu habitat. Kita dapat mengumpulkan data tentang kelimpahan spesies tersebut dan variabel lingkungan yang mungkin mempengaruhinya seperti jenis tanah, kelembaban, dan suhu. Selanjutnya, kita dapat menggunakan GLM untuk mengidentifikasi variabel lingkungan yang signifikan dalam mempengaruhi kelimpahan spesies tersebut dan memprediksi kelimpahan spesies di suatu habitat dengan mempertimbangkan faktor-faktor lingkungan yang signifikan.</p>
+<p>Sebagai contoh, kita dapat menggunakan GLM untuk mempelajari pengaruh suhu dan kelembaban terhadap kelimpahan burung di suatu hutan. Dalam studi ini, kita dapat mengumpulkan data tentang kelimpahan burung, suhu, dan kelembaban di beberapa titik di hutan yang berbeda. Selanjutnya, kita dapat menggunakan GLM untuk memprediksi kelimpahan burung di suatu titik berdasarkan suhu dan kelembaban di titik tersebut. Dengan demikian, kita dapat memahami hubungan antara suhu, kelembaban, dan kelimpahan burung di hutan tersebut.</p>
+</section>
+<section id="analisis-pola-dan-struktur-dalam-komunitas" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="analisis-pola-dan-struktur-dalam-komunitas"><span class="header-section-number">5.4</span> Analisis pola dan struktur dalam komunitas</h2>
+<p>Analisis pola dan struktur dalam komunitas membahas cara-cara untuk menganalisis struktur dan pola dalam komunitas biologis. Dua teknik utama yang digunakan dalam analisis ini adalah klaster dan ordinasi. Klaster digunakan untuk mengelompokkan spesies dalam kelompok-kelompok yang saling berhubungan berdasarkan kesamaan atribut. Sementara itu, ordinasi memproyeksikan data ke ruang multi-dimensi yang lebih rendah, sehingga memudahkan pemahaman tentang pola yang tersembunyi dalam data.</p>
+<section id="dendogram-klaster" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="dendogram-klaster"><span class="header-section-number">5.4.1</span> Dendogram klaster</h3>
+<p>Dendrogram klaster adalah representasi visual dari hasil analisis klaster yang digunakan untuk menggambarkan hubungan kekerabatan antara individu atau kelompok dalam dataset. Dendrogram biasanya berupa diagram pohon yang terdiri dari simpul dan cabang. Simpul mewakili individu atau kelompok, sedangkan cabang menggambarkan jarak atau kesamaan antara simpul.</p>
+<p>Dalam analisis klaster, dendrogram dapat digunakan untuk memvisualisasikan cara di mana kelompok atau individu saling terkait. Dendrogram dapat membantu dalam mengidentifikasi pola dan struktur dalam data, termasuk mengidentifikasi kelompok yang saling terkait.</p>
+<p>Contoh penggunaan dendrogram dalam ekologi adalah ketika membandingkan keanekaragaman spesies antara lokasi yang berbeda. Dengan menggunakan dendrogram, dapat dilihat bagaimana spesies-spesies yang serupa terkait satu sama lain dalam setiap lokasi dan bagaimana lokasi tersebut terkait satu sama lain dalam hal keanekaragaman spesies.</p>
+</section>
+<section id="ordinasi" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="ordinasi"><span class="header-section-number">5.4.2</span> Ordinasi</h3>
+<p>Ordinasi adalah metode statistik multivariat yang digunakan untuk menganalisis hubungan antara objek dalam ruang multivariat. Metode ini sering digunakan untuk mengeksplorasi pola-pola dalam data ekologi, seperti data keanekaragaman spesies dan komposisi vegetasi. Dalam analisis ordinasi, data yang dianalisis direduksi menjadi beberapa dimensi yang lebih sedikit, biasanya dua atau tiga, yang memungkinkan visualisasi pola-pola yang terkandung dalam data. Dua metode yang umum digunakan dalam analisis pola dan struktur dalam komunitas adalah <em>Multidimensional Scaling</em> (MDS) dan <em>Canonical Correspondence Analysis</em> (CCA).</p>
+<p>MDS digunakan untuk menggambarkan pola-pola keanekaragaman dalam sebuah diagram dua atau tiga dimensi. Metode ini memproyeksikan data keanekaragaman hayati ke dalam ruang yang lebih rendah dimensi. Sebagai contoh, jika kita memiliki data keanekaragaman hayati untuk beberapa lokasi, maka MDS dapat membantu kita untuk memvisualisasikan perbedaan antara lokasi-lokasi tersebut.</p>
+<p>Sementara itu, CCA merupakan metode statistik multivariat yang digunakan untuk mengevaluasi hubungan antara pola keanekaragaman hayati dan variabel lingkungan. Dengan CCA, kita dapat mengevaluasi bagaimana faktor-faktor lingkungan seperti suhu, curah hujan, dan ketersediaan nutrisi mempengaruhi keanekaragaman hayati.</p>
+<p>Kedua metode ini sering digunakan dalam studi-studi ekologi untuk mengevaluasi perbedaan dalam pola keanekaragaman hayati antar lokasi atau dalam rentang waktu tertentu. Misalnya, sebuah studi dapat menggunakan MDS untuk memvisualisasikan perbedaan dalam keanekaragaman hayati antara beberapa lokasi, dan kemudian menggunakan CCA untuk mengevaluasi faktor lingkungan yang mempengaruhi pola-pola keanekaragaman tersebut.</p>
+</section>
+</section>
+<section id="kepadatan-spesies-distance-sampling" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="kepadatan-spesies-distance-sampling"><span class="header-section-number">5.5</span> Kepadatan Spesies (<em>Distance sampling</em>)</h2>
+<p>Salah satu analisis yang paling populer untuk memperkirakan kepadatan satwa adalah dengan menggunakan metode <em>Distance sampling</em>, metode tersebut pada dasarnya mengukur jarak objek dari sebuah garis atau titik deteksi. Objek yang dimaksud biasanya adalah hewan atau kelompok hewan (yang disebut klaster), maupun tanda satwa (seperti suara burung, kotoran, sarang, hingga semburan paus).</p>
+<p>Metode konvensional <em>distance sampling</em> (CDS) dijelaskan oleh <span class="citation" data-cites="buckland2005distance">(<a href="../07-referensi.html#ref-buckland2005distance" role="doc-biblioref">Buckland et al. 2005</a>)</span>, dan variasi lainnya dibahas dalam <span class="citation" data-cites="buckland2004advanced">(<a href="../07-referensi.html#ref-buckland2004advanced" role="doc-biblioref">Buckland et al. 2004</a>)</span>. Daftar referensi yang lengkap, mencakup pengembangan metodologi dan aplikasi praktis metode tersebut, dapat ditemukan di <a href="https://workshops.distancesampling.org/online-course/">Online distance sampling course</a>. Untuk dapat menerapkan aplikasi ini, setidaknya ada 3 asumsi yang harus dipenuhi:</p>
+<ol type="1">
+<li><strong>Objek tepat pada garis atau titik dideteksi dengan pasti</strong>. Secara konseptual, objek pada jarak yang dekat harus selalu dapat terdeteksi. Namun, asumsi ini kadang dilanggar, misalnya pada survei menggunakan perahu untuk mamalia laut di mana satwa di bawah perahu tidak terdeteksi. Solusi untuk ini adalah menggunakan lebih dari satu pengamat yang berjalan beriringan <span class="citation" data-cites="borchers2006accommodating">(<a href="../07-referensi.html#ref-borchers2006accommodating" role="doc-biblioref">Borchers et al. 2006</a>)</span></li>
+<li><strong>Objek tidak bergerak</strong>. Secara konseptual, kita mengukur objek saat hewan tersebut pertama kali terdeteksi. Jika hewan tersebut berpindah dari tempat semula, itu tidak masalah, yang penting adalah individu yang sama tidak diukur kembali.</li>
+<li><strong>Pengukuran yang tepat</strong>. Sebisa mungkin, jarak objek dari garis atau titik harus diukur dengan seakurat mungkin. Selalu gunakan alat bantu seperti distometer jika memungkinkan.</li>
+</ol>
+<p>Dengan memahami dan memenuhi asumsi-asumsi ini, analisis <em>distance sampling</em> dapat memberikan perkiraan yang andal mengenai kepadatan satwa dan dapat digunakan untuk studi ekologi dan konservasi.</p>
+<p>Bab ini hanya sebagian kecil dari keseluruhan teknik yang dapat anda pelajari dan aplikasikan dalam survei yang telah anda lakukan. Untuk memperdalam pemahaman anda, penjelasan yang lebih mendetail akan dipraktikan pada <a href="#lampiran">lampiran 3</a> dan diagram analisa yang dapat anda lakukan dari data yang anda miliki tersaji pada <a href="#fig-oa" class="quarto-xref">Gambar&nbsp;<span>5.1</span></a> berikut ini.</p>
+<div id="fig-oa" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-oa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/option_analysis.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-oa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;5.1: Analisis yang dapat dilakukan dari data yang dimiliki
+</figcaption>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-borchers2006accommodating" class="csl-entry" role="listitem">
+Borchers, DL, JL Laake, C Southwell, and CGM Paxton. 2006. <span>“Accommodating Unmodeled Heterogeneity in Double-Observer Distance Sampling Surveys.”</span> <em>Biometrics</em> 62 (2): 372–78.
+</div>
+<div id="ref-buckland2005distance" class="csl-entry" role="listitem">
+Buckland, Stephen T, David R Anderson, Kenneth P Burnham, and Jeffrey L Laake. 2005. <span>“Distance Sampling.”</span> <em>Encyclopedia of Biostatistics</em> 2.
+</div>
+<div id="ref-buckland2004advanced" class="csl-entry" role="listitem">
+Buckland, Stephen T, David R Anderson, Kenneth P Burnham, Jeffrey L Laake, David L Borchers, and Len Thomas. 2004. <em>Advanced Distance Sampling: Estimating Abundance of Biological Populations</em>. OUP Oxford.
+</div>
+<div id="ref-cook2000" class="csl-entry" role="listitem">
+Cook, Penny A., and C. Phillip Wheater. 2000. <em>Using Statistics to Understand the Environment</em>. 1st edition. London ; New York: Routledge.
+</div>
+<div id="ref-fielding2006" class="csl-entry" role="listitem">
+Fielding, Alan H. 2006. <span>“Cluster and Classification Techniques for the Biosciences.”</span> In. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511607493">https://doi.org/10.1017/CBO9780511607493</a>.
+</div>
+<div id="ref-henderson2008" class="csl-entry" role="listitem">
+Henderson, Peter A., and Richard MH Seaby. 2008. <em>A Practical Handbook for Multivariate Methods</em>. Pisces Conservation Lymington, England.
+</div>
+<div id="ref-legendre2012" class="csl-entry" role="listitem">
+Legendre, P., and L. Legendre. 2012. <em>Numerical Ecology</em>. Elsevier.
+</div>
+<div id="ref-margalef1973" class="csl-entry" role="listitem">
+Margalef, Ramón. 1973. <span>“Information theory in ecology.”</span> <a href="https://digital.csic.es/handle/10261/284346">https://digital.csic.es/handle/10261/284346</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../01-terestrial/05-pengelolaan-data.html" class="pagination-link" aria-label="Pengelolaan Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pengelolaan Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../02-camtrap/02-intro.html" class="pagination-link" aria-label="Kamera Intai">
+        <span class="nav-page-text">Kamera Intai</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

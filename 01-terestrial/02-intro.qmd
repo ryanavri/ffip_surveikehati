@@ -1,0 +1,9 @@
+---
+lightbox: true
+---
+
+# Bioma Terestrial
+
+Bagian ini membahas survei di bioma terestrial, mulai dari penempatan dan jumlah unit cuplik sesuai karakteristik habitat, protokol survei, hingga pilihan metode analisis data yang tepat.
+
+![Hutan di Taman Nasional Kerinci Seblat, Sumatra. Foto diambil oleh Jeremy Holden,Fauna & Flora](images/KSNP.png){#fig-ksnp fig-align="center"}

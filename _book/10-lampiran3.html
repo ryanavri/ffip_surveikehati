@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Panduan praktis mengenai survei keanekaragaman hayati">
+
+<title>Panduan Survei Kehati - 11&nbsp; Eksplorasi dan visualisasi data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-lampiran2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="theme.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-lampiran1.html">Lampiran</a></li><li class="breadcrumb-item"><a href="./10-lampiran3.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Eksplorasi dan visualisasi data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./cover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Panduan Survei Kehati</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prakata</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-pendahuluan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pendahuluan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-terestrial/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioma Terestrial</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-terestrial/03-rancangan-survei.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Rancangan Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-terestrial/04-protokol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-terestrial/05-pengelolaan-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pengelolaan Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-terestrial/06-analisa-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analisis Data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-camtrap/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kamera Intai</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-camtrap/02-rancangan-survei.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rancangan Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-camtrap/03-protokol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-camtrap/04-pengelolaan-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pengelolaan data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-referensi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referensi</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Lampiran</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-lampiran1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lembar Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-lampiran2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Teknik Preservasi Spesimen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-lampiran3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Eksplorasi dan visualisasi data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Daftar Isi</h2>
+   
+  <ul>
+  <li><a href="#analisis-kekayaan-dan-keseragaman-spesies" id="toc-analisis-kekayaan-dan-keseragaman-spesies" class="nav-link active" data-scroll-target="#analisis-kekayaan-dan-keseragaman-spesies"><span class="header-section-number">11.1</span> Analisis kekayaan dan keseragaman spesies</a>
+  <ul class="collapse">
+  <li><a href="#indeks-diversitas-dan-dominasi" id="toc-indeks-diversitas-dan-dominasi" class="nav-link" data-scroll-target="#indeks-diversitas-dan-dominasi"><span class="header-section-number">11.1.1</span> Indeks diversitas dan dominasi</a></li>
+  <li><a href="#indeks-nilai-penting-pada-vegetasi" id="toc-indeks-nilai-penting-pada-vegetasi" class="nav-link" data-scroll-target="#indeks-nilai-penting-pada-vegetasi"><span class="header-section-number">11.1.2</span> Indeks nilai penting pada vegetasi</a></li>
+  <li><a href="#estimasi-kekayaan-jenis" id="toc-estimasi-kekayaan-jenis" class="nav-link" data-scroll-target="#estimasi-kekayaan-jenis"><span class="header-section-number">11.1.3</span> Estimasi kekayaan jenis</a></li>
+  </ul></li>
+  <li><a href="#analisis-perbedaan-komposisi-spesies" id="toc-analisis-perbedaan-komposisi-spesies" class="nav-link" data-scroll-target="#analisis-perbedaan-komposisi-spesies"><span class="header-section-number">11.2</span> Analisis perbedaan komposisi spesies</a>
+  <ul class="collapse">
+  <li><a href="#mengukur-perbedaan-komunitas-menggunakan-klaster" id="toc-mengukur-perbedaan-komunitas-menggunakan-klaster" class="nav-link" data-scroll-target="#mengukur-perbedaan-komunitas-menggunakan-klaster"><span class="header-section-number">11.2.1</span> Mengukur perbedaan komunitas menggunakan klaster</a></li>
+  <li><a href="#mengukur-perbedaan-komunitas-menggunakan-ordinasi" id="toc-mengukur-perbedaan-komunitas-menggunakan-ordinasi" class="nav-link" data-scroll-target="#mengukur-perbedaan-komunitas-menggunakan-ordinasi"><span class="header-section-number">11.2.2</span> Mengukur perbedaan komunitas menggunakan ordinasi</a></li>
+  </ul></li>
+  <li><a href="#pengaruh-faktor-lingkungan-terhadap-kelimpahan-spesies-model-linier-umum-glm" id="toc-pengaruh-faktor-lingkungan-terhadap-kelimpahan-spesies-model-linier-umum-glm" class="nav-link" data-scroll-target="#pengaruh-faktor-lingkungan-terhadap-kelimpahan-spesies-model-linier-umum-glm"><span class="header-section-number">11.3</span> Pengaruh Faktor Lingkungan terhadap Kelimpahan Spesies: Model Linier Umum (GLM)</a>
+  <ul class="collapse">
+  <li><a href="#glm-dengan-variabel-kontinu" id="toc-glm-dengan-variabel-kontinu" class="nav-link" data-scroll-target="#glm-dengan-variabel-kontinu"><span class="header-section-number">11.3.1</span> GLM dengan variabel kontinu</a></li>
+  <li><a href="#glm-dengan-variable-kategori" id="toc-glm-dengan-variable-kategori" class="nav-link" data-scroll-target="#glm-dengan-variable-kategori"><span class="header-section-number">11.3.2</span> GLM dengan variable kategori</a></li>
+  </ul></li>
+  <li><a href="#pengaruh-faktor-lingkungan-terhadap-komposisi-spesies-canonical-correspondence-analysis-cca" id="toc-pengaruh-faktor-lingkungan-terhadap-komposisi-spesies-canonical-correspondence-analysis-cca" class="nav-link" data-scroll-target="#pengaruh-faktor-lingkungan-terhadap-komposisi-spesies-canonical-correspondence-analysis-cca"><span class="header-section-number">11.4</span> Pengaruh Faktor Lingkungan terhadap komposisi Spesies: Canonical Correspondence Analysis (CCA)</a></li>
+  <li><a href="#analisis-kepadatan-spesies" id="toc-analisis-kepadatan-spesies" class="nav-link" data-scroll-target="#analisis-kepadatan-spesies"><span class="header-section-number">11.5</span> Analisis Kepadatan Spesies</a>
+  <ul class="collapse">
+  <li><a href="#analisis-dasar-tanpa-variabel" id="toc-analisis-dasar-tanpa-variabel" class="nav-link" data-scroll-target="#analisis-dasar-tanpa-variabel"><span class="header-section-number">11.5.1</span> Analisis dasar tanpa variabel</a></li>
+  <li><a href="#analisis-dengan-mempertimbangkan-variabel" id="toc-analisis-dengan-mempertimbangkan-variabel" class="nav-link" data-scroll-target="#analisis-dengan-mempertimbangkan-variabel"><span class="header-section-number">11.5.2</span> Analisis dengan mempertimbangkan variabel</a></li>
+  </ul></li>
+  <li><a href="#daftar-spesies-prioritas" id="toc-daftar-spesies-prioritas" class="nav-link" data-scroll-target="#daftar-spesies-prioritas"><span class="header-section-number">11.6</span> Daftar Spesies Prioritas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-lampiran1.html">Lampiran</a></li><li class="breadcrumb-item"><a href="./10-lampiran3.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Eksplorasi dan visualisasi data</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="lampiran3" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Eksplorasi dan visualisasi data</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Pada bagian ini, akan dijelaskan secara umum tentang eksplorasi dan visualisasi data kehati menggunakan Rstudio. RStudio adalah perangkat lunak yang sangat populer digunakan oleh para peneliti dan analis data untuk memproses, menganalisis, dan visualisasi data. Keuntungan menggunakan RStudio adalah dapat mengakses dan menggunakan berbagai paket dan fungsi statistik yang tersedia secara gratis. Selain itu, RStudio juga memungkinkan pengguna untuk mengintegrasikan skrip dan luaran dalam satu tempat, sehingga analisa yang dijalankan dapat dengan mudah direplikasi pada kajian yang lain.</p>
+<p>Namun, terdapat beberapa kekurangan dalam menggunakan RStudio, seperti tampilan antarmuka pengguna yang kurang intuitif dan sulit dipelajari bagi pemula. Selain itu, pengguna harus memahami bahasa pemrograman R untuk dapat menggunakan RStudio secara efektif. Perlu diingat bahwa ini hanya merupakan pengantar dan untuk memahami seluruh aspek dari Rstudio, diperlukan pembelajaran yang lebih mendalam.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Klik bagian ini bagi pengguna R pertama kali
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Penjelasan dan langkah instalasi R studio dapat dilihat pada tautan berikut ini ‘<a href="https://ffionline-my.sharepoint.com/:b:/g/personal/ravriandy_fauna-flora_org/ETx2GFuyFMFNgFmxvMVXYvkBE7K12f_BpVfWlAj-fD-x2g?e=UU46yW">Panduan instalasi Rstudio</a>’. Ikuti langkah yang ada pada panduan tersebut hingga bagian instalasi Rtools!</p>
+<p>Setelah itu salin dan tempel seluruh skrip dibawah ini di konsol Rstudio kalian;</p>
+<p>packages &lt;- c(“tidyverse”, “BiodiversityR”, “SpadeR”, “iNEXT”, “ggrepel”, “ggplot2”, “kableExtra”)</p>
+<p>for (package in packages) { if (!requireNamespace(package, quietly = TRUE)) { install.packages(package) }</p>
+<p>library(package, character.only = TRUE) }</p>
+<p>install.packages(“remotes”)</p>
+<p>remotes::install_github(“gavinsimpson/ggvegan”)</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Seluruh data yang dipergunakan dalam panduan ini merupakan data simulasi. Seluruh analisa yang dihasilkan dalam panduan ini hanya berupaya untuk menjelaskan interpretasi dan eksplorasi data keanekaragaman hayati tanpa menggambarkan kondisi aktual pada kawasan tersebut.</p>
+</div>
+</div>
+<section id="analisis-kekayaan-dan-keseragaman-spesies" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="analisis-kekayaan-dan-keseragaman-spesies"><span class="header-section-number">11.1</span> Analisis kekayaan dan keseragaman spesies</h2>
+<p>Pada bagian ini akan melihat bagaimana komposisi spesies dari setiap unit cuplik berbeda satu sama lain, langkah pertama yang harus dilakukan adalah memuat data dan paket yang dibutuhkan</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Memuat paket yang dibutuhkan----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BiodiversityR)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpadeR)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggvegan)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(unmarked)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">##Memuat dataset----</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengunduh data dan memuat data</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/ryanavri/Biodive-survey/raw/main/data_clean.RData"</span>, <span class="st">"data_clean.RData"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"data_clean.RData"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Melihat struktur data</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(raw_m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [110 × 3] (S3: tbl_df/tbl/data.frame)
+ $ Transect       : chr [1:110] "TS02" "TS02" "TS01" "TS01" ...
+ $ Scientific.Name: chr [1:110] "Sus Scrofa" "Trachypithecus auratus" "Macaca fascicularis" "Sus Scrofa" ...
+ $ Distance       : num [1:110] 10 25 15 27 20 26 2 29 20 7 ...</code></pre>
+</div>
+</div>
+<p>Data yang dimuat pada skrip diatas terdiri dari;</p>
+<ul>
+<li><p>raw, berupa data survei avifauna menggunakan titik hitung</p></li>
+<li><p>raw_env, merupakan data rona lingkungan dari setiap titik hitung burung diatas</p></li>
+<li><p>raw_m, berupa data survei mamalia menggunakan transek</p></li>
+<li><p>raw_t berupa data vegetasi menggunakan petak persegi.</p></li>
+</ul>
+<p>Seluruh data tersebut mengikuti protokol yang dijelaskan pada <a href="01-terestrial/04-protokol.html">Bab Protokol</a>, namun hanya menggunakan beberapa kolom saja untuk penyederhanaan simulasi.</p>
+<section id="indeks-diversitas-dan-dominasi" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="indeks-diversitas-dan-dominasi"><span class="header-section-number">11.1.1</span> Indeks diversitas dan dominasi</h3>
+<p>Selanjutnya dari data mamalia tersebut (‘raw_m’) tersebut kita dapat merangkum nilai indeks diversitas dan dominansi menggunakan skrip dibawah ini</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>indeks_tabel <span class="ot">&lt;-</span> raw_m <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Scientific.Name, Transect) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Transect) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">richness =</span> <span class="fu">n_distinct</span>(Scientific.Name),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">abundance =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">shannon =</span> <span class="sc">-</span><span class="fu">sum</span>(<span class="fu">prop.table</span>(n) <span class="sc">*</span> <span class="fu">log</span>(<span class="fu">prop.table</span>(n))),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">margalef =</span> (<span class="fu">n_distinct</span>(Scientific.Name) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">log</span>(<span class="fu">sum</span>(n)),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">evenness =</span> (<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">prop.table</span>(n) <span class="sc">*</span> <span class="fu">log</span>(<span class="fu">prop.table</span>(n))))<span class="sc">/</span><span class="fu">log</span>(<span class="fu">length</span>(n)),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">simpson =</span> <span class="fu">sum</span>(<span class="fu">prop.table</span>(n)<span class="sc">^</span><span class="dv">2</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="dv">4</span><span class="sc">:</span><span class="fu">last_col</span>(), <span class="sc">~</span><span class="fu">round</span>(., <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tbl-cap-location="top">
+<div id="tbl-rikj" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rikj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;11.1: Ringkasan indeks kekayaan jenis
+</figcaption>
+<div aria-describedby="tbl-rikj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Transect</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">richness</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">abundance</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">shannon</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">margalef</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">evenness</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">simpson</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TS01</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">1.12</td>
+<td style="text-align: right;">1.40</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">0.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TS02</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">1.06</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: right;">0.59</td>
+<td style="text-align: right;">0.47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TS03</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">1.03</td>
+<td style="text-align: right;">0.69</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TS04</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">1.19</td>
+<td style="text-align: right;">1.36</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">0.37</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Selanjutnya kita dapat membuat plot untuk melihat bagaimana perbandingan kekayaan jenis antar transek pada skrip dibawah ini</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(richness_plot <span class="ot">&lt;-</span> indeks_tabel <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="fu">c</span>(Transect, richness, abundance)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">pivot_longer</span>(<span class="sc">-</span>Transect, <span class="at">names_to =</span> <span class="st">"category"</span>, <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>category, <span class="at">y=</span>values, <span class="at">x=</span>Transect)) <span class="sc">+</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_col</span>(<span class="at">position=</span><span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(values,<span class="dv">1</span>)), </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.8</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rnaplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rnaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-rnaplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rnaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.1: Grafik kekayaan jenis dan kelimpahan
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Pada <a href="#fig-rnaplot" class="quarto-xref">Gambar&nbsp;<span>11.1</span></a> yang ditampilkan, jumlah spesies yang teridentifikasi dalam satu transek berkisar antara 3 hingga 6 spesies, dengan kelimpahan individu antara 18 hingga 73. Pada tabel tersebut secara sekilas mungkin kita akan menarik kesimpulan bahwa transek 1 dan 2 memiliki keanekaragaman yang lebih tinggi dibanding transek lainnya. Indeks kekayaan jenis, terutama indeks Shannon, mempertimbangkan proporsi kemerataan individu di setiap jenis. Selanjutnya, gunakan skrip dibawah ini untuk membuat grafik perbandingan indeks keanekaragaman jenis.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(RI_plot <span class="ot">&lt;-</span> indeks_tabel <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="fu">c</span>(Transect,shannon,margalef)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">pivot_longer</span>(<span class="sc">-</span>Transect, <span class="at">names_to =</span> <span class="st">"index"</span>, <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>index, <span class="at">y=</span>values, <span class="at">x=</span>Transect)) <span class="sc">+</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_col</span>(<span class="at">position=</span><span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(values,<span class="dv">2</span>)), </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.8</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-richnessplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-richnessplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-richnessplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-richnessplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.2: Grafik indeks kekayaan jenis
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>pada <a href="#fig-richnessplot" class="quarto-xref">Gambar&nbsp;<span>11.2</span></a> diatas, nilai indeks shannon ternyata lebih tinggi di transek 4. Hal ini disebabkan karena ketimpangan antar individu di setiap spesies jauh lebih kecil dibandingkan dengan transek 1 dan 2, meskipun jumlah spesies di kedua transek tersebut lebih banyak.</p>
+<p>Selanjutnya, kita dapat menginvestigasi lebih lanjut untuk menentukan apakah benar ada spesies yang mendominasi pada kawasan tersebut. Kondisi ini ditandai dengan nilai evenness yang rendah dan nilai dominansi simpson yang tinggi. Gunakan skrip dibawah ini untuk membuat plot indeks kemerataan dan dominansi jenis.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(DI_plot <span class="ot">&lt;-</span> indeks_tabel <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="fu">c</span>(Transect,simpson,evenness)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">pivot_longer</span>(<span class="sc">-</span>Transect, <span class="at">names_to =</span> <span class="st">"index"</span>, <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>index, <span class="at">y=</span>values, <span class="at">x=</span>Transect)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_col</span>(<span class="at">position=</span><span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(values,<span class="dv">2</span>)), </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.8</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-evenessplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-evenessplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-evenessplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evenessplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.3: Grafik indeks kesamaan jenis
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Pada <a href="#fig-evenessplot" class="quarto-xref">Gambar&nbsp;<span>11.3</span></a> diatas, terlihat bahwa transek 1 dan 2 menunjukan kemerataan (evenness) yang rendah dan nilai dominansi (simpson) yang lebih tinggi dibandingkan dengan transek lainnya, sehingga kita dapat menarik kesimpulan bahwa meskipun dari jumlah spesies transek 1 dan 2 ditemukan spesies lebih banyak namun keduanya memiliki ketimpangan proporsi jumlah individu yang cukup tinggi juga.</p>
+<p>Gunakan skrip dibawah ini dapat digunakan untuk memeriksa lebih dalam, spesies apa yang sebetulnya mendominasi dikedua transek tersebut.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Membuat tabel kelimpahan spesies</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>abundance_table <span class="ot">&lt;-</span> raw_m <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Transect, Scientific.Name) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">abundance =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Setelah itu kita dapat membuat grafiknya dengan skrip berikut ini</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Membuat plot kelimpahan jenis</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(abundance_table, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Scientific.Name, <span class="at">levels =</span> <span class="fu">rev</span>(<span class="fu">sort</span>(<span class="fu">unique</span>(Scientific.Name)))), <span class="at">y =</span> abundance, <span class="at">fill =</span> Transect)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Abundance"</span>, <span class="at">fill =</span> <span class="st">"Transect"</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> Transect, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.box =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">l =</span> <span class="dv">0</span>),</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">size =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-abundplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-abundplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-abundplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-abundplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.4: Grafik kelimpahan jenis di setiap transek
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Pada <a href="#fig-abundplot" class="quarto-xref">Gambar&nbsp;<span>11.4</span></a> diatas memperlihatkan bahwa babi hutan (<em>Sus scrofa</em>) dan monyet ekor panjang (<em>Macaca fascicularis</em>) hampir selalu mendominasi pada setiap transek dimana pada transek 1 dan 2 terlihat dengan jelas bagaimana kedua spesies ini memiliki kelimpahan yang lebih banyak dibandingkan dengan spesies lainnya. Sebaliknya, pada transek 3, kelimpahan tiap jenisnya tidak jauh berbeda sehingga didapatkan indeks kemerataan tinggi dan indeks dominansi rendah</p>
+</section>
+<section id="indeks-nilai-penting-pada-vegetasi" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="indeks-nilai-penting-pada-vegetasi"><span class="header-section-number">11.1.2</span> Indeks nilai penting pada vegetasi</h3>
+<p>Pada kajian vegetasi, terkadang nilai INP (Indeks Nilai Penting) dibutuhkan untuk melihat spesies yang mendominasi suatu ekosistem atau komunitas vegetasi. skrip dibawah ini dapat digunakan untuk membuat ringakasan INP dari data vegetasi (‘raw_t’). Hasilnya dapat dilihat pada <a href="#tbl-ivtable" class="quarto-xref">Tabel&nbsp;<span>11.2</span></a> yang menunjukan 6 spesies dengan nilai INP tertinggi dari akumulasi nilai frekuensi, kepadatan dan dominasi relatif.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Menghitung indeks nilai penting</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ival <span class="ot">&lt;-</span> raw_t <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Transect, Scientific.Name) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">basal =</span> <span class="fu">sum</span>(<span class="fl">0.7854</span><span class="sc">*</span>(dbh<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> <span class="co">#konversi dbh (cm) ke basal area dalam meter persegi</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">importancevalue</span>(<span class="at">site=</span><span class="st">"Transect"</span>, <span class="at">species=</span><span class="st">"Scientific.Name"</span>, </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">count=</span><span class="st">"count"</span>, <span class="at">basal=</span><span class="st">"basal"</span>, </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">factor=</span><span class="st">""</span>,<span class="at">level=</span><span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="dv">3</span><span class="sc">:</span><span class="fu">last_col</span>(), <span class="sc">~</span><span class="fu">round</span>(., <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tbl-cap-location="top">
+<div id="tbl-ivtable" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ivtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;11.2: Indeks nilai penting vegetasi
+</figcaption>
+<div aria-describedby="tbl-ivtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Indeks nilai penting vegetasi</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">frequency</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">density</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dominance</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">frequency.percent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">density.percent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dominance.percent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">importance.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; min-width: 3in; font-style: italic;">Melanochyla caesia</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">20.32</td>
+<td style="text-align: right;">6.71</td>
+<td style="text-align: right;">17.82</td>
+<td style="text-align: right;">16.70</td>
+<td style="text-align: right;">41.23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; min-width: 3in; font-style: italic;">Baccaurea macrocarpa</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">116</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">6.04</td>
+<td style="text-align: right;">17.08</td>
+<td style="text-align: right;">16.62</td>
+<td style="text-align: right;">39.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; min-width: 3in; font-style: italic;">Antidesma neurocarpum</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">114</td>
+<td style="text-align: right;">19.06</td>
+<td style="text-align: right;">4.70</td>
+<td style="text-align: right;">16.79</td>
+<td style="text-align: right;">15.66</td>
+<td style="text-align: right;">37.15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; min-width: 3in; font-style: italic;">Symplocos fasciculata</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">103</td>
+<td style="text-align: right;">18.28</td>
+<td style="text-align: right;">6.71</td>
+<td style="text-align: right;">15.17</td>
+<td style="text-align: right;">15.02</td>
+<td style="text-align: right;">36.90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; min-width: 3in; font-style: italic;">Meiogyne virgata</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">106</td>
+<td style="text-align: right;">19.34</td>
+<td style="text-align: right;">5.37</td>
+<td style="text-align: right;">15.61</td>
+<td style="text-align: right;">15.90</td>
+<td style="text-align: right;">36.88</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; min-width: 3in; font-style: italic;">Horsfieldia parviflora</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.90</td>
+<td style="text-align: right;">2.68</td>
+<td style="text-align: right;">0.88</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">4.31</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="estimasi-kekayaan-jenis" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="estimasi-kekayaan-jenis"><span class="header-section-number">11.1.3</span> Estimasi kekayaan jenis</h3>
+<p>Pada bagian ini, disajikan skrip untuk menghasilkan kurva akumulasi spesies (<em>species accumulation curve</em>) dari data avifauna (‘raw’). Metode ini umumnya digunakan untuk menilai apakah jumlah sampel yang diperoleh dalam survei sudah cukup untuk menggambarkan keanekaragaman spesies di suatu area.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Menghitung kurva akumulasi spesies----</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>out1 <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span> <span class="fu">count</span>(Scientific.Name) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">"Scientific.Name"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">iNEXT</span>(<span class="at">q=</span><span class="dv">0</span>, <span class="at">datatype =</span> <span class="st">"abundance"</span>, <span class="at">conf =</span> <span class="fl">0.95</span>, <span class="at">nboot =</span> <span class="dv">100</span>) <span class="co">#nboot dapat ditingkatkan.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Membuat grafik dari hasil tersebut</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(<span class="at">x =</span> out1, <span class="at">type =</span> <span class="dv">1</span>, <span class="at">color.var =</span> <span class="st">"Order.q"</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of Individuals"</span>, <span class="at">y =</span> <span class="st">"Cumulative Species Richness"</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-sacplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sacplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-sacplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sacplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.5: Kurva akumulasi spesies berdasarkan jumlah sampel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Pada <a href="#fig-sacplot" class="quarto-xref">Gambar&nbsp;<span>11.5</span></a> tersebut, kurva masih meningkat secara bertahap dan belum mencapai titik jenuh (datar), ini mengindikasikan bahwa apabila ada penambahan jumlah sampel ada kemungkinan terdapat penambahan spesies-spesies baru dalam kajian tersebut.</p>
+<p>Mengingat kurva menunjukkan potensi penambahan spesies baru seiring bertambahnya sampel, skrip dibawah ini dapat digunakan untuk memperkirakan potensi penemuan spesies baru menggunakan berbagai model estimator yang hasilnya disajikan pada <a href="#tbl-esttable" class="quarto-xref">Tabel&nbsp;<span>11.3</span></a>. Pada berbagai model tersebut dihasilkan bahwa rerata pertambahan spesies dapat mencapai hingga 90-an spesies dari total 63 spesies yang dijumpai saat survei berlangsung.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Estimasi kekayaan jenis----</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>out2 <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span> <span class="fu">count</span>(Scientific.Name) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">"Scientific.Name"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  SpadeR<span class="sc">::</span><span class="fu">ChaoSpecies</span>(<span class="at">datatype =</span> <span class="st">"abundance"</span>, <span class="at">k=</span><span class="dv">3</span>, <span class="at">conf =</span> <span class="fl">0.95</span>) <span class="co">#k adalah jumlah kelimpahan yang dianggap spesies "langka"</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Menampilkan tabel estimasi spesies</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>out2<span class="sc">$</span>Species_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tbl-cap-location="top">
+<div id="tbl-esttable" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-esttable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;11.3: Estimasi kekayaan jenis dari berbagai metode ekstrapolasi
+</figcaption>
+<div aria-describedby="tbl-esttable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">s.e.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">95%Lower</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">95%Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Homogeneous Model</td>
+<td style="text-align: right;">96.49</td>
+<td style="text-align: right;">12.62</td>
+<td style="text-align: right;">79.40</td>
+<td style="text-align: right;">131.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Homogeneous (MLE)</td>
+<td style="text-align: right;">63.00</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">63.00</td>
+<td style="text-align: right;">63.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chao1 (Chao, 1984)</td>
+<td style="text-align: right;">103.85</td>
+<td style="text-align: right;">20.37</td>
+<td style="text-align: right;">79.22</td>
+<td style="text-align: right;">165.88</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chao1-bc</td>
+<td style="text-align: right;">99.20</td>
+<td style="text-align: right;">17.80</td>
+<td style="text-align: right;">77.53</td>
+<td style="text-align: right;">153.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iChao1 (Chiu et al. 2014)</td>
+<td style="text-align: right;">110.73</td>
+<td style="text-align: right;">14.48</td>
+<td style="text-align: right;">89.68</td>
+<td style="text-align: right;">148.39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACE (Chao &amp; Lee, 1992)</td>
+<td style="text-align: right;">96.49</td>
+<td style="text-align: right;">12.62</td>
+<td style="text-align: right;">79.40</td>
+<td style="text-align: right;">131.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ACE-1 (Chao &amp; Lee, 1992)</td>
+<td style="text-align: right;">96.49</td>
+<td style="text-align: right;">12.62</td>
+<td style="text-align: right;">79.40</td>
+<td style="text-align: right;">131.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1st order jackknife</td>
+<td style="text-align: right;">92.96</td>
+<td style="text-align: right;">7.74</td>
+<td style="text-align: right;">81.20</td>
+<td style="text-align: right;">112.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2nd order jackknife</td>
+<td style="text-align: right;">111.91</td>
+<td style="text-align: right;">13.39</td>
+<td style="text-align: right;">91.88</td>
+<td style="text-align: right;">145.84</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-perbedaan-komposisi-spesies" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="analisis-perbedaan-komposisi-spesies"><span class="header-section-number">11.2</span> Analisis perbedaan komposisi spesies</h2>
+<p>Pada bagian ini akan dibahas menganai analisis perbedaan komposisi spesies antara berbagai habitat atau lokasi survei. Analisis ini penting untuk memahami bagaimana keanekaragaman spesies dipengaruhi oleh faktor lingkungan. Dengan memahami perbedaan komposisi spesies di berbagai area, kita dapat mengidentifikasi pola sebaran spesies, hubungan antara spesies dan faktor lingkungan, serta mengevaluasi dampak perubahan lingkungan terhadap keanekaragaman hayati.</p>
+<p>Pada bagian ini akan diperkenalkan beberapa metode statistik yang umum digunakan untuk analisis perbedaan komposisi spesies, termasuk perhitungan indeks ketidaksamaan, analisis klaster, dan metode multivariat lainnya serta cara menafsirkan dan menyajikan hasil analisis.</p>
+<section id="mengukur-perbedaan-komunitas-menggunakan-klaster" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="mengukur-perbedaan-komunitas-menggunakan-klaster"><span class="header-section-number">11.2.1</span> Mengukur perbedaan komunitas menggunakan klaster</h3>
+<p>Dalam bagian ini, kita akan membahas metode populer untuk mengukur perbedaan komunitas, yaitu analisis klaster berdasarkan ketidaksamaan Bray-Curtis dan Jaccard. Metode ini membantu mengidentifikasi pola sebaran dan hubungan antara komunitas berdasarkan perbedaan komposisi spesies. Analisis klaster ini penting dalam memahami hubungan antar komunitas spesies dan pengaruh faktor lingkungan.</p>
+<p>Bray-Curtis menekankan perbedaan kelimpahan spesies antara komunitas, sementara indeks Jaccard fokus pada keberadaan atau ketiadaan spesies. Bray-Curtis cocok digunakan saat kita dapat mengidentifikasi kelimpahan spesies dengan tepat, seperti pengamatan burung menggunakan titik hitung. Skrip berikut ini dapat digunakan untuk menghitung dan menyajikan perbedaan tersebut.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat matriks temuan dari data burung</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data_matrix <span class="ot">&lt;-</span><span class="fu">table</span>(raw<span class="sc">$</span>Transect, raw<span class="sc">$</span>Scientific.Name)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung dan membuat dendogram ketidaksamaan komunitas</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>data_matrix <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vegdist</span>(<span class="at">method =</span> <span class="st">"bray"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hclust</span>(<span class="at">method =</span> <span class="st">"average"</span>) <span class="ot">-&gt;</span> hc_transect</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dendogram dari hasil tersebut</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc_transect, <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">"Dissimilarity"</span>, <span class="at">sub =</span> <span class="st">"Transect"</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rect.hclust</span>(hc_transect, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">border =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>) <span class="co">#k adalah jumlah grup, sesuaikan dengan data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-showclustplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showclustplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-showclustplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showclustplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.6: Klaster ketidaksamaan komunitas antar transek
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-showclustplot" class="quarto-xref">Gambar&nbsp;<span>11.6</span></a> menunjukkan dendrogram klaster yang dihasilkan dari ketidaksamaan Bray-Curtis. Cabang-cabang dendrogram menggambarkan kelompok-kelompok komunitas yang mirip, dan tinggi cabang menunjukkan tingkat perbedaan antara kelompok-kelompok tersebut. Nilai pada sumbu Y mengindikasikan indeks ketidaksamaan; semakin kecil nilainya, semakin mirip komposisi spesies dan kelimpahan relatif antara kedua komunitas. Sebaliknya, nilai yang lebih tinggi menunjukkan perbedaan yang lebih besar dalam komposisi dan kelimpahan. Gambar tersebut menunjukkan bahwa TS01 dan TS02 memiliki komposisi spesies yang paling mirip, dan kedua transek ini berbeda jauh dari TS07 hingga TS10 dalam hal komposisi spesies.</p>
+<p>Selanjutnya, skrip dibawah ini digunakan untuk menghitung ketidaksamaan Jaccard. Analisa ini digunakan ketika kelimpahan individunya tidak bisa diidentifikasi dengan pasti. Salah satu contohnya adalah ketika survei yang digunakan menggunakan perekam suara, dimana pengamat dapat mengidentifikasi perbedaan spesies, namun tidak bisa dengan pasti mengukur perbedaan individu dari suara-suara tersebut.</p>
+<p>Skrip ini akan mengkonversi data perjumpaan yang kita miliki sebagai 0 dan 1, dimana angka 0 menunjukan spesies tidak ditemukan dalam transek dan 1 adalah spesies terdeteksi, berapapun jumlahnya.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Jaccard dan binary data (presence/absence)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data_matrix <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vegdist</span>(<span class="at">method =</span> <span class="st">"jaccard"</span>, <span class="at">binary =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hclust</span>(<span class="at">method =</span> <span class="st">"average"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">"Dissimilarity"</span>, <span class="at">sub=</span><span class="st">"Transect"</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mengukur-perbedaan-komunitas-menggunakan-ordinasi" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="mengukur-perbedaan-komunitas-menggunakan-ordinasi"><span class="header-section-number">11.2.2</span> Mengukur perbedaan komunitas menggunakan ordinasi</h3>
+<p>Pada bagian ini akan dibahas metode lain yang digunakan untuk mengukur perbedaan komunitas, yaitu analisis ordinasi. Ordinasi merupakan suatu teknik multivariat yang mengatur objek-objek (misalnya, komunitas atau spesies) dalam suatu ruang berdimensi rendah berdasarkan perbedaan atau kemiripan karakteristik mereka. Tujuan dari analisis ordinasi adalah untuk menyederhanakan data yang kompleks dan mengungkapkan pola yang mendasari struktur komunitas spesies. Pada contoh kode dibawah ini, akan menggunakan analisis koordinat non-metrik (NMDS) dengan ketidaksamaan Bray-Curtis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat matriks kelimpahan spesies</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sp.abd <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Transect, Scientific.Name) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific.Name, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="fu">list</span>(<span class="at">n =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">"Transect"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># menghitung nilai NMDS</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>(mynmds <span class="ot">&lt;-</span> <span class="fu">metaMDS</span>(sp.abd, <span class="at">distance =</span> <span class="st">"bray"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Wisconsin double standardization
+Run 0 stress 0.07832448 
+Run 1 stress 0.07832449 
+... Procrustes: rmse 4.223574e-05  max resid 9.613214e-05 
+... Similar to previous best
+Run 2 stress 0.07832449 
+... Procrustes: rmse 1.558519e-05  max resid 2.329932e-05 
+... Similar to previous best
+Run 3 stress 0.06960334 
+... New best solution
+... Procrustes: rmse 0.1917279  max resid 0.3719363 
+Run 4 stress 0.07832448 
+Run 5 stress 0.06960334 
+... Procrustes: rmse 1.220221e-05  max resid 1.845675e-05 
+... Similar to previous best
+Run 6 stress 0.07832448 
+Run 7 stress 0.07832448 
+Run 8 stress 0.06960334 
+... Procrustes: rmse 6.833592e-06  max resid 1.172698e-05 
+... Similar to previous best
+Run 9 stress 0.07832448 
+Run 10 stress 0.07832448 
+Run 11 stress 0.07832448 
+Run 12 stress 0.07832448 
+Run 13 stress 0.06960334 
+... New best solution
+... Procrustes: rmse 9.468379e-06  max resid 1.751872e-05 
+... Similar to previous best
+Run 14 stress 0.06960334 
+... Procrustes: rmse 1.410908e-05  max resid 2.554455e-05 
+... Similar to previous best
+Run 15 stress 0.06960334 
+... Procrustes: rmse 1.211752e-05  max resid 1.834884e-05 
+... Similar to previous best
+Run 16 stress 0.07832448 
+Run 17 stress 0.07832449 
+Run 18 stress 0.06960334 
+... New best solution
+... Procrustes: rmse 1.149719e-06  max resid 1.764007e-06 
+... Similar to previous best
+Run 19 stress 0.06960334 
+... New best solution
+... Procrustes: rmse 9.36584e-06  max resid 1.731291e-05 
+... Similar to previous best
+Run 20 stress 0.06960334 
+... Procrustes: rmse 3.682246e-05  max resid 6.425039e-05 
+... Similar to previous best
+*** Best solution repeated 2 times</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+metaMDS(comm = sp.abd, distance = "bray") 
+
+global Multidimensional Scaling using monoMDS
+
+Data:     wisconsin(sp.abd) 
+Distance: bray 
+
+Dimensions: 2 
+Stress:     0.06960334 
+Stress type 1, weak ties
+Best solution was repeated 2 times in 20 tries
+The best solution was from try 19 (random start)
+Scaling: centring, PC rotation, halfchange scaling 
+Species: expanded scores based on 'wisconsin(sp.abd)' </code></pre>
+</div>
+</div>
+<p>Pada hasil tersebut dapat dillihat bahwa nilai stres rendah (&lt;0,2), menunjukkan bahwa hasil NMDS dapat diinterpretasikan dengan keyakinan yang lebih tinggi. Sedangkan nilai stres yang lebih tinggi menunjukkan bahwa interpretasi mungkin tidak dapat diandalkan. Selanjutnya, skrip dibawah ini digunakan untuk membuat plot NMDS dengan memberikan pilihan bahwa intuisi awal kita terdapat 4 kelompok utama.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membagi poin-point kedalam jumlah grup yang kita tentukan</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>myclusters <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(mynmds<span class="sc">$</span>points, <span class="at">centers=</span><span class="dv">4</span>, <span class="at">nstart=</span><span class="dv">10</span>) <span class="co">#ganti centers, untuk merubah jumlah grup</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> <span class="fu">factor</span>(myclusters<span class="sc">$</span>cluster)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mynmds, <span class="at">type=</span><span class="st">"n"</span>, <span class="at">main=</span><span class="st">"NMDS Plot"</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(mynmds, <span class="at">display=</span><span class="st">"sites"</span>, <span class="at">col=</span>group, <span class="at">pch=</span><span class="dv">16</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(mynmds<span class="sc">$</span>points, <span class="at">labels=</span><span class="fu">rownames</span>(sp.abd), <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">pos =</span> <span class="dv">1</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">legend=</span><span class="fu">unique</span>(group), <span class="at">col=</span><span class="fu">unique</span>(group), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">title =</span> <span class="st">"Group"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-shownmdsplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shownmdsplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-shownmdsplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shownmdsplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.7: Grafik ordinasi kesamaan komposisi spesies antar transek
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-shownmdsplot" class="quarto-xref">Gambar&nbsp;<span>11.7</span></a> menyajikan pola sebaran titik-titik sebagai perwakilan sampel, yang dalam konteks ini adalah transek. Jarak antara titik-titik ini menggambarkan tingkat kemiripan atau perbedaan dalam komposisi spesies antara komunitas. Jarak yang lebih dekat antara titik-titik menunjukkan komposisi spesies yang lebih mirip, sementara jarak yang lebih jauh menunjukkan perbedaan yang lebih besar. Dapat dilihat bahwa TS07 memiliki komposisi yang sangat jauh berbeda dibandingkan transek lainnya.</p>
+</section>
+</section>
+<section id="pengaruh-faktor-lingkungan-terhadap-kelimpahan-spesies-model-linier-umum-glm" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="pengaruh-faktor-lingkungan-terhadap-kelimpahan-spesies-model-linier-umum-glm"><span class="header-section-number">11.3</span> Pengaruh Faktor Lingkungan terhadap Kelimpahan Spesies: Model Linier Umum (GLM)</h2>
+<p>Bagian ini akan membahas penggunaan Model Linier Umum (GLM) dalam menganalisis pengaruh faktor lingkungan terhadap kelimpahan spesies. Model ini memungkinkan kita untuk mempelajari hubungan antara variabel dependen (misalnya, kelimpahan spesies) dan satu atau lebih variabel independen (faktor lingkungan). GLM fleksibel dalam mengakomodasi berbagai distribusi variabel respon, seperti distribusi poisson (kelimpahan) atau binomial (keberadaan/ketiadaan), yang umum ditemukan dalam data ekologi.</p>
+<section id="glm-dengan-variabel-kontinu" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="glm-dengan-variabel-kontinu"><span class="header-section-number">11.3.1</span> GLM dengan variabel kontinu</h3>
+<p>Skrip di bawah ini menunjukkan contoh analisis hubungan antara variabel kontinu, di mana kita akan mengevaluasi pengaruh elevasi, keragaman jenis pohon, kepadatan pohon, dan jumlah pohon pakan terhadap kelimpahan merpati hijau Sumatra (<em>Treron oxyurus).</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Menghitung kelimpahan spesies disetiap transek</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>species_abundance <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Scientific.Name <span class="sc">==</span> <span class="st">"Treron oxyurus"</span>) <span class="sc">%&gt;%</span> <span class="co">#ganti nama spesies ini untuk jenis lainnya</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Transect) <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Abundance =</span> <span class="fu">n</span>())</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">#menggabungkan data kelimpahan dan variabel lingkungan</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>raw_env_bird <span class="ot">&lt;-</span> <span class="fu">left_join</span>(raw_env, species_abundance, <span class="at">by =</span> <span class="st">"Transect"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">replace_na</span>(<span class="fu">list</span>(<span class="at">Abundance =</span> <span class="dv">0</span>))</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>glm1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Abundance <span class="sc">~</span> Elev <span class="sc">+</span>  Tree.count <span class="sc">+</span> Tree.rich <span class="sc">+</span>  Imp.Tree, <span class="at">data =</span> raw_env_bird, <span class="at">family =</span> <span class="st">"poisson"</span>) <span class="co">#GLM menggunakan poisson</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>glm2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Abundance <span class="sc">~</span> Elev <span class="sc">+</span>  Tree.count <span class="sc">+</span> Tree.rich <span class="sc">+</span>  Imp.Tree, <span class="at">data =</span> raw_env_bird, <span class="at">family =</span> <span class="st">"quasipoisson"</span>) <span class="co">#GLM dengan quasipoison</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">#periksa ringkasan hasil kedua model tersebut</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm1)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Abundance ~ Elev + Tree.count + Tree.rich + Imp.Tree, 
+    family = "poisson", data = raw_env_bird)
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)   
+(Intercept) -2.0339395  1.0080291  -2.018  0.04362 * 
+Elev         0.0005957  0.0004688   1.271  0.20384   
+Tree.count   0.0033233  0.0079028   0.421  0.67410   
+Tree.rich    0.1113168  0.0372917   2.985  0.00284 **
+Imp.Tree     0.0026611  0.0252308   0.105  0.91600   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 91.907  on 9  degrees of freedom
+Residual deviance: 10.407  on 5  degrees of freedom
+AIC: 48.371
+
+Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+</div>
+<p>Berdasarkan ringkasan kedua model di atas, nilai dispersinya mendekati 1, sehingga kita akan menggunakan GLM dengan distribusi Poisson. Hasil tersebut menunjukkan bahwa variabel yang signifikan (P &lt; 0.05) adalah keragaman jenis pohon dengan nilai positif, yang mengindikasikan bahwa semakin beragam vegetasi di suatu area, kelimpahan burung tersebut cenderung lebih tinggi.</p>
+<p>Selanjutnya, skrip dibawah ini bisa digunakan untuk membuat plot yang menggambarkan pengaruh keragaman jenis pohon terhadap kelimpahan burung.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat tabel prediksi dari model terbaik</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pred_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Tree.rich =</span> <span class="fu">seq</span>(<span class="fu">min</span>(raw_env_bird<span class="sc">$</span>Tree.rich), <span class="fu">max</span>(raw_env_bird<span class="sc">$</span>Tree.rich), <span class="at">length.out =</span> <span class="dv">1000</span>), </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Elev =</span> <span class="fu">mean</span>(raw_env_bird<span class="sc">$</span>Elev),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Tree.count =</span> <span class="fu">mean</span>(raw_env_bird<span class="sc">$</span>Tree.count),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Imp.Tree =</span><span class="fu">mean</span>(raw_env_bird<span class="sc">$</span>Imp.Tree))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>pred_df<span class="sc">$</span>Abundance <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm1, <span class="at">newdata =</span> pred_df, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot prediksi kelimpahan burung dari keragaman jenis pohon</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(raw_env_bird, <span class="fu">aes</span>(<span class="at">x =</span> Tree.rich, <span class="at">y =</span> Abundance)) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"#3B6B9A"</span>) <span class="sc">+</span> </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"poisson"</span>), <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#8C510A"</span>) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Predicted abundance by tree richness"</span>) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Tree richness"</span>) <span class="sc">+</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted abundance"</span>) <span class="sc">+</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-showglmcpl" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showglmcpl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-showglmcpl-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showglmcpl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.8: Grafik pengaruh keanekaragaman pohon terhadap kelimpahan burung merpati hijau
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="glm-dengan-variable-kategori" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="glm-dengan-variable-kategori"><span class="header-section-number">11.3.2</span> GLM dengan variable kategori</h3>
+<p>Bagian ini akan membahas penggunaan Model Linier Umum (GLM) dalam menganalisis pengaruh faktor lingkungan tipe kategori terhadap kelimpahan spesies. Dalam contoh ini, kita akan mengevaluasi pengaruh tutupan lahan, yang mencakup hutan primer, hutan sekunder, hutan tanaman, dan tanah terbuka, terhadap kelimpahan merpati hijau Sumatra (<em>Treron oxyurus</em>). Skrip di bawah ini menunjukkan cara menggunakan GLM untuk memodelkan hubungan antara kelimpahan burung dengan variabel kategori tutupan lahan.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">### GLM untuk variabel kategori</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>glm3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Abundance <span class="sc">~</span> Tuplah, <span class="at">data =</span> raw_env_bird, <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>glm4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Abundance <span class="sc">~</span> Tuplah, <span class="at">data =</span> raw_env_bird, <span class="at">family =</span> <span class="st">"quasipoisson"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm3)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Abundance ~ Tuplah, family = "poisson", data = raw_env_bird)
+
+Coefficients:
+                      Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)             3.0681     0.1525  20.119  &lt; 2e-16 ***
+TuplahHutan Sekunder   -0.9578     0.2314  -4.139 3.49e-05 ***
+TuplahHutan Tanaman    -3.4735     0.7234  -4.802 1.57e-06 ***
+TuplahTanah Terbuka   -20.3706  3467.8585  -0.006    0.995    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 91.907  on 9  degrees of freedom
+Residual deviance: 10.845  on 6  degrees of freedom
+AIC: 46.809
+
+Number of Fisher Scoring iterations: 15</code></pre>
+</div>
+</div>
+<p>Hasil analisis GLM terbaik menggunakan model Poisson pada model glm3, karena nilai dispersinya mendekati 1. hasil tersebut menunjukan bahwa kelimpahan merpati hijau Sumatra (<em>Treron oxyurus</em>) secara signifikan lebih tinggi di hutan primer dibandingkan dengan hutan sekunder dan hutan tanaman. Perbedaan kelimpahan burung di hutan sekunder dan hutan tanaman lebih rendah daripada di hutan primer, dengan nilai yang signifikan (P&lt;0.05) untuk kedua kategori tersebut. Sementara itu, tidak ada bukti yang cukup untuk menyatakan perbedaan signifikan antara kelimpahan burung di tanah terbuka dengan hutan primer.</p>
+<p>Selanjutnya anda dapat menggunakan skrip dibawah ini untuk membuat plot dari model tersebut</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat tabel prediksi dari model terbaik</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pred_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Tuplah =</span> <span class="fu">unique</span>(raw_env_bird<span class="sc">$</span>Tuplah))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>pred_df<span class="sc">$</span>Predicted <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm3, <span class="at">newdata =</span> pred_df, <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">se.fit =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>fit</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>pred_df<span class="sc">$</span>SE <span class="ot">&lt;-</span> <span class="fu">predict</span>(glm3, <span class="at">newdata =</span> pred_df, <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">se.fit =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>se.fit</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot prediksi kelimpahan burung dari perbedaan tutupan lahan</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pred_df, <span class="fu">aes</span>(<span class="at">x =</span> Tuplah, <span class="at">y =</span> Predicted, <span class="at">fill =</span> Tuplah)) <span class="sc">+</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(), <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Predicted <span class="sc">-</span> SE, <span class="at">ymax =</span> Predicted <span class="sc">+</span> SE), </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#74C476"</span>, <span class="st">"#6BAED6"</span>, <span class="st">"#FD8D3C"</span>, <span class="st">"#9E9AC8"</span>)) <span class="sc">+</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Landcover"</span>, <span class="at">y =</span> <span class="st">"Predicted abundance"</span>,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Predicted abundance by landcover"</span>,</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">size =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-showglmcatpl" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showglmcatpl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-showglmcatpl-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showglmcatpl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.9: Grafik pengaruh tutupan lahan terhadap kelimpahan burung
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="pengaruh-faktor-lingkungan-terhadap-komposisi-spesies-canonical-correspondence-analysis-cca" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="pengaruh-faktor-lingkungan-terhadap-komposisi-spesies-canonical-correspondence-analysis-cca"><span class="header-section-number">11.4</span> Pengaruh Faktor Lingkungan terhadap komposisi Spesies: Canonical Correspondence Analysis (CCA)</h2>
+<p>Bagian ini akan membahas analisis menggunakan <em>Canonical Correspondence Analysis</em> (CCA). CCA merupakan metode multivariat yang digunakan untuk menganalisis hubungan antara variabel lingkungan dengan pola komposisi spesies dalam suatu komunitas. Melalui analisis CCA, kita dapat mengidentifikasi faktor lingkungan yang paling berpengaruh terhadap komposisi spesies, serta membuat visualisasi hubungan antara spesies, kondisi lingkungan, dan lokasi transek dalam bentuk grafik dua dimensi.</p>
+<p>Skrip dibawah ini dapat digunakan untuk melalukan analisa CCA secara sederhana mengenai komposisi komunitas burung di setiap transek terhadap perbedaan elevasi, keanekaragaman pohon, kelimpahan pohon penting dan tutupan lahan.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat matriks kelimpahan spesies</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sp.abd <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Transect, Scientific.Name) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific.Name, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="fu">list</span>(<span class="at">n =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">"Transect"</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat matriks variabel lingkungan</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>sp.env <span class="ot">&lt;-</span> raw_env <span class="sc">%&gt;%</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">"Transect"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span> (<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Elev =</span> <span class="fu">scale</span>(Elev)) <span class="sc">%&gt;%</span> <span class="co">#opsional, jika ingin menstandarisasi data</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tree.count =</span> <span class="fu">scale</span>(Tree.count)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Imp.Tree =</span> <span class="fu">scale</span>(Imp.Tree)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tree.rich =</span> <span class="fu">scale</span>(Tree.rich)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tuplah =</span> <span class="fu">as.factor</span>(Tuplah))</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung CCA dengan variabel lingkungan</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>OM1 <span class="ot">&lt;-</span> <span class="fu">cca</span>(sp.abd <span class="sc">~</span> Elev <span class="sc">+</span> Tuplah <span class="sc">+</span> Tree.count <span class="sc">+</span> Tree.rich, sp.env)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot sederhana</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">plot</span>(OM1, <span class="at">display=</span><span class="fu">c</span>(<span class="st">"bp"</span>, <span class="st">"sp"</span>, <span class="st">"sites"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-ccabasepl" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ccabasepl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-ccabasepl-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ccabasepl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.10: Grafik ordinasi CCA sederhana
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Plot yang ditampilkan pada <a href="#fig-ccabasepl" class="quarto-xref">Gambar&nbsp;<span>11.10</span></a> diatas dapat dimodifikasi agar lebih mudah dibaca dengan menggunakan fungsi dari ggplot pada skrip dibawah ini.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Konversi hasil perhitungan CCA kedalam data frame</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">fortify</span>(OM1)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># memilih 10 spesies yang paling dominan</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>dom_sp <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Scientific.Name) <span class="sc">%&gt;%</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">abundance =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(abundance)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot baru dengan ggplot</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="dv">0</span>), <span class="at">color =</span> <span class="st">"grey70"</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="dv">0</span>), <span class="at">color =</span> <span class="st">"grey70"</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span>  </span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">sec.axis =</span> <span class="fu">dup_axis</span>(<span class="at">labels=</span><span class="cn">NULL</span>, <span class="at">name=</span><span class="cn">NULL</span>), <span class="at">name =</span> <span class="st">"CCA1"</span>) <span class="sc">+</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">sec.axis =</span> <span class="fu">dup_axis</span>(<span class="at">labels=</span><span class="cn">NULL</span>, <span class="at">name=</span><span class="cn">NULL</span>), <span class="at">name =</span> <span class="st">"CCA2"</span>) <span class="sc">+</span>    </span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>CCA1, <span class="at">y=</span>CCA2), <span class="at">data=</span><span class="fu">filter</span>(df, score<span class="sc">==</span><span class="st">"sites"</span>), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#1f77b4"</span>) <span class="sc">+</span> </span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">xend =</span> CCA1<span class="sc">*</span><span class="fl">2.5</span>, <span class="at">yend =</span> CCA2<span class="sc">*</span><span class="fl">2.5</span>), <span class="at">data =</span> <span class="fu">filter</span>(df, score<span class="sc">==</span><span class="st">"biplot"</span>),<span class="at">color =</span> <span class="st">"#d62728"</span>, <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>))) <span class="sc">+</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">x=</span>CCA1<span class="sc">*</span><span class="fl">2.5</span>, <span class="at">y=</span>CCA2<span class="sc">*</span><span class="fl">2.5</span>, <span class="at">label=</span>label),<span class="at">data =</span> <span class="fu">filter</span>(df, score<span class="sc">==</span><span class="st">"biplot"</span>),<span class="at">color =</span> <span class="st">"#d62728"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">x=</span>CCA1, <span class="at">y=</span>CCA2, <span class="at">label=</span>label), </span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span><span class="fu">filter</span>(df, score<span class="sc">==</span><span class="st">"species"</span>, label <span class="sc">%in%</span> dom_sp<span class="sc">$</span>Scientific.Name),</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> <span class="st">"#2ca02c"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">x=</span>CCA1, <span class="at">y=</span>CCA2, <span class="at">label=</span>label), <span class="at">data=</span><span class="fu">filter</span>(df, score<span class="sc">==</span><span class="st">"sites"</span>),<span class="at">color =</span> <span class="st">"#1f77b4"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-showccaplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showccaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-lampiran3_files/figure-html/fig-showccaplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showccaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.11: Grafik ordinasi CCA komunitas burung terhadap variabel lingkungan
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-showccaplot" class="quarto-xref">Gambar&nbsp;<span>11.11</span></a> menunjukkan plot CCA yang telah dimodifikasi dengan memperlihatkan 10 spesies paling melimpah untuk kemudahan interpretasi. Untuk memahami hasil CCA, Anda harus melihat sejauh mana titik-titik transek, spesies, dan panah variabel lingkungan berdekatan. Transek dan spesies yang berada dekat dengan panah variabel lingkungan menandakan bahwa mereka dipengaruhi oleh variabel lingkungan tersebut. Jika panah variabel lingkungan berdekatan atau berpotongan, ini menunjukkan adanya korelasi antara variabel-variabel tersebut dalam menjelaskan pola distribusi spesies.</p>
+<p>Pada <a href="#fig-showccaplot" class="quarto-xref">Gambar&nbsp;<span>11.11</span></a> tersebut menunjukkan bahwa panah elevasi dan keragaman jenis pohon berdekatan, yang berarti semakin tinggi elevasi, keragaman jenis pohon semakin meningkat. Selain itu, posisi ayam hutan (<em>Gallus varius</em>) terletak jauh dari arah elevasi, yang berarti dalam sampel kita, ayam hutan lebih sering ditemukan di daerah dengan elevasi yang lebih rendah dan ditemukan lebih sering di hutan sekunder. Jarak antar titik juga menunjukkan kesamaan komposisi jenis dan variabel lingkungan, seperti transek 5 dan 6 yang lebih mirip satu sama lain dibandingkan dengan transek 3 dan 4 yang memiliki posisi yang lebih jauh.</p>
+<p>Jika kita bandingkan dengan hasil klaster dan NMDS pada <a href="#fig-showclustplot" class="quarto-xref">Gambar&nbsp;<span>11.6</span></a> dan <a href="#fig-shownmdsplot" class="quarto-xref">Gambar&nbsp;<span>11.7</span></a>, posisi relatif titik atau transek ini menjadi berbeda karena metode sebelumnya hanya mempertimbangkan komposisi spesies, sedangkan CCA mencakup variabel-variabel lingkungan sehingga menggambarkan kondisi komunitas dan lingkungan yang lebih lengkap.</p>
+</section>
+<section id="analisis-kepadatan-spesies" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="analisis-kepadatan-spesies"><span class="header-section-number">11.5</span> Analisis Kepadatan Spesies</h2>
+<section id="analisis-dasar-tanpa-variabel" class="level3" data-number="11.5.1">
+<h3 data-number="11.5.1" class="anchored" data-anchor-id="analisis-dasar-tanpa-variabel"><span class="header-section-number">11.5.1</span> Analisis dasar tanpa variabel</h3>
+<p>Bagian ini akan membahas tentang cara memperoleh kepadatan spesies menggunakan konsep <em>distance sampling</em>.</p>
+<p>Dalam panduan ini, kita akan menggunakan data simulasi dari observasi primata menggunakan metode transek garis. Setiap transek memiliki panjang 2000 meter dan satuan jarak yang digunakan adalah meter (m).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Melihat struktur data</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(simdat_primate_ds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   800 obs. of  3 variables:
+ $ Transect: chr  "TS01" "TS01" "TS01" "TS01" ...
+ $ Species : chr  "Trachypithecus auratus" "Presbytis comata" "Macaca fascicularis" "Hylobates javanicus" ...
+ $ Distance: num  3.04 12.91 4.18 17.09 1.14 ...</code></pre>
+</div>
+</div>
+<p>Pada bagian ini, kita akan membuat struktur data untuk analisis <em>distance sampling</em>. Pertama, kita memilih salah satu spesies, dalam contoh ini, kita akan memilih monyet ekor panjang (<em>Macaca fascicularis</em>) untuk dihitung estimasi kepadatannya.</p>
+<p>Selanjutnya, kita melakukan beberapa manipulasi data. Kolom “Transect” diubah menjadi faktor dan kolom “Distance” diubah menjadi tipe data integer. Hal ini dilakukan untuk memastikan bahwa kolom-kolom tersebut memiliki tipe data yang sesuai untuk analisis <em>distance sampling</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat struktur data untuk analisa 'distance sampling'</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Memilih salah satu spesies yang akan dianalisa</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>subset_data <span class="ot">&lt;-</span> simdat_primate_ds <span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"Macaca fascicularis"</span>) <span class="sc">%&gt;%</span> <span class="co">#Ganti argumen ini untuk spesies yang lain</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Transect =</span> <span class="fu">as.factor</span>(Transect)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Distance =</span> <span class="fu">as.integer</span>(Distance)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Memastikan semua transek yang disurvei ada pada dataset kita</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(subset_data<span class="sc">$</span>Transect)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "TS01" "TS02" "TS03" "TS04" "TS05" "TS06" "TS07" "TS08" "TS09" "TS10"</code></pre>
+</div>
+</div>
+<p>Pada data ekologi yang sebenarnya, mungkin tidak semua spesies teridentifikasi di semua transek, dan juga mungkin beberapa transek tidak mencatat adanya spesies tertentu. Oleh karena itu, penting untuk memastikan bahwa semua transek yang ada dalam kajian tercakup dalam dataset kita. Baris terakhir diatas digunakan untuk memeriksa transek yang ada pada dataset kita.</p>
+<p>Gunakan skrip dibawah ini apabila kita melakukan survei, namun spesies target tidak ditemukan pada transek “TS08”, “TS09”, dan “TS07”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(subset_data<span class="sc">$</span>Transect) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">levels</span>(subset_data<span class="sc">$</span>Transect), <span class="st">"TS08"</span>, <span class="st">"TS09"</span>, <span class="st">"TS07"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Setelah semua transek dipastikan ada dalam dataset kita, selanjutnya kita akan membuat dataset deteksi dengan interval jarak sejauh 5 meter.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat interval jarak</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>db <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dataset deteksi spesies</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>yDat <span class="ot">&lt;-</span> <span class="fu">formatDistData</span>(subset_data,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">distCol=</span><span class="st">"Distance"</span>,</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">transectNameCol=</span><span class="st">"Transect"</span>,</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">dist.breaks=</span>db)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Menambahkan variabel yang dipergunakan dan melakukan standarisasi pada data kontinu</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>covs <span class="ot">&lt;-</span> raw_env <span class="sc">%&gt;%</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"Transect"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Tuplah, Elev, Tree.count) <span class="sc">%&gt;%</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Elev =</span> <span class="fu">scale</span>(Elev), <span class="co"># Standarisasi untuk data kontinu</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">Tree.count =</span> <span class="fu">scale</span>(Tree.count))</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataset final yang dipergunakan untuk analisis</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>umf <span class="ot">&lt;-</span> <span class="fu">unmarkedFrameDS</span>(<span class="at">y=</span>yDat, </span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>                       <span class="at">siteCovs=</span>covs, </span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>                       <span class="at">dist.breaks=</span>db,</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>                       <span class="at">survey=</span><span class="st">"line"</span>, <span class="co">#ganti jadi point untuk metode titik hitung</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>                       <span class="at">tlength=</span><span class="fu">rep</span>(<span class="dv">2000</span>, <span class="dv">10</span>), <span class="co">#total transek 10 dengan panjang masing-masing 2000m</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">unitsIn=</span><span class="st">"m"</span>) <span class="co">#satuan panjang kolom transek dan jarak</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(umf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>unmarkedFrameDS Object
+
+line-transect survey design
+Distance class cutpoints (m):  0 5 10 15 20 25 30 
+
+10 sites
+Maximum number of distance classes per site: 6 
+Mean number of distance classes per site: 6 
+Sites with at least one detection: 10 
+
+Tabulation of y observations:
+ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 17 
+ 8  9  7  4  9  3  2  1  4  2  1  2  2  1  3  1  1 
+
+Site-level covariates:
+            Tuplah        Elev.V1           Tree.count.V1    
+ Hutan Primer  :2   Min.   :-1.1524181   Min.   :-1.0786962  
+ Hutan Sekunder:4   1st Qu.:-0.7036379   1st Qu.:-0.9820796  
+ Hutan Tanaman :3   Median :-0.0572298   Median : 0.1659533  
+ Tanah Terbuka :1   Mean   : 0.0000000   Mean   : 0.0000000  
+                    3rd Qu.: 0.3956677   3rd Qu.: 0.3591865  
+                    Max.   : 2.2854851   Max.   : 1.6379360  </code></pre>
+</div>
+</div>
+<p>Baris skrip terakhir diatas memberikan ringkasan dari objek ‘umf’ menunjukkan hasil dari persiapan data untuk analisis distance sampling dengan metode transek garis yang menunjukan jumlah transek dan nilai variabel.</p>
+<p>Selanjutnya pada skrip dibawah ini, kita membuat tiga model dasar dengan berbagai macam fungsi deteksi yang berbeda. Fungsi deteksi digunakan untuk mengestimasi probabilitas deteksi objek dalam distance sampling. Dengan membuat ketiga model ini, kita dapat membandingkan kinerja fungsi deteksi yang berbeda dalam mengestimasi kepadatan spesies pada data yang telah disiapkan sebelumnya dan menentukan model mana yang akan dipergunakan</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat model dasar dengan berbagai macam fungsi deteksi</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>m.half <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span><span class="dv">1</span>, umf,</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">keyfun=</span><span class="st">"halfnorm"</span>, <span class="co"># fungsi deteksi</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>) <span class="co"># pengaturah hasil, dalam konteks ini berarti 'animals/ha'</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>m.haz <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span><span class="dv">1</span>, umf, <span class="at">keyfun=</span><span class="st">"hazard"</span>, <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>m.uni <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span><span class="dv">1</span>, umf, <span class="at">keyfun=</span><span class="st">"uniform"</span>, <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Setelah model-model dibuat, mengetikkan namanya akan menampilkan informasi estimasi parameter dan AIC (Kriteria Informasi Akaike).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>m.half</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+distsamp(formula = ~1 ~ 1, data = umf, keyfun = "halfnorm", output = "density", 
+    unitsOut = "ha")
+
+Density:
+ Estimate     SE    z   P(&gt;|z|)
+      1.7 0.0733 23.1 2.62e-118
+
+Detection:
+ Estimate     SE    z P(&gt;|z|)
+      2.4 0.0475 50.5       0
+
+AIC: 252.0427 </code></pre>
+</div>
+</div>
+<p>Hasil tersebut menunjukkan bahwa nilai p-value dari model tersebut adalah kurang dari 0.05, yang berarti secara statistik nilai estimasi tersebut signifikan, dan data dapat digunakan secara sah. Selain itu, nilai AIC dari model ini lebih kecil daripada nilai AIC model lainnya, yang menunjukkan bahwa model ini adalah model terbaik.</p>
+<p>Selain melihat perbedaan nilai AIC, kita juga harus memeriksa bentuk histogram yang mungkin menunjukkan adanya “bahu”. Skrip dibawah digunakan untuk visualisasi deteksi fungsi dari model tersebut. Idealnya semakin lebar “bahu”, maka data tersebut semakin bagus.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(m.half)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-rlv" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rlv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/Shoulder.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rlv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;11.12: histogram deteksi yang menunjukan ‘bahu’
+</figcaption>
+</figure>
+</div>
+<p>Setelah kita yakin dengan model yang akan dipergunakan, selanjutnya adalah melihat bagaimana nilai kepadatan spesies dengan skrip dibawah ini</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(m.half, <span class="at">type=</span><span class="st">"state"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Density estimate(s)
+
+ Estimate  SE LinComb (Intercept)
+     5.45 0.4     1.7           1
+
+Transformation: exp </code></pre>
+</div>
+</div>
+<p>Pada hasil tersebut dinyatakan kepadatan monyet ekor panjang dalam kajian ini adalah 5.45 <u>+</u> 0.4 individu/ha.</p>
+</section>
+<section id="analisis-dengan-mempertimbangkan-variabel" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="analisis-dengan-mempertimbangkan-variabel"><span class="header-section-number">11.5.2</span> Analisis dengan mempertimbangkan variabel</h3>
+<p>Dalam kajian ekologi seringkali kondisi lingkungan antar transek tidak homogen, terdapat berbagai variasi parameter lingkungan antar transek. Dalam pembahasan ini kita akan melihat bagaimana tipe tutupan hutan, elevasi dan jumlah pohon mempengaruhi kepadatan spesies.</p>
+<p>Dari model sebelumnya diketahui bahwa model dengan deteksi fungsi ‘half-normal’ adalah model terbaik. Maka kita akan tetap menggunakan fungsi tersebut dengan menambahkan variabel lingkungan menggunakan skrip dibawah ini</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan variabel lingkungan</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan elevasi sebagai covariate yang mempengaruhi kepadatan</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>m.Elev <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span>Elev, umf, <span class="at">keyfun=</span><span class="st">"halfnorm"</span>, <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan tutupan lahan</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>m.Tuplah <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span>Tuplah, umf, <span class="at">keyfun=</span><span class="st">"halfnorm"</span>, <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan banyaknya pohon</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>m.Treecount <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span>Tree.count, umf, <span class="at">keyfun=</span><span class="st">"halfnorm"</span>, <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan elevasi, tutupan lahan dan banyaknya pohon secara bersamaan</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>m.all <span class="ot">&lt;-</span> <span class="fu">distsamp</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span>Tuplah <span class="sc">+</span> Elev <span class="sc">+</span> Tree.count, umf, <span class="at">keyfun=</span><span class="st">"halfnorm"</span>, <span class="at">output=</span><span class="st">"density"</span>, <span class="at">unitsOut=</span><span class="st">"ha"</span>)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluasi model terbaik dari seluruh model yang digunakan</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>mlist <span class="ot">&lt;-</span> <span class="fu">fitList</span>(m.half, m.Elev, m.Tuplah, m.Treecount, m.all)</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a><span class="fu">modSel</span>(mlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            nPars    AIC delta AICwt cumltvWt
+m.half          2 252.04  0.00 0.503     0.50
+m.Elev          3 253.87  1.83 0.202     0.70
+m.Treecount     3 254.03  1.99 0.186     0.89
+m.Tuplah        5 255.36  3.32 0.096     0.99
+m.all           7 259.22  7.18 0.014     1.00</code></pre>
+</div>
+</div>
+<p>Dari nilai tersebut diketahui bahwa model tanpa variabel merupakan model terbaik, diikuti dengan elevasi, jumlah pohon dan tutupan lahan.</p>
+<p>Kita dapat menggunakan skrip dibawah ini untuk melihat bagaimana respon dari variabel tersebut mempengaruhi kepadatan satwa .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediksi pengaruh elevasi terhadap kepadatan satwa</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat tabel nilai prediksi</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>m.nelev <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Elev =</span> <span class="fu">seq</span>(<span class="fu">min</span>(covs<span class="sc">$</span>Elev), <span class="fu">max</span>(covs<span class="sc">$</span>Elev), <span class="at">length=</span><span class="dv">100</span>))</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>elev.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m.Elev, <span class="at">type=</span><span class="st">"state"</span>, <span class="at">newdata=</span>m.nelev, <span class="at">appendData=</span><span class="cn">TRUE</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot prediksi</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elev.pred, <span class="fu">aes</span>(<span class="at">x =</span> Elev, <span class="at">y =</span> Predicted)) <span class="sc">+</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="fu">bold</span>(<span class="st">'Elevation'</span>)), <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">bold</span>(<span class="fu">paste</span>(<span class="st">"Animals/Ha"</span>)))) <span class="sc">+</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10-lampiran3_files/figure-html/viz_ds_covs-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Pada grafik tersebut terlihat bahwa semakin tinggi elevasi, maka estimasi kepadatan satwa semakin menurun. Selanjutnya kita juga dapat melihat respon variabel yang datanya bersifat kategori dengan skrip dibawah ini</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediksi pengaruh tutupan lahan terhadap kepadatan satwa</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat tabel nilai prediksi</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>m.hab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Tuplah=</span><span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">'Hutan Primer'</span>, <span class="st">'Hutan Sekunder'</span>, <span class="st">'Hutan Tanaman'</span>, <span class="st">'Tanah Terbuka'</span>)))</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>hab.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(m.Tuplah, <span class="at">type=</span><span class="st">"state"</span>, <span class="at">newdata=</span>m.hab, <span class="at">appendData=</span><span class="cn">TRUE</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot prediksi</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hab.pred, <span class="fu">aes</span>(<span class="at">x=</span>Tuplah, <span class="at">y=</span>Predicted)) <span class="sc">+</span>  </span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="fu">position_dodge</span>(), <span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">colour =</span> <span class="st">'blue'</span>, <span class="at">fill =</span> <span class="st">'light blue'</span>) <span class="sc">+</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>Predicted<span class="sc">-</span>SE, <span class="at">ymax=</span>Predicted<span class="sc">+</span>SE), <span class="at">width=</span>.<span class="dv">2</span>, <span class="at">colour =</span> <span class="st">'blue'</span>) <span class="sc">+</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="fu">expression</span>(<span class="fu">bold</span>(<span class="st">'Land Cover'</span>))) <span class="sc">+</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="fu">expression</span>(<span class="fu">bold</span>(<span class="fu">paste</span>(<span class="st">"Animals/Ha"</span>)))) <span class="sc">+</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10-lampiran3_files/figure-html/viz_ds_covs2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Berdasarkan hasil analisis diatas, estimasi kepadatan satwa pada hutan primer dan hutan tanaman lebih tinggi dibandingkan dengan hutan sekunder dan tanah terbuka. Artinya, daerah dengan tutupan lahan hutan primer dan hutan tanaman memiliki kepadatan satwa yang lebih tinggi dibandingkan dengan hutan sekunder dan daerah terbuka.</p>
+</section>
+</section>
+<section id="daftar-spesies-prioritas" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="daftar-spesies-prioritas"><span class="header-section-number">11.6</span> Daftar Spesies Prioritas</h2>
+<p>Bagian ini akan menjelaskan mengenai bagaimana kita bisa langsung mendapatkan seluruh informasi taksonomi dan status konservasi satwa, dari dataset yang kita miliki. Data tersebut diambil dari pangkalan data IUCN, CITES dan Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor P.106/MENLHK/SETJEN/KUM.1/12/2018.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mendaftarkan nomor token
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sebelum menggunakan skrip dibawah ini, daftarkan dulu nomor token masing-masing menggunakan <a href="https://ffionline-my.sharepoint.com/:b:/g/personal/ravriandy_fauna-flora_org/EQgcEO91EJ9JosiJleKqfgIBRPr7l6c8Cg3UHM6Uy8_OvQ?e=H0rFoH">Panduan Mendapatkan Token IUCN dan CITES</a>.</p>
+<p>Nomor token ini biasanya didapatkan selama 1-3 hari kerja. Mohon diisi alasan kenapa memerlukan token dengan jawaban yang logis. Jawaban yang terlalu singkat dan asal-asalan cenderung ditolak dan memerlukan akun baru untuk mendaftarkan kembali.</p>
+</div>
+</div>
+</div>
+<p>Skrip dibawah ini baru bisa dilakukan setelah anda mendapatkan nomor token dari IUCN dan CITES. Ganti nomor token dibawah ini menggunakan token yang sudah didapatkan.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Memuat paket yang dibutuhkan----</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rredlist)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rcites)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengatur token dari CITES</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set_token</span>(<span class="st">"3yTXsqrceqKHF"</span>) </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co">#PERHATIAN! Nomor token ini hanya contoh,</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="co">#gunakan token kamu sendiri </span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengatur token dari IUCN</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">IUCN_KEY =</span> <span class="st">"qNdBxkZRQi5V54ZYyauKacIzT7csLlUaVxi"</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="co">#PERHATIAN! Nomor token ini hanya contoh,</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="co">#gunakan token kamu sendiri </span></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>apikey <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"IUCN_KEY"</span>)</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengunduh fungsi yang dibutuhkan</span></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">source_url</span>(<span class="st">"https://raw.githubusercontent.com/ryanavri/GetTaxonCS/main/iucn_cites_fn.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Skrip diatas memuat paket tambahan yang dibutuhkan serta mendaftarkan nomor token yang kita miliki ke dalam sistem Rstudio kita. Token ini berfungsi seperti kunci yang memungkinkan kita untuk dapat mengakses pangkalan data IUCN dan CITES.</p>
+<p>Selanjutnya dengan menggunakan dataset mamalia dalam panduan sebelumnya, kita akan membuat dataset baru dengan memilih nama unik spesies didalam dataset yang kita miliki.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dataset baru yang hanya memiliki kolom spesies dan perwakilan spesies</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>Species <span class="ot">&lt;-</span> <span class="fu">unique</span>(raw_m<span class="sc">$</span>Scientific.Name)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>Species_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Setelah itu, skrip dibawah ini dapat diijalankan untuk membuat tabel informasi dari status taksonomi hingga status konservasi dan tren populasi spesies secara global.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mendapatkan data dari IUCN</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>sp1 <span class="ot">&lt;-</span> <span class="fu">retrieve_IUCN_data</span>(Species_df<span class="sc">$</span>Species)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Mendapatkan katalog data dari CITES</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>sp2 <span class="ot">&lt;-</span> <span class="fu">retrieve_CITES_data</span>(Species_df<span class="sc">$</span>Species)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mendapatkan informasi spesies dari katalog CITES </span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>sp3 <span class="ot">&lt;-</span> <span class="fu">spp_cites_legislation</span>(<span class="at">taxon_id =</span> sp2<span class="sc">$</span>taxon_id, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>sp3 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span> (sp3[[<span class="st">"cites_listings"</span>]])</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggabungkan seluruh informasi dari IUCN, CITES dan Peraturan Pemerintah kedalam satu tabel.</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>(species_list <span class="ot">&lt;-</span> <span class="fu">left_join</span>(sp1, sp2, <span class="at">by=</span><span class="st">'Species'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(., sp3, <span class="at">by=</span><span class="st">'taxon_id'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(., db,  <span class="at">by=</span><span class="st">"Species"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Class, Order, Family, Species, Status, Trend, appendix, Protected, Endemic, Migratory) <span class="sc">%&gt;%</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(Class, Order, Family),tolower) <span class="sc">%&gt;%</span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(Class, Order, Family),str_to_title) <span class="sc">%&gt;%</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Appendix =</span> appendix))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tbl-cap-location="top">
+<div id="tbl-spltb" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spltb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;11.4: Daftar jenis, taksonomi dan status konservasi
+</figcaption>
+<div aria-describedby="tbl-spltb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Class</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Order</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Status</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Trend</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Appendix</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Protected</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Endemic</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Migratory</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Cetartiodactyla</td>
+<td style="text-align: left;">Suidae</td>
+<td style="text-align: left;">Sus scrofa</td>
+<td style="text-align: left;">LC</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Cercopithecidae</td>
+<td style="text-align: left;">Trachypithecus auratus</td>
+<td style="text-align: left;">VU</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Cercopithecidae</td>
+<td style="text-align: left;">Macaca fascicularis</td>
+<td style="text-align: left;">EN</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Cercopithecidae</td>
+<td style="text-align: left;">Macaca fascicularis</td>
+<td style="text-align: left;">EN</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Mustelidae</td>
+<td style="text-align: left;">Aonyx cinereus</td>
+<td style="text-align: left;">VU</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">I</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Herpestidae</td>
+<td style="text-align: left;">Herpestes javanicus</td>
+<td style="text-align: left;">LC</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">III</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Hylobatidae</td>
+<td style="text-align: left;">Hylobates moloch</td>
+<td style="text-align: left;">EN</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">I</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Hystricidae</td>
+<td style="text-align: left;">Hystrix javanica</td>
+<td style="text-align: left;">LC</td>
+<td style="text-align: left;">Stable</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Felidae</td>
+<td style="text-align: left;">Prionailurus bengalensis</td>
+<td style="text-align: left;">LC</td>
+<td style="text-align: left;">Stable</td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Cetartiodactyla</td>
+<td style="text-align: left;">Cervidae</td>
+<td style="text-align: left;">Muntiacus muntjak</td>
+<td style="text-align: left;">LC</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mammalia</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Cercopithecidae</td>
+<td style="text-align: left;">Presbytis comata</td>
+<td style="text-align: left;">VU</td>
+<td style="text-align: left;">Decreasing</td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Pada tabel <a href="#tbl-spltb" class="quarto-xref">Tabel&nbsp;<span>11.4</span></a> di atas, kita telah memperoleh ringkasan informasi tentang sistem taksonomi, konservasi, tren populasi, daftar spesies endemik, dan spesies migran dari dataset yang dimiliki.</p>
+<p>Namun, perlu diperhatikan bahwa hingga saat panduan ini ditulis, skrip ini hanya efektif untuk taksa mamalia, reptil, dan beberapa jenis burung. Sementara itu, identifikasi tumbuhan sering kali gagal karena banyaknya sinonim dari spesies tumbuhan. Oleh karena itu, kamu tetap harus memeriksa kembali hasil dari skrip ini.</p>
+<p>Terkadang hasilnya menunjukan ‘NA’ pada kolom taksonomi atau status konservasi, karena ada perbedaan nama latin yang tercantum di dataset dengan nama latin yang terdaftar di pangkalan data IUCN dan CITES.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09-lampiran2.html" class="pagination-link" aria-label="Teknik Preservasi Spesimen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Teknik Preservasi Spesimen</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

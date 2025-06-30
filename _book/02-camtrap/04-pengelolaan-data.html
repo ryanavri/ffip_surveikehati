@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Panduan praktis mengenai survei keanekaragaman hayati">
+
+<title>Panduan Survei Kehati - 8&nbsp; Pengelolaan data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../07-referensi.html" rel="next">
+<link href="../02-camtrap/03-protokol.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="../theme.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-camtrap/02-intro.html">Kamera Intai</a></li><li class="breadcrumb-item"><a href="../02-camtrap/04-pengelolaan-data.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pengelolaan data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../cover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Panduan Survei Kehati</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prakata</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-pendahuluan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pendahuluan</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01-terestrial/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioma Terestrial</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/03-rancangan-survei.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Rancangan Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/04-protokol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/05-pengelolaan-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pengelolaan Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-terestrial/06-analisa-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analisis Data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../02-camtrap/02-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kamera Intai</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-camtrap/02-rancangan-survei.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rancangan Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-camtrap/03-protokol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-camtrap/04-pengelolaan-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pengelolaan data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-referensi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referensi</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Lampiran</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-lampiran1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lembar Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../09-lampiran2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Teknik Preservasi Spesimen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-lampiran3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Eksplorasi dan visualisasi data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Daftar Isi</h2>
+   
+  <ul>
+  <li><a href="#sec-organisir-data-kamera-intai" id="toc-sec-organisir-data-kamera-intai" class="nav-link active" data-scroll-target="#sec-organisir-data-kamera-intai"><span class="header-section-number">8.1</span> Organisir data kamera intai</a></li>
+  <li><a href="#sec-datatabular" id="toc-sec-datatabular" class="nav-link" data-scroll-target="#sec-datatabular"><span class="header-section-number">8.2</span> Data Tabular</a></li>
+  <li><a href="#data-fotovideo" id="toc-data-fotovideo" class="nav-link" data-scroll-target="#data-fotovideo"><span class="header-section-number">8.3</span> Data Foto/Video</a></li>
+  <li><a href="#data-spasial" id="toc-data-spasial" class="nav-link" data-scroll-target="#data-spasial"><span class="header-section-number">8.4</span> Data Spasial</a></li>
+  <li><a href="#laporan" id="toc-laporan" class="nav-link" data-scroll-target="#laporan"><span class="header-section-number">8.5</span> Laporan</a></li>
+  <li><a href="#penyimpanan-data" id="toc-penyimpanan-data" class="nav-link" data-scroll-target="#penyimpanan-data"><span class="header-section-number">8.6</span> Penyimpanan data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-camtrap/02-intro.html">Kamera Intai</a></li><li class="breadcrumb-item"><a href="../02-camtrap/04-pengelolaan-data.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pengelolaan data</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-pengelolaan-data" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pengelolaan data</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Bagian ini memberikan rekomendasi tentang pengelolaan data kamera pengintai. Survei menggunakan kamera pengintai biasanya dapat menghasilkan ratusan hingga puluhan ribu foto dan video dalam satu durasi survei. Jika data ini dikelola secara manual , ini akan membutuhkan banyak waktu, melelahkan, dan berpotensi tinggi mengalami banyak kesalahan. Oleh karena itu, otomatisasi pengelolaan data merupakan pilihan yang masuk akal karena dapat memangkas waktu dan memaksimalkan informasi yang dapat diperoleh.</p>
+<p>Pengelolaan data kamera pengintai dapat dianggap “benar” jika mampu menyediakan struktur data yang konsisten namun fleksibel untuk dapat memenuhi berbagai macam desain survei dan luaran yang dibutuhkan. Selama beberapa tahun terakhir, untuk memenuhi kriteria tersebut, berbagai perangkat lunak telah dikembangkan untuk mengotomatisasi pengelolaan data kamera pengintai <span class="citation" data-cites="Sanderson2013 sundaresan2011 fegraus2011a krishnappa2014 zaragozí2015 beery2019 hendry2018">(<a href="../07-referensi.html#ref-Sanderson2013" role="doc-biblioref">Sanderson and Harris 2013</a>; <a href="../07-referensi.html#ref-sundaresan2011" role="doc-biblioref">Sundaresan, Riginos, and Abelson 2011</a>; <a href="../07-referensi.html#ref-fegraus2011a" role="doc-biblioref">Fegraus et al. 2011</a>; <a href="../07-referensi.html#ref-krishnappa2014" role="doc-biblioref">Krishnappa and Turner 2014</a>; <a href="../07-referensi.html#ref-zaragozí2015" role="doc-biblioref">Zaragozí et al. 2015</a>; <a href="../07-referensi.html#ref-beery2019" role="doc-biblioref">Beery, Morris, and Yang 2019</a>; <a href="../07-referensi.html#ref-hendry2018" role="doc-biblioref">Hendry and Mann 2018</a>)</span>.</p>
+<p>Beberapa publikasi telah membandingkan kelebihan dan kekurangan dari perangkat lunak yang tersedia <span class="citation" data-cites="scotson2017 wearn2017">(<a href="../07-referensi.html#ref-scotson2017" role="doc-biblioref">Scotson et al. 2017</a>; <a href="../07-referensi.html#ref-wearn2017" role="doc-biblioref">Wearn and Glover-Kapfer 2017</a>)</span>. Dalam panduan ini, kami mengadopsi protokol pengelolaan data kamera pengintai menggunakan <em>camtrapR</em> (paket dalam perangkat lunak R) yang menyediakan sejumlah fitur yang dapat membantu mengelola data kamera pengintai secara lebih efisien dan efektif, mulai dari organisasi penyimpanan data, pemrosesan data temuan, hingga visualisasi dan analisis data yang lebih kompleks.</p>
+<p>Alur kerja pengelolaan data dengan <em>camtrapR</em> dibagi menjadi lima bagian (<a href="#fig-wf" class="quarto-xref">Gambar&nbsp;<span>8.1</span></a>), dimulai dari memindahkan data kamera intai ke dalam sistem komputer. Selanjutnya, camtrapR akan membantu membaca seluruh gambar atau video yang sudah diorganisir ke dalam tabel rekaman spesies. Tabel tersebut kemudian dapat digunakan lebih lanjut untuk eksplorasi dan visualisasi data, serta analisis lebih lanjut seperti model okupansi dan <em>spatial capture-recapture.</em></p>
+<div id="fig-wf" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/workflow.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;8.1: Alur kerja pengelolaan data kamera intai
+</figcaption>
+</figure>
+</div>
+<section id="sec-organisir-data-kamera-intai" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-organisir-data-kamera-intai"><span class="header-section-number">8.1</span> Organisir data kamera intai</h2>
+<p>Langkah pertama dalam pengelolaan data kamera pengintai adalah membuat salinan data mentah. Dari data mentah yang sudah disalin tersebut kemudian dilakukan organisasi data ke dalam struktur folder seperti yang ditunjukkan pada <a href="#fig-fld" class="quarto-xref">Gambar&nbsp;<span>8.2</span></a>. Prinsip organisasi folder ini adalah membuat penyimpanan bertingkat berupa nama area studi -&gt; nama stasiun -&gt; lalu nama spesies (<a href="#fig-fld" class="quarto-xref">Gambar&nbsp;<span>8.2</span></a> .i).</p>
+<p>Pada beberapa desain survei, seringkali satu stasiun dipasang kamera secara berpasangan, sehingga kita bisa mengikuti struktur pada gambar (<a href="#fig-fld" class="quarto-xref">Gambar&nbsp;<span>8.2</span></a> .ii), dengan menambah satu tingkat lagi menjadi nama stasiun -&gt; nama kamera -&gt; nama spesies. Kedua struktur sama saja, yang penting dalam satu studi area dibuat konsisten dengan pilihan tersebut.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Data mentah harus tetap disimpan sebagai sumber awal pengecekan data, apabila terdapat kesalahan pada saat melakukan organisasi data</p>
+</div>
+</div>
+<div id="fig-fld" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fld-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/foldering.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fld-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;8.2: Struktur organisasi folder kamera intai
+</figcaption>
+</figure>
+</div>
+<p>Dalam struktur folder ini, data kamera pengintai akan diorganisir berdasarkan area studi dan stasiun yang digunakan dalam survei. Kemudian, data akan dikelompokkan berdasarkan spesies yang terekam dalam gambar. Selanjutnya <em>camtrapR</em> akan mengekstrak metadata tersebut kedalam lembar data kamera intai. Prosedur mengenai pembuatan lembar data ini akan dijelaskan lebih lanjut pada lampiran xx.</p>
+<p>Dalam konteks pengelolaan data yang efektif, selain data kamera intai, data pendukung lain seperti data spasial, laporan hasil, dan dokumentasi juga perlu disimpan dengan protokol yang konsisten, dikarenakan data tersebut saling terkait satu sama lain dan memiliki informasi yang sama berharganya dengan data hasil kamera intai itu sendiri. Hal ini dilakukan agar hasil survei ini dapat digunakan kembali dengan mudah dan efisien di masa depan.</p>
+</section>
+<section id="sec-datatabular" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-datatabular"><span class="header-section-number">8.2</span> Data Tabular</h2>
+<p>Data tabular merupakan data utama dari kajian survei kamera intai yang berisi temuan satwa dan informasi usaha survei. Pada <a href="#fig-dts" class="quarto-xref">Gambar&nbsp;<span>8.3</span></a> dibawah, terdapat minimal dua jenis data.</p>
+<ul>
+<li><p>Pertama, dalam format (.pdf) dari hasil pemindaian lembar kerja pengisian informasi stasiun kamera intai. Data ini merupakan sumber verifikasi utama dari lembar data usaha survei kamera intai, apabila terdapat kesalahan dalam pemindahan ke format digital (xls).</p></li>
+<li><p>Kedua merupakan lembar data digital dalam format (.xls).</p></li>
+</ul>
+<div id="fig-dts" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/datasheet.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;8.3: Komponen pada folder data tabular
+</figcaption>
+</figure>
+</div>
+<p>Templat lembar data dalam survei menggunakan kamera intai dapat diunduh melalui tautan berikut ini; <a href="https://ffionline-my.sharepoint.com/:x:/g/personal/ravriandy_fauna-flora_org/EfgEkh2-8B9KsxpUcI8Iq7wBDbaXplsYv6BbsOUotgOE7g?e=ReRE5u">Lembar data kamera intai</a>. Setiap lembar data memiliki 4 lembar utama berupa;</p>
+<ol type="1">
+<li><p>Perjumpaan satwa. Lembar ini berisi informasi perjumpaan satwa liar yang terdeteksi oleh kamera pengintai. Lembar data ini akan diproduksi menggunakan <em>camtrapR</em> pada <span class="quarto-unresolved-ref">?sec-bacadatakamera</span>, dengan tambahan informasi spesifik yang akan diedit secara manual.</p></li>
+<li><p>Usaha survei. Lembar ini berisi informasi yang mencakup waktu dan lokasi pemasangan kamera pengintai, serta durasi kamera intai aktif. Informasi ini membantu dalam memahami konteks usaha survei.</p></li>
+<li><p>Deksripsi pengisian data. Lembar ini berupa informasi cara pengisian setiap kolom dalam lembar pertama dan kedua. Lembar ini dijadikan acuan dalam pengisian data dan memastikan penggunaan data yang konsisten, serta dapat diinterpretasikan dan di replikasi oleh orang lain di kemudian hari.</p></li>
+<li><p>Informasi survei. Lembar ini berisi informasi kepemilikan data serta gambaran umum survei tersebut. Dengan adanya informasi ini, orisinalitas kepemilikan data melekat pada data tersebut.</p></li>
+</ol>
+</section>
+<section id="data-fotovideo" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="data-fotovideo"><span class="header-section-number">8.3</span> Data Foto/Video</h2>
+<p>Folder ini terdiri dari dua sub-folder utama, yaitu ;</p>
+<ul>
+<li><p>Folder hasil kamera intai yang telah diorganisir pada <a href="#sec-organisir-data-kamera-intai" class="quarto-xref"><span>Section 8.1</span></a></p></li>
+<li><p>Folder aktivitas yang berisi foto-foto terpilih mengenai aktivitas yang dilakukan oleh tim terkait survei seperti pada <a href="#fig-dok" class="quarto-xref">Gambar&nbsp;<span>8.4</span></a>.</p></li>
+</ul>
+<div id="fig-dok" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dok-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figdok.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dok-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;8.4: Komponen pada folder data foto/video
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-spasial" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="data-spasial"><span class="header-section-number">8.4</span> Data Spasial</h2>
+<p>Folder ini berisi seluruh data spasial pendukung kegiatan survei. Folder utama yang perlu ada setidaknya adalah gpx dan shapefiles (<a href="#fig-fsp" class="quarto-xref">Gambar&nbsp;<span>8.5</span></a>). Folder gpx merupakan <em>backup</em> dari data gps yang dipakai, baik untuk menyimpan data <em>waypoint</em> maupun <em>track</em>. Data gpx dalam bentuk <em>waypoint</em> digunakan untuk verifikasi kordinat yang tertulis dalam lembar data, sekaligus sebagai informasi tambahan untuk titik penting lainnya, sedangkan data <em>track</em> diperlukan agar informasi terkait jalur dan rute survei dapat digunakan oleh tim lain jika terdapat pergantian personil, maupun oleh pemangku kepentingan lain jika dibutuhkan di kemudian hari. Data dari gps dapat dengan mudah dikelola serta dipindahkan antar perangkat (contoh; gps ke laptop, maupun sebaliknya) menggunakan perangkat lunak <a href="https://www.garmin.com/en-US/software/basecamp/"><em>BaseCamp</em></a>.</p>
+<div id="fig-fsp" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fsp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figsp.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fsp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;8.5: Komponen pada folder data spasial
+</figcaption>
+</figure>
+</div>
+<p>Folder shapefile utamanya berisi lokasi kamera intai, dengan isian atribut tabel yang sama pada lembar kerja di lembar (usaha survei). Selain itu, data pendukung lainnya seperti petak survei (grid), batas kawasan, sungai, jalan dan informasi penting lainnya dalam area studi juga disarankan masuk kedalam folder tersebut.</p>
+</section>
+<section id="laporan" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="laporan"><span class="header-section-number">8.5</span> Laporan</h2>
+<p>Seluruh laporan dari hasil kajian survei yang dilakukan, baik itu laporan tematis ataupun laporan utama disimpan dalam folder ini. Penamaan laporan dibuat dengan praktik sebagai berikut;</p>
+<ul>
+<li>Dibuat sesingkat mungkin namun tetap informatis</li>
+<li>Hindari kata yang berulang</li>
+<li>Hindari spesial karakter seperti; !@#$%^&amp;*()`;&lt;&gt;?,’“|</li>
+<li>Menambahkan versi untuk memudahkan melacak perubahan seperti; laporan-camtrap-seko2021_02-12-21, laporan-camtrap-seko2021_25-12-21.</li>
+<li>Penambahan inisial pada akhir nama juga dapat ditambahkan bila diperlukan untuk melihat <em>reviewer</em> terakhir seperti; laporan-camtrap-seko2021_25-12-21_FNT.</li>
+</ul>
+</section>
+<section id="penyimpanan-data" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="penyimpanan-data"><span class="header-section-number">8.6</span> Penyimpanan data</h2>
+<p>Setelah melalui empat tahap sebelumnya termasuk pengendalian kualitas data, tahap terakhir adalah menyimpan data final ke dalam tiga lokasi yang berbeda. Ketiga lokasi penyimpanan tersebut adalah:</p>
+<ol type="1">
+<li><p>Lokal pada hard drive external di site atau wilayah kerja masing-masing, yang didedikasikan khusus untuk penyimpanan final semua kegiatan.</p></li>
+<li><p>Online pada akun personal OneDrive staf FFI’s IP yang ditunjuk sebagai wali data di site tersebut.</p></li>
+<li><p>Menghubungkan data pada poin dua tersebut pada akun OneDrive Indonesia (indonesia@fauna-flora.org, cc; ryan.avriandy@fauna-flora.org) dan mengirimkan email pemberitahuan pembaruan data pada email tersebut.</p></li>
+</ol>
+<p>Tahapan pertama dilakukan untuk memastikan data tersimpan tidak hanya pada laptop individu tetapi juga ada cadangan lokal di site tersebut. Tahap kedua untuk memastikan backup secara online karena penyimpanan lokal dapat kehilangan data akibat kerusakan atau pencurian infrastrukturnya. Terakhir, tahap ketiga dilakukan untuk memastikan adanya cadangan di nasional antara site dan proyek agar data nasional dapat diperbarui secara berkala. Data ini dapat ditampilkan dalam sistem <a href="https://ryanavri.shinyapps.io/FFI_Database/">visualisasi data FFI’s IP</a> untuk strategi proposal bagi fundraiser atau pengelola pusat untuk membantu pelaporan kepada donor.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-beery2019" class="csl-entry" role="listitem">
+Beery, Sara, Dan Morris, and Siyu Yang. 2019. <span>“Efficient Pipeline for Camera Trap Image Review.”</span> <a href="https://doi.org/10.48550/ARXIV.1907.06772">https://doi.org/10.48550/ARXIV.1907.06772</a>.
+</div>
+<div id="ref-fegraus2011a" class="csl-entry" role="listitem">
+Fegraus, Eric H., Kai Lin, Jorge A. Ahumada, Chaitan Baru, Sandeep Chandra, and Choonhan Youn. 2011. <span>“Data Acquisition and Management Software for Camera Trap Data: A Case Study from the TEAM Network.”</span> <em>Ecological Informatics</em> 6 (6): 345–53. <a href="https://doi.org/10.1016/j.ecoinf.2011.06.003">https://doi.org/10.1016/j.ecoinf.2011.06.003</a>.
+</div>
+<div id="ref-hendry2018" class="csl-entry" role="listitem">
+Hendry, Heidi, and Christopher Mann. 2018. <span>“<span><em>Camelot</em></span>-<span></span>Intuitive Software for Camera-Trap Data Management.”</span> <em>Oryx</em> 52 (1): 15–15. <a href="https://doi.org/10.1017/s0030605317001818">https://doi.org/10.1017/s0030605317001818</a>.
+</div>
+<div id="ref-krishnappa2014" class="csl-entry" role="listitem">
+Krishnappa, Yathin S., and Wendy C. Turner. 2014. <span>“Software for Minimalistic Data Management in Large Camera Trap Studies.”</span> <em>Ecological Informatics</em> 24 (November): 11–16. <a href="https://doi.org/10.1016/j.ecoinf.2014.06.004">https://doi.org/10.1016/j.ecoinf.2014.06.004</a>.
+</div>
+<div id="ref-Sanderson2013" class="csl-entry" role="listitem">
+Sanderson, Jim, and Grant Harris. 2013. <span>“Automatic Data Organization, Storage, and Analysis of Camera Trap Pictures.”</span> <em>Journal of Indonesian Natural History</em> 1 (January): 11–19.
+</div>
+<div id="ref-scotson2017" class="csl-entry" role="listitem">
+Scotson, Lorraine, Lisa R. Johnston, Fabiola Iannarilli, Oliver R. Wearn, Jayasilan Mohd-Azlan, Wai&nbsp;Ming Wong, Thomas N. E. Gray, et al. 2017. <span>“Best Practices and Software for the Management and Sharing of Camera Trap Data for Small and Large Scales Studies.”</span> Edited by Marcus Rowcliffe and Carlos De Angelo. <em>Remote Sensing in Ecology and Conservation</em> 3 (3): 158–72. <a href="https://doi.org/10.1002/rse2.54">https://doi.org/10.1002/rse2.54</a>.
+</div>
+<div id="ref-sundaresan2011" class="csl-entry" role="listitem">
+Sundaresan, Siva R., Corinna Riginos, and Eric S. Abelson. 2011. <span>“Management and Analysis of Camera Trap Data: Alternative Approaches (Response to Harris Et Al. 2010).”</span> <em>Bulletin of the Ecological Society of America</em> 92 (2): 188–95. <a href="https://doi.org/10.1890/0012-9623-92.2.188">https://doi.org/10.1890/0012-9623-92.2.188</a>.
+</div>
+<div id="ref-wearn2017" class="csl-entry" role="listitem">
+Wearn, Oliver R., and Paul Glover-Kapfer. 2017. <span>“Camera-Trapping for Conservation: A Guide to Best-Practices.”</span> <em>WWF</em>. <a href="https://doi.org/10.13140/RG.2.2.23409.17767">https://doi.org/10.13140/RG.2.2.23409.17767</a>.
+</div>
+<div id="ref-zaragozí2015" class="csl-entry" role="listitem">
+Zaragozí, B., A. Belda, P. Giménez, J. T. Navarro, and A. Bonet. 2015. <span>“Advances in Camera Trap Data Management Tools: Towards Collaborative Development and Integration with GIS.”</span> <em>Ecological Informatics</em> 30 (November): 6–11. <a href="https://doi.org/10.1016/j.ecoinf.2015.08.001">https://doi.org/10.1016/j.ecoinf.2015.08.001</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../02-camtrap/03-protokol.html" class="pagination-link" aria-label="Protokol Survei">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Protokol Survei</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../07-referensi.html" class="pagination-link" aria-label="Referensi">
+        <span class="nav-page-text">Referensi</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
